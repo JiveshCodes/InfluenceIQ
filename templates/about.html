@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — InfluenceIQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/main.css">
+<script>(function(){const t=localStorage.getItem('iq_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body class="landing-page">
+<div class="orb orb-1"></div><div class="orb orb-2"></div>
+
+<nav class="navbar scrolled">
+  <a href="/" class="nav-brand"><span class="brand-mark">IQ</span><span class="brand-name">InfluenceIQ</span></a>
+  <div class="nav-right">
+    <button class="theme-btn" onclick="toggleTheme()"><span id="themeIcon">🌙</span></button>
+    <a href="/login" class="btn-ghost-nav">Log in</a>
+    <a href="/signup" class="btn-cta-nav">Get Started</a>
+  </div>
+</nav>
+
+<div class="about-page">
+  <div class="about-hero">
+    <div class="section-tag">About InfluenceIQ</div>
+    <h1>We built the AI layer<br>influencer marketing was missing</h1>
+    <p>Traditional influencer discovery relies on spreadsheets, gut feelings, and expensive agencies. InfluenceIQ changes that — using real machine learning to match brands with creators who'll actually move the needle.</p>
+  </div>
+
+  <div class="about-section">
+    <div class="about-grid-2">
+      <div>
+        <h2>Our Mission</h2>
+        <p>To make data-driven influencer marketing accessible to every brand — from indie D2C startups to global marketing agencies — by democratizing access to AI-powered discovery tools that were previously only available to enterprise teams.</p>
+        <p style="margin-top:16px">We believe every brand deserves to find the right voice. Not just the loudest one.</p>
+      </div>
+      <div class="about-mission-visual">
+        <div class="mission-stat"><div class="ms-num">150+</div><div class="ms-label">Verified Creators</div></div>
+        <div class="mission-stat"><div class="ms-num">94%</div><div class="ms-label">Match Accuracy</div></div>
+        <div class="mission-stat"><div class="ms-num">2×</div><div class="ms-label">Faster Discovery</div></div>
+        <div class="mission-stat"><div class="ms-num">6</div><div class="ms-label">Platforms</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-section alt-bg">
+    <h2 class="text-center">The Technology Stack</h2>
+    <p class="text-center sub-p">Built on modern ML infrastructure — not keyword matching or manual curation.</p>
+    <div class="tech-cards">
+      <div class="tech-card">
+        <div class="tc-icon">🤗</div>
+        <div class="tc-title">Sentence Transformers</div>
+        <div class="tc-desc">all-MiniLM-L6-v2 model encodes influencer profiles and brand briefs into 384-dimension semantic vectors for deep contextual matching.</div>
+        <div class="tc-tag">NLP · Transformers · BERT</div>
+      </div>
+      <div class="tech-card">
+        <div class="tc-icon">📐</div>
+        <div class="tc-title">Cosine Similarity</div>
+        <div class="tc-desc">Query vectors are matched against pre-encoded influencer embeddings using cosine similarity — capturing semantic meaning beyond keyword overlap.</div>
+        <div class="tc-tag">Linear Algebra · Embeddings</div>
+      </div>
+      <div class="tech-card">
+        <div class="tc-icon">⚖️</div>
+        <div class="tc-title">Weighted ML Scoring</div>
+        <div class="tc-desc">Five-factor composite score: semantic similarity (30%), engagement (25%), category match (20%), keyword alignment (15%), fraud safety (10%).</div>
+        <div class="tc-tag">Machine Learning · Scoring</div>
+      </div>
+      <div class="tech-card">
+        <div class="tc-icon">🛡️</div>
+        <div class="tc-title">Fraud Detection</div>
+        <div class="tc-desc">Each influencer carries an audience authenticity score derived from follower-to-engagement ratios and growth pattern analysis.</div>
+        <div class="tc-tag">Anomaly Detection · NLP</div>
+      </div>
+      <div class="tech-card">
+        <div class="tc-icon">💬</div>
+        <div class="tc-title">Explainable AI</div>
+        <div class="tc-desc">Every recommendation is accompanied by clear human-readable reasons. No black box scores — full interpretability for marketing teams.</div>
+        <div class="tc-tag">XAI · Interpretability</div>
+      </div>
+      <div class="tech-card">
+        <div class="tc-icon">🐍</div>
+        <div class="tc-title">Python + Flask</div>
+        <div class="tc-desc">Backend built on Flask with pandas, scikit-learn, and sentence-transformers. Embeddings are pre-computed at startup for fast real-time inference.</div>
+        <div class="tc-tag">Flask · scikit-learn · pandas</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-section">
+    <h2 class="text-center">ML Pipeline — End to End</h2>
+    <div class="pipeline-visual">
+      <div class="pv-step"><div class="pvs-icon">📋</div><div class="pvs-label">Brand Input</div><div class="pvs-sub">Category, subcategory, budget, platform</div></div>
+      <div class="pv-arrow">▶</div>
+      <div class="pv-step"><div class="pvs-icon">🔤</div><div class="pvs-label">Preprocessing</div><div class="pvs-sub">Tokenization, normalization, keyword expansion</div></div>
+      <div class="pv-arrow">▶</div>
+      <div class="pv-step"><div class="pvs-icon">🧠</div><div class="pvs-label">Embedding</div><div class="pvs-sub">Sentence-BERT 384D vector encoding</div></div>
+      <div class="pv-arrow">▶</div>
+      <div class="pv-step"><div class="pvs-icon">📐</div><div class="pvs-label">Similarity</div><div class="pvs-sub">Cosine similarity vs. all influencer vectors</div></div>
+      <div class="pv-arrow">▶</div>
+      <div class="pv-step"><div class="pvs-icon">⚡</div><div class="pvs-label">ML Scoring</div><div class="pvs-sub">Weighted composite score + fraud penalty</div></div>
+      <div class="pv-arrow">▶</div>
+      <div class="pv-step"><div class="pvs-icon">📊</div><div class="pvs-label">Results</div><div class="pvs-sub">Ranked matches + XAI explanations</div></div>
+    </div>
+  </div>
+
+  <div class="about-section alt-bg">
+    <div class="about-grid-2">
+      <div>
+        <h2>Why InfluenceIQ?</h2>
+        <div class="why-list">
+          <div class="why-item-row"><span class="why-icon">🎯</span><div><strong>Precision over popularity</strong><p>We rank by fit — not follower count. A micro-creator with a highly engaged niche audience often outperforms a mega-celebrity.</p></div></div>
+          <div class="why-item-row"><span class="why-icon">🔍</span><div><strong>Transparent scoring</strong><p>Every factor in our algorithm is explained. You know exactly why a creator was recommended.</p></div></div>
+          <div class="why-item-row"><span class="why-icon">⚡</span><div><strong>Instant results</strong><p>Pre-computed embeddings mean zero waiting. Switch currency, change category, run 10 searches — all instant.</p></div></div>
+          <div class="why-item-row"><span class="why-icon">🛡️</span><div><strong>Built-in fraud detection</strong><p>Fake followers inflate reach without driving results. We flag and penalize suspicious engagement patterns automatically.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <h2>Dataset Quality</h2>
+        <p>Our influencer dataset is hand-curated and regularly verified. Every entry includes:</p>
+        <ul class="about-list">
+          <li>Verified real follower counts from public profiles</li>
+          <li>Accurate engagement rate calculations</li>
+          <li>Correct fraud risk labels (no real influencers marked fake)</li>
+          <li>Multi-platform coverage: Instagram, YouTube, Twitter, LinkedIn</li>
+          <li>Geographic diversity: India, USA, UK, UAE, and global creators</li>
+          <li>Platform verification status where available</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-section">
+    <h2 class="text-center">Roadmap & Future Scope</h2>
+    <p class="text-center sub-p">Our planned improvements to make InfluenceIQ even more powerful.</p>
+    <div class="tech-cards">
+      <div class="tech-card">
+        <div class="tc-icon">📡</div>
+        <div class="tc-title">Phase 1 — Data (Q3 2025)</div>
+        <ul class="about-list" style="margin-top:0">
+          <li>YouTube Data API v3 integration</li>
+          <li>Live follower count updates</li>
+          <li>Automated CRON job data refresh</li>
+          <li>Social Blade API connection</li>
+        </ul>
+      </div>
+      <div class="tech-card">
+        <div class="tc-icon">🏗️</div>
+        <div class="tc-title">Phase 2 — Infrastructure (Q4 2025)</div>
+        <ul class="about-list" style="margin-top:0">
+          <li>PostgreSQL database migration</li>
+          <li>Pinecone vector database for faster similarity</li>
+          <li>Redis caching layer</li>
+          <li>Docker containerization</li>
+        </ul>
+      </div>
+      <div class="tech-card">
+        <div class="tc-icon">✨</div>
+        <div class="tc-title">Phase 3 — Features (Q1 2026)</div>
+        <ul class="about-list" style="margin-top:0">
+          <li>Instagram Graph API integration</li>
+          <li>Campaign analytics dashboard</li>
+          <li>AI negotiation assistant (LLM-powered)</li>
+          <li>Team collaboration and multi-seat support</li>
+          <li>White-label reporting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-cta">
+    <h2>Ready to try it?</h2>
+    <p>No credit card required. Start discovering influencers in 30 seconds.</p>
+    <div class="cta-btns">
+      <a href="/signup" class="btn-hero-primary">Create free account</a>
+      <a href="/dashboard?demo=1" class="btn-hero-ghost">Launch demo</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><span class="brand-mark sm">IQ</span><span class="brand-name">InfluenceIQ</span></div>
+    <div class="footer-links"><a href="/">Home</a><a href="/about">About</a><a href="/settings">Settings</a><a href="#">Privacy</a></div>
+    <div class="footer-copy">© 2025 InfluenceIQ</div>
+  </div>
+</footer>
+
+<script src="/static/js/theme.js"></script>
+</body>
+</html>

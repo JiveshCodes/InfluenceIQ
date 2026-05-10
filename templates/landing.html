@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InfluenceIQ — AI-Powered Influencer Discovery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/main.css">
+<script>(function(){const t=localStorage.getItem('iq_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body class="landing-page">
+
+<!-- Ambient background orbs -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="/" class="nav-brand">
+    <span class="brand-mark">IQ</span>
+    <span class="brand-name">InfluenceIQ</span>
+  </a>
+  <div class="nav-center">
+    <a href="#features" class="nav-link">Features</a>
+    <a href="#how-it-works" class="nav-link">How it works</a>
+    <a href="/about" class="nav-link">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">
+      <span class="theme-icon">🌙</span>
+    </button>
+    <a href="/login" class="btn-ghost-nav">Log in</a>
+    <a href="/signup" class="btn-cta-nav">Get Started</a>
+  </div>
+  <button class="nav-hamburger" onclick="toggleMobileNav()">☰</button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#features">Features</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="/about">About</a>
+  <a href="/login">Log in</a>
+  <a href="/signup" class="mobile-cta">Get Started →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      AI-Powered Matchmaking Platform
+    </div>
+    <h1 class="hero-title">
+      Find the perfect<br>
+      <span class="gradient-text">influencer</span><br>
+      for your brand
+    </h1>
+    <p class="hero-desc">
+      Our transformer-based ML engine analyzes 150+ verified influencers across engagement authenticity, semantic alignment, and audience quality — surfacing your ideal match in seconds.
+    </p>
+    <div class="hero-actions">
+      <a href="/signup" class="btn-hero-primary">Start for free →</a>
+      <a href="/dashboard?demo=1" class="btn-hero-ghost">Watch demo</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-avatars">
+        <div class="ta ta-1">🧑</div>
+        <div class="ta ta-2">👩</div>
+        <div class="ta ta-3">👨</div>
+        <div class="ta ta-4">🧑</div>
+      </div>
+      <span class="trust-text">Trusted by <strong>500+</strong> marketing teams</span>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-card-stack">
+      <div class="hc hc-bg"></div>
+      <div class="hc hc-mid">
+        <div class="hc-avatar">🎯</div>
+        <div class="hc-body">
+          <div class="hc-name">AI Matching Engine</div>
+          <div class="hc-sub">Transformer · BERT · Cosine Similarity</div>
+          <div class="hc-bar">
+            <div class="hc-bar-fill" style="width:88%"></div>
+          </div>
+          <div class="hc-bar-label">Match Score: 88%</div>
+        </div>
+      </div>
+      <div class="hc hc-front">
+        <div class="match-row">
+          <span class="match-icon">📊</span>
+          <span class="match-label">Engagement Quality</span>
+          <span class="match-val good">High</span>
+        </div>
+        <div class="match-row">
+          <span class="match-icon">🛡️</span>
+          <span class="match-label">Fraud Risk</span>
+          <span class="match-val good">Low ✓</span>
+        </div>
+        <div class="match-row">
+          <span class="match-icon">🎯</span>
+          <span class="match-label">Niche Alignment</span>
+          <span class="match-val good">Exact</span>
+        </div>
+        <div class="match-row">
+          <span class="match-icon">💡</span>
+          <span class="match-label">AI Confidence</span>
+          <span class="match-val good">92%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="sstat">
+      <div class="sstat-num" id="stat-influencers">150+</div>
+      <div class="sstat-label">Verified Influencers</div>
+    </div>
+    <div class="sstat-div"></div>
+    <div class="sstat">
+      <div class="sstat-num">6</div>
+      <div class="sstat-label">Platforms Covered</div>
+    </div>
+    <div class="sstat-div"></div>
+    <div class="sstat">
+      <div class="sstat-num">20</div>
+      <div class="sstat-label">Niche Sub-categories</div>
+    </div>
+    <div class="sstat-div"></div>
+    <div class="sstat">
+      <div class="sstat-num">BERT</div>
+      <div class="sstat-label">Transformer Model</div>
+    </div>
+    <div class="sstat-div"></div>
+    <div class="sstat">
+      <div class="sstat-num">6</div>
+      <div class="sstat-label">Currencies Supported</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+  <div class="section-wrap">
+    <div class="section-tag">Platform Features</div>
+    <h2 class="section-title">Everything your marketing team needs</h2>
+    <p class="section-sub">Built with real machine learning — not just filters and keyword search.</p>
+    <div class="features-grid">
+      <div class="feat-card feat-card-accent">
+        <div class="feat-icon">🧠</div>
+        <h3>Transformer Embeddings</h3>
+        <p>All-MiniLM-L6-v2 sentence transformer converts influencer profiles and brand briefs into semantic vectors for precise matching.</p>
+        <div class="feat-tag">BERT · Sentence Transformers</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📐</div>
+        <h3>Cosine Similarity Ranking</h3>
+        <p>Multi-factor ML scoring: semantic similarity (30%), engagement quality (25%), category match (20%), keyword alignment (15%), fraud safety (10%).</p>
+        <div class="feat-tag">ML · Linear Algebra</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🛡️</div>
+        <h3>Fraud Risk Detection</h3>
+        <p>Every influencer is scored for audience authenticity. Fake follower patterns are penalized automatically in the ranking algorithm.</p>
+        <div class="feat-tag">Anomaly Detection · NLP</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">💬</div>
+        <h3>Explainable AI</h3>
+        <p>Every recommendation comes with a clear, human-readable explanation — not a black box score. Know exactly why each match was surfaced.</p>
+        <div class="feat-tag">XAI · Interpretability</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🌍</div>
+        <h3>Multi-Currency Pricing</h3>
+        <p>Toggle between USD, INR, EUR, GBP, CAD, and AED instantly — all conversions happen client-side with no page reload required.</p>
+        <div class="feat-tag">Real-time · Reactive</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📊</div>
+        <h3>Profile Quality Scoring</h3>
+        <p>ML model evaluates each influencer profile on engagement, authenticity, content richness, and verification status on a 0–100 scale.</p>
+        <div class="feat-tag">Scoring Model · Analytics</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how-it-works">
+  <div class="section-wrap">
+    <div class="section-tag">ML Pipeline</div>
+    <h2 class="section-title">How the AI engine works</h2>
+    <div class="pipeline-steps">
+      <div class="pipe-step">
+        <div class="pipe-num">01</div>
+        <div class="pipe-icon">📋</div>
+        <h3>Brand Input</h3>
+        <p>Select category, sub-category, preferred platform and budget to define your campaign brief.</p>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step">
+        <div class="pipe-num">02</div>
+        <div class="pipe-icon">🔤</div>
+        <h3>Text Embedding</h3>
+        <p>Query is encoded into a 384-dimension semantic vector using a pre-trained sentence transformer.</p>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step">
+        <div class="pipe-num">03</div>
+        <div class="pipe-icon">📐</div>
+        <h3>Cosine Matching</h3>
+        <p>Query vector is compared against all pre-encoded influencer profiles using cosine similarity.</p>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step">
+        <div class="pipe-num">04</div>
+        <div class="pipe-icon">⚡</div>
+        <h3>Ranked Results</h3>
+        <p>Top matches are returned with explainable scores, fraud risk labels, and AI-generated reasons.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-orb"></div>
+  <div class="cta-inner">
+    <h2>Ready to find your perfect influencer?</h2>
+    <p>Join marketing teams already using InfluenceIQ to cut influencer research time by 90%.</p>
+    <div class="cta-btns">
+      <a href="/signup" class="btn-hero-primary">Create free account</a>
+      <a href="/dashboard?demo=1" class="btn-hero-ghost">Try demo first</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark sm">IQ</span>
+      <span class="brand-name">InfluenceIQ</span>
+    </div>
+    <div class="footer-links">
+      <a href="/about">About</a>
+      <a href="/settings">Settings</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+    <div class="footer-copy">© 2025 InfluenceIQ. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="/static/js/theme.js"></script>
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+});
+// Mobile nav
+function toggleMobileNav() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
