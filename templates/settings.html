@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings — InfluenceIQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/main.css">
+<script>(function(){const t=localStorage.getItem('iq_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body class="app-page">
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <a href="/" class="sidebar-brand"><span class="brand-mark sm">IQ</span><span class="brand-name">InfluenceIQ</span></a>
+    <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-group-label">Main</div>
+    <a href="/dashboard" class="s-nav-item"><span class="sni-icon">🎯</span><span>Dashboard</span></a>
+    <a href="/about" class="s-nav-item"><span class="sni-icon">ℹ️</span><span>About</span></a>
+    <div class="nav-group-label">Account</div>
+    <a href="/settings" class="s-nav-item active"><span class="sni-icon">⚙️</span><span>Settings</span></a>
+  </nav>
+  <div class="sidebar-footer">
+    <button class="theme-toggle-btn" onclick="toggleTheme()"><span id="themeIcon">🌙</span> <span id="themeLabel">Dark mode</span></button>
+    <a href="/" class="sidebar-home-link">← Back to home</a>
+  </div>
+</aside>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<div class="app-main">
+  <header class="app-topbar">
+    <div class="topbar-left">
+      <button class="menu-btn" onclick="openSidebar()">☰</button>
+      <div class="topbar-title"><h1>Settings</h1><p class="topbar-sub">Manage your account and preferences</p></div>
+    </div>
+    <div class="topbar-right">
+      <div class="user-chip"><div class="user-avatar" id="userAvatar">G</div><span class="user-name" id="userName">Guest</span></div>
+    </div>
+  </header>
+
+  <div class="settings-layout">
+    <!-- Settings Sidebar -->
+    <div class="settings-sidebar">
+      <nav class="settings-nav">
+        <a class="sn-item active" onclick="showTab('profile')">👤 Profile</a>
+        <a class="sn-item" onclick="showTab('account')">🔐 Account</a>
+        <a class="sn-item" onclick="showTab('preferences')">🎨 Preferences</a>
+        <a class="sn-item" onclick="showTab('notifications')">🔔 Notifications</a>
+        <a class="sn-item" onclick="showTab('privacy')">🛡️ Privacy</a>
+        <a class="sn-item" onclick="showTab('billing')">💳 Billing</a>
+        <a class="sn-item" onclick="showTab('api')">🔌 API Access</a>
+      </nav>
+    </div>
+
+    <!-- Settings Content -->
+    <div class="settings-content">
+
+      <!-- PROFILE TAB -->
+      <div class="settings-tab active" id="tab-profile">
+        <h2>Profile Information</h2>
+        <p class="tab-desc">Update your public profile details.</p>
+        <div class="settings-card">
+          <div class="avatar-editor">
+            <div class="big-avatar" id="bigAvatar">G</div>
+            <div>
+              <div class="av-name" id="avName">Guest User</div>
+              <div class="av-role" id="avRole">Brand Marketer</div>
+              <button class="btn-sm-outline" onclick="alert('Photo upload — coming soon in v2')">Change photo</button>
+            </div>
+          </div>
+          <div class="field-grid-settings">
+            <div class="form-field"><label>First name</label><input type="text" id="sf-fname" placeholder="First name"/></div>
+            <div class="form-field"><label>Last name</label><input type="text" id="sf-lname" placeholder="Last name"/></div>
+            <div class="form-field full"><label>Email address</label><input type="email" id="sf-email" placeholder="you@company.com"/></div>
+            <div class="form-field full"><label>Company / Brand</label><input type="text" id="sf-company" placeholder="Your company name"/></div>
+            <div class="form-field full"><label>Bio <span class="opt">(optional)</span></label><textarea id="sf-bio" placeholder="Brief description of your brand and campaign goals…" rows="3"></textarea></div>
+            <div class="form-field"><label>Country</label>
+              <select id="sf-country">
+                <option value="IN">🇮🇳 India</option>
+                <option value="US">🇺🇸 United States</option>
+                <option value="GB">🇬🇧 United Kingdom</option>
+                <option value="AE">🇦🇪 UAE</option>
+                <option value="CA">🇨🇦 Canada</option>
+                <option value="AU">🇦🇺 Australia</option>
+              </select>
+            </div>
+            <div class="form-field"><label>Default Currency</label>
+              <select id="sf-currency">
+                <option value="USD">$ USD</option>
+                <option value="INR">₹ INR</option>
+                <option value="EUR">€ EUR</option>
+                <option value="GBP">£ GBP</option>
+                <option value="CAD">C$ CAD</option>
+                <option value="AED">AED</option>
+              </select>
+            </div>
+          </div>
+          <div class="settings-actions">
+            <button class="btn-save" onclick="saveProfile()">Save changes</button>
+            <span class="save-status" id="profileStatus"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACCOUNT TAB -->
+      <div class="settings-tab" id="tab-account">
+        <h2>Account & Security</h2>
+        <p class="tab-desc">Manage your login credentials and account security.</p>
+        <div class="settings-card">
+          <h3>Change Password</h3>
+          <div class="form-field"><label>Current password</label><input type="password" id="ac-curpw" placeholder="••••••••"/></div>
+          <div class="form-field"><label>New password</label><input type="password" id="ac-newpw" placeholder="Min. 8 characters"/></div>
+          <div class="form-field"><label>Confirm new password</label><input type="password" id="ac-confpw" placeholder="••••••••"/></div>
+          <div class="settings-actions">
+            <button class="btn-save" onclick="savePassword()">Update password</button>
+            <span class="save-status" id="pwStatus"></span>
+          </div>
+        </div>
+        <div class="settings-card danger-zone">
+          <h3 class="danger-title">⚠️ Danger Zone</h3>
+          <p>These actions are irreversible. Please proceed with caution.</p>
+          <div class="danger-actions">
+            <button class="btn-danger-outline" onclick="confirmDelete()">Delete Account</button>
+            <button class="btn-danger-outline" onclick="confirmLogout()">Sign Out All Devices</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PREFERENCES TAB -->
+      <div class="settings-tab" id="tab-preferences">
+        <h2>Preferences</h2>
+        <p class="tab-desc">Customize how InfluenceIQ looks and works for you.</p>
+        <div class="settings-card">
+          <h3>Appearance</h3>
+          <div class="pref-row">
+            <div class="pref-info"><strong>Theme</strong><p>Choose your preferred interface color scheme.</p></div>
+            <div class="theme-toggle-group">
+              <button class="ttg-btn" id="ttg-dark" onclick="setTheme('dark')">🌙 Dark</button>
+              <button class="ttg-btn" id="ttg-light" onclick="setTheme('light')">☀️ Light</button>
+            </div>
+          </div>
+          <div class="pref-row">
+            <div class="pref-info"><strong>Default currency</strong><p>Currency shown on influencer pricing cards.</p></div>
+            <select class="pref-select" id="pref-currency" onchange="savePref('currency', this.value)">
+              <option value="USD">$ USD</option><option value="INR">₹ INR</option>
+              <option value="EUR">€ EUR</option><option value="GBP">£ GBP</option>
+              <option value="CAD">C$ CAD</option><option value="AED">AED</option>
+            </select>
+          </div>
+          <div class="pref-row">
+            <div class="pref-info"><strong>Results per search</strong><p>Max number of influencer results to display.</p></div>
+            <select class="pref-select" id="pref-results" onchange="savePref('results', this.value)">
+              <option value="6">6 results</option>
+              <option value="9">9 results</option>
+              <option value="12" selected>12 results</option>
+            </select>
+          </div>
+          <div class="pref-row">
+            <div class="pref-info"><strong>Default platform</strong><p>Platform pre-selected when starting a new search.</p></div>
+            <select class="pref-select" id="pref-platform" onchange="savePref('platform', this.value)">
+              <option value="">Any</option>
+              <option value="Instagram">Instagram</option>
+              <option value="YouTube">YouTube</option>
+              <option value="Twitter">Twitter / X</option>
+              <option value="LinkedIn">LinkedIn</option>
+            </select>
+          </div>
+        </div>
+        <div class="settings-card">
+          <h3>Search Behavior</h3>
+          <div class="toggle-row">
+            <div class="toggle-info"><strong>Auto-run demo on launch</strong><p>Automatically run a Tech / AI/ML demo search when opening dashboard.</p></div>
+            <label class="toggle-switch"><input type="checkbox" id="pref-autodemo" onchange="savePref('autodemo', this.checked)"><span class="toggle-slider"></span></label>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-info"><strong>Show fraud risk details</strong><p>Display detailed fraud risk breakdown on each influencer card.</p></div>
+            <label class="toggle-switch"><input type="checkbox" id="pref-fraud" checked onchange="savePref('showFraud', this.checked)"><span class="toggle-slider"></span></label>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-info"><strong>Show AI match explanations</strong><p>Display "Why this influencer?" section on result cards.</p></div>
+            <label class="toggle-switch"><input type="checkbox" id="pref-explain" checked onchange="savePref('showExplain', this.checked)"><span class="toggle-slider"></span></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOTIFICATIONS TAB -->
+      <div class="settings-tab" id="tab-notifications">
+        <h2>Notifications</h2>
+        <p class="tab-desc">Choose how and when you receive notifications.</p>
+        <div class="settings-card">
+          <h3>Email Notifications</h3>
+          <div class="toggle-row">
+            <div class="toggle-info"><strong>Campaign reports</strong><p>Weekly summary of your search activity and top matches.</p></div>
+            <label class="toggle-switch"><input type="checkbox" checked onchange="savePref('notif_reports', this.checked)"><span class="toggle-slider"></span></label>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-info"><strong>New influencer alerts</strong><p>Notify when new creators are added in your saved categories.</p></div>
+            <label class="toggle-switch"><input type="checkbox" checked onchange="savePref('notif_new', this.checked)"><span class="toggle-slider"></span></label>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-info"><strong>Product updates</strong><p>News about new features, improvements, and AI model updates.</p></div>
+            <label class="toggle-switch"><input type="checkbox" onchange="savePref('notif_product', this.checked)"><span class="toggle-slider"></span></label>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-info"><strong>Marketing emails</strong><p>Tips, case studies, and best practices for influencer campaigns.</p></div>
+            <label class="toggle-switch"><input type="checkbox" onchange="savePref('notif_marketing', this.checked)"><span class="toggle-slider"></span></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRIVACY TAB -->
+      <div class="settings-tab" id="tab-privacy">
+        <h2>Privacy & Data</h2>
+        <p class="tab-desc">Control how your data is stored and used.</p>
+        <div class="settings-card">
+          <div class="toggle-row">
+            <div class="toggle-info"><strong>Search history</strong><p>Save your past campaign searches for quick access.</p></div>
+            <label class="toggle-switch"><input type="checkbox" checked onchange="savePref('saveHistory', this.checked)"><span class="toggle-slider"></span></label>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-info"><strong>Analytics tracking</strong><p>Help us improve by sharing anonymous usage data.</p></div>
+            <label class="toggle-switch"><input type="checkbox" checked onchange="savePref('analytics', this.checked)"><span class="toggle-slider"></span></label>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-info"><strong>Personalized results</strong><p>Use your search history to improve future recommendations.</p></div>
+            <label class="toggle-switch"><input type="checkbox" checked onchange="savePref('personalize', this.checked)"><span class="toggle-slider"></span></label>
+          </div>
+        </div>
+        <div class="settings-card">
+          <h3>Data Export</h3>
+          <p>Download a copy of all your account data including search history and saved profiles.</p>
+          <button class="btn-sm-outline" onclick="exportData()">📦 Download my data</button>
+        </div>
+      </div>
+
+      <!-- BILLING TAB -->
+      <div class="settings-tab" id="tab-billing">
+        <h2>Billing & Plan</h2>
+        <p class="tab-desc">Manage your subscription and payment details.</p>
+        <div class="settings-card plan-card">
+          <div class="plan-current">
+            <div class="plan-badge">FREE</div>
+            <div>
+              <strong>Free Plan</strong>
+              <p>Up to 10 searches/month · Basic filters · Email support</p>
+            </div>
+          </div>
+          <div class="plan-options">
+            <div class="plan-box">
+              <div class="plan-name">Pro</div>
+              <div class="plan-price">$49<span>/month</span></div>
+              <ul class="plan-features">
+                <li>✓ Unlimited searches</li>
+                <li>✓ Advanced ML filters</li>
+                <li>✓ CSV export</li>
+                <li>✓ Priority support</li>
+              </ul>
+              <button class="btn-plan" onclick="alert('Billing integration coming soon!')">Upgrade to Pro</button>
+            </div>
+            <div class="plan-box plan-box-accent">
+              <div class="plan-badge-top">Most Popular</div>
+              <div class="plan-name">Agency</div>
+              <div class="plan-price">$149<span>/month</span></div>
+              <ul class="plan-features">
+                <li>✓ Everything in Pro</li>
+                <li>✓ API access</li>
+                <li>✓ Team seats (5)</li>
+                <li>✓ White-label reports</li>
+                <li>✓ Dedicated CSM</li>
+              </ul>
+              <button class="btn-plan btn-plan-accent" onclick="alert('Billing integration coming soon!')">Upgrade to Agency</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- API TAB -->
+      <div class="settings-tab" id="tab-api">
+        <h2>API Access</h2>
+        <p class="tab-desc">Integrate InfluenceIQ into your own tools and workflows.</p>
+        <div class="settings-card">
+          <div class="api-key-block">
+            <div class="form-field"><label>Your API Key</label>
+              <div class="api-key-row">
+                <input type="password" id="apiKeyInput" value="iq_live_demo_key_xxxxxxxxxxxxxxxxxxx" readonly/>
+                <button class="btn-sm-outline" onclick="copyApiKey()">Copy</button>
+                <button class="btn-sm-outline" onclick="toggleApiKey()">Show</button>
+              </div>
+            </div>
+            <p class="api-note">API access requires a Pro or Agency plan. Keep this key secret — do not share it publicly.</p>
+          </div>
+          <h3 style="margin-top:24px">Example Request</h3>
+          <div class="code-block"><pre>POST /api/predict
+Content-Type: application/json
+Authorization: Bearer YOUR_API_KEY
+
+{
+  "category": "Tech",
+  "subcategory": "AI/ML",
+  "platform": "YouTube",
+  "budget": 20000
+}</pre></div>
+          <h3 style="margin-top:20px">Available Endpoints</h3>
+          <div class="endpoint-list">
+            <div class="ep-row"><span class="ep-method get">GET</span><span class="ep-path">/api/stats</span><span class="ep-desc">Platform statistics</span></div>
+            <div class="ep-row"><span class="ep-method post">POST</span><span class="ep-path">/api/predict</span><span class="ep-desc">Influencer matching</span></div>
+            <div class="ep-row"><span class="ep-method get">GET</span><span class="ep-path">/api/trending</span><span class="ep-desc">Trending creators</span></div>
+            <div class="ep-row"><span class="ep-method get">GET</span><span class="ep-path">/api/categories</span><span class="ep-desc">Category list</span></div>
+            <div class="ep-row"><span class="ep-method get">GET</span><span class="ep-path">/api/currencies</span><span class="ep-desc">Currency rates</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end settings-content -->
+  </div><!-- end settings-layout -->
+</div>
+
+<script src="/static/js/theme.js"></script>
+<script src="/static/js/settings.js"></script>
+</body>
+</html>
