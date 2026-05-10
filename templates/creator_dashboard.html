@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creator Dashboard — InfluenceIQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/main.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>(function(){const t=localStorage.getItem('iq_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body class="app-page">
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <a href="/" class="sidebar-brand">
+      <span class="brand-mark sm">IQ</span>
+      <span class="brand-name">InfluenceIQ</span>
+    </a>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-group-label">Creator Space</div>
+    <a href="#" class="s-nav-item active" data-view="overview" onclick="switchView('overview',this)">
+      <span class="sni-icon">📱</span><span>Overview</span>
+    </a>
+    <a href="#" class="s-nav-item" data-view="offers" onclick="switchView('offers',this)">
+      <span class="sni-icon">✉️</span><span>My Offers</span>
+      <span class="sni-badge" id="creatorInboxBadge" style="display:none"></span>
+    </a>
+  </nav>
+  <div class="sidebar-footer">
+    <button class="theme-toggle-btn" onclick="toggleTheme()"><span id="themeIcon">🌙</span> <span id="themeLabel">Dark mode</span></button>
+    <a href="/login" onclick="localStorage.removeItem('iq_user')" class="sidebar-home-link">Log out</a>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div class="app-main" id="appMain">
+  <!-- TOPBAR -->
+  <header class="app-topbar">
+    <div class="topbar-left">
+      <div class="topbar-title">
+        <h1 id="viewTitle">Overview</h1>
+        <p id="viewSub" class="topbar-sub">Your profile metrics</p>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <div class="user-chip">
+        <div class="user-avatar" id="creatorAvatar">C</div>
+        <span class="user-name" id="creatorName">Creator</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- OVERVIEW VIEW -->
+  <div class="view active" id="view-overview">
+    <div class="view-inner">
+      <div class="results-bar">
+        <h2>Welcome back, <span id="welcomeName">Creator</span>!</h2>
+      </div>
+      <div class="analytics-grid">
+        <div class="an-card full-width">
+          <h3>Your Profile Stats</h3>
+          <div class="campaign-stats-grid">
+            <div class="cs-stat"><div class="cs-val">1.2M</div><div class="cs-lbl">Followers</div></div>
+            <div class="cs-stat"><div class="cs-val text-green">8.4%</div><div class="cs-lbl">Engagement</div></div>
+            <div class="cs-stat"><div class="cs-val">245K</div><div class="cs-lbl">Avg Likes</div></div>
+            <div class="cs-stat"><div class="cs-val" style="color:var(--green)">Low</div><div class="cs-lbl">Fraud Risk</div></div>
+          </div>
+        </div>
+        <div class="an-card full-width">
+          <h3>Audience Growth (Last 6 Months)</h3>
+          <canvas id="growthChart" height="100"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFERS VIEW -->
+  <div class="view" id="view-offers">
+    <div class="view-inner">
+      <div class="results-bar">
+        <div class="results-bar-left">
+          <h2>Brand Offers</h2>
+          <p class="results-sub">Manage your inbound collaboration requests.</p>
+        </div>
+      </div>
+      <div class="inbox-list" id="creatorOffersList">
+        <!-- JS fills this -->
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="/static/js/theme.js"></script>
+<script src="/static/js/creator.js"></script>
+</body>
+</html>
