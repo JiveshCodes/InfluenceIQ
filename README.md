@@ -1,300 +1,250 @@
 <div align="center">
+  
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&duration=3000&pause=1000&color=2EA44F&center=true&vCenter=true&width=600&lines=InfluenceIQ;AI-Powered+Influencer+Discovery;Real-Time+Audience+Intelligence;Explainable+AI+(XAI)+Analytics" alt="Typing SVG" />
 
-# 🚀 InfluenceIQ
+  <p align="center">
+    <strong>The Next-Generation SaaS Platform for High-ROI Creator Matching</strong>
+  </p>
 
-**The Next-Generation AI Influencer Discovery & Analytics Engine**
+  <p align="center">
+    <a href="https://github.com/JiveshCodes/InfluenceIQ/stargazers"><img src="https://img.shields.io/github/stars/JiveshCodes/InfluenceIQ?style=for-the-badge&color=e3b341&logo=github" alt="Stars" /></a>
+    <a href="https://github.com/JiveshCodes/InfluenceIQ/network/members"><img src="https://img.shields.io/github/forks/JiveshCodes/InfluenceIQ?style=for-the-badge&color=8a8a8a&logo=github" alt="Forks" /></a>
+    <img src="https://img.shields.io/badge/Status-Production--Ready-2ea44f?style=for-the-badge&logo=checkmarx" alt="Status" />
+    <img src="https://img.shields.io/badge/AI_Engine-Sentence--BERT-0366d6?style=for-the-badge&logo=openai" alt="AI" />
+    <img src="https://img.shields.io/badge/License-MIT-d93f0b?style=for-the-badge&logo=opensourceinitiative" alt="License" />
+  </p>
 
-[![Production Status](https://img.shields.io/badge/Status-Production_Ready-2ea44f?style=for-the-badge&logo=github)](https://github.com/JiveshCodes/InfluenceIQ)
-[![Version](https://img.shields.io/badge/Version-v2.0.0-0366d6?style=for-the-badge)](https://github.com/JiveshCodes/InfluenceIQ)
-[![Python](https://img.shields.io/badge/Python-3.12-ffdd54?style=for-the-badge&logo=python&logoColor=black)](https://python.org)
-[![Flask](https://img.shields.io/badge/Flask-2.3-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
-[![License](https://img.shields.io/badge/License-MIT-d93f0b?style=for-the-badge)](LICENSE)
-
-*Intelligently matching brands with high-ROI creators using Transformer-based Machine Learning and Real-Time Audience Intelligence.*
-
-[Explore Features](#-key-features) • [View Architecture](#-system-architecture) • [Read Documentation](#-installation--setup) • [Live Demo](#-screenshots--demo)
+  <p align="center">
+    <a href="#-executive-overview">Overview</a> •
+    <a href="#-core-ai-capabilities">Features</a> •
+    <a href="#-system-architecture">Architecture</a> •
+    <a href="#-interactive-demo">Demo</a> •
+    <a href="#-deployment--setup">Setup</a>
+  </p>
 
 </div>
 
 ---
 
-## 📖 Project Overview
+## 🚀 Executive Overview
 
-**InfluenceIQ** is an advanced SaaS platform engineered to solve the most expensive problem in modern marketing: *influencer misclassification and audience fraud*. 
+**InfluenceIQ** is an enterprise-grade AI analytics platform engineered to solve the multi-billion dollar problem of influencer misclassification and audience bot fraud. 
 
-By leveraging Natural Language Processing (NLP) and robust algorithmic heuristics, InfluenceIQ bridges the gap between brands and creators. The engine computes semantic relevance between campaign goals and creator profiles, executing real-time fraud analysis and delivering Explainable AI (XAI) insights.
+By utilizing dense vector embeddings and heuristic machine learning pipelines, InfluenceIQ intelligently matches brands with the exact right creators. It bypasses shallow keyword searching to understand the deep semantic context of a campaign, executing real-time fraud analysis via live YouTube API telemetry.
 
-**Business Value:**
-* **Reduce CAC:** Stop wasting budget on misaligned creators.
-* **Mitigate Fraud:** Automatically flag suspicious audience inflation.
-* **Save Time:** Replaces days of manual outreach with instant, data-driven ML curation.
+> **Our Mission:** Replace days of manual influencer outreach and guesswork with milliseconds of data-driven, mathematically proven AI curation.
 
----
-
-## ⚡ Key Features
-
-*   🧠 **Transformer-Based Recommendations:** Semantic context matching utilizing `Sentence-BERT` or scalable `TF-IDF` pipelines.
-*   🛡️ **Fraud Detection Engine:** Live scoring of audience authenticity to mitigate influencer fraud and bot inflation.
-*   📊 **Real-Time YouTube Sync:** Direct integration with the YouTube Data API for live engagement and subscriber telemetry.
-*   💡 **Explainable AI (XAI):** Transparent, human-readable reasoning behind every algorithm-generated match score.
-*   🌍 **Dynamic Localization:** Instant, zero-latency client-side currency conversions (USD, INR, EUR, GBP, CAD, AED).
-*   📱 **Responsive Glassmorphism UI:** Premium, app-like aesthetics optimized for desktop, tablet, and mobile workflows.
-*   🚀 **Scalable Architecture:** Enterprise-grade Flask application factory patterns with environment abstraction.
+<br>
 
 ---
 
-## 🏛️ System Architecture
+## 🎥 Interactive Demo
 
-### Application Data Flow
+*(Demo GIF placeholder — imagine a sleek, fast-paced walkthrough of the UI filtering influencers and generating live ML scores)*
 
+<div align="center">
+  <img src="static/assets/hero-dark.jpeg" alt="InfluenceIQ Hero Interface" width="800" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+</div>
+
+<br>
+
+---
+
+## ✨ Core AI Capabilities
+
+| 🧠 **Contextual AI Matching** | 🛡️ **Fraud Detection Engine** | 📈 **Live Audience Telemetry** |
+| :--- | :--- | :--- |
+| Uses `Sentence-BERT` transformer models to semantically map brand requirements to creator profiles. | Live scoring algorithms detect engagement anomalies and flag suspicious bot-inflated audiences. | Direct ingestion of the YouTube Data API v3 for real-time engagement and subscriber metrics. |
+
+| 💡 **Explainable AI (XAI)** | 🌍 **Dynamic Localization** | ⚡ **High-Speed Execution** |
+| :--- | :--- | :--- |
+| Generates human-readable reasoning (`"Why this influencer?"`) for every algorithmic decision to build trust. | Zero-latency, client-side currency conversions (USD, INR, EUR, GBP) using reactive JavaScript. | Pre-computed embeddings enable sub-100ms vector similarity searches across the corpus. |
+
+<br>
+
+---
+
+## 🖥️ Platform Interfaces
+
+<div align="center">
+
+| **Analytics Dashboard** | **AI Match Results** |
+| :---: | :---: |
+| <img src="static/assets/Analysis_diagram.jpeg" width="400" style="border-radius:8px;"> | <img src="static/assets/result.jpeg" width="400" style="border-radius:8px;"> |
+| *Real-time visualization of creator ROI, engagement metrics, and campaign budget forecasting.* | *Ranked, explainable AI results showing exact cosine similarity scores and fraud risk labels.* |
+
+| **AI Negotiation Script** | **Influencer Offer Generation** |
+| :---: | :---: |
+| <img src="static/assets/Negotiation.jpeg" width="400" style="border-radius:8px;"> | <img src="static/assets/influencer_offer.jpeg" width="400" style="border-radius:8px;"> |
+| *Automated AI drafting of personalized creator outreach emails based on match metrics.* | *Seamless campaign offer structuring and pricing recommendations.* |
+
+| **Secure Authentication** | **Creator Settings** |
+| :---: | :---: |
+| <img src="static/assets/log_in.jpeg" width="400" style="border-radius:8px;"> | <img src="static/assets/settings.jpeg" width="400" style="border-radius:8px;"> |
+| *Glassmorphic, enterprise-grade secure authentication entry point.* | *Persistent creator configurations and dark/light mode preference tracking.* |
+
+</div>
+
+<br>
+
+---
+
+## ⚙️ System Architecture
+
+InfluenceIQ is built on a scalable, decoupled architecture pattern, separating the high-speed Flask API gateway from the heavy Machine Learning inference engine.
+
+### 1. Application & Data Flow
+```mermaid
+graph LR
+    Client([💻 Web Client]) <-->|REST API JSON| Gateway{Flask Gateway}
+    
+    subgraph Backend Infrastructure
+        Gateway --> Auth[JWT Auth Service]
+        Gateway --> ML[🧠 ML Inference Engine]
+    end
+    
+    subgraph External Data
+        ML <-->|Live Sync| YT[(YouTube API)]
+        ML <-->|Pre-loaded| DB[(Verified Creator DB)]
+    end
+    
+    style Client fill:#2b3137,stroke:#fff,color:#fff
+    style Gateway fill:#0366d6,stroke:#fff,color:#fff
+    style ML fill:#2ea44f,stroke:#fff,color:#fff
+    style YT fill:#d93f0b,stroke:#fff,color:#fff
+```
+
+### 2. AI Recommendation Pipeline
 ```mermaid
 graph TD
-    A[Brand User Interface] -->|HTTP POST Request| B(Flask API Gateway)
-    B --> C{Config & Validation}
-    C -->|Valid| D[ML Engine Pipeline]
+    A[Brand Input: Budget, Niche, Platform] --> B(NLP Preprocessing)
+    B --> C{Embedding Engine}
     
-    subgraph Data Layer
-        E[(Verified Creator Dataset)]
-        F((YouTube Data API))
-    end
+    C -->|Fallback| D[TF-IDF Vectorizer 256-dim]
+    C -->|Primary| E[Sentence-BERT 384-dim]
     
-    F -->|Live Sync| D
-    E -->|Pre-computed Embeddings| D
+    D --> F((Cosine Similarity Matrix))
+    E --> F
     
-    subgraph Machine Learning Core
-        D --> G[Text Preprocessing & NLP]
-        G --> H[Sentence-BERT / TF-IDF]
-        H --> I[Cosine Similarity Matrix]
-        I --> J[Heuristic Weighting Engine]
-    end
+    F --> G[Heuristic Weighting Engine]
+    G -->|Applies Fraud Penalty & Reach Bonus| H[Final Suitability Score]
+    H --> I([XAI Reason Generator])
     
-    J --> K[XAI Reasoning Module]
-    K --> L[JSON Response]
-    L -->|Client Render| A
-    
-    style A fill:#1e1e1e,stroke:#333,stroke-width:2px,color:#fff
-    style B fill:#0366d6,stroke:#000,stroke-width:2px,color:#fff
-    style D fill:#2ea44f,stroke:#000,stroke-width:2px,color:#fff
+    style C fill:#6f42c1,stroke:#fff,color:#fff
+    style F fill:#e3b341,stroke:#fff,color:#000
+    style H fill:#2ea44f,stroke:#fff,color:#fff
 ```
 
----
-
-## 🧠 AI/ML Pipeline Details
-
-InfluenceIQ does not rely on simple keyword matching. It utilizes a deep pipeline to understand the *contextual nuance* of a brand's request.
-
-1.  **Dataset Ingestion:** 150+ highly verified, manually audited influencers are loaded into memory.
-2.  **Preprocessing & Expansion:** Brand inputs (budget, platform, category) are expanded using domain-specific synonym mapping to capture latent semantic meaning.
-3.  **Vector Embeddings:** 
-    *   *Primary:* `SentenceTransformers` (`all-MiniLM-L6-v2`) converts profiles into 384-dimensional dense vectors.
-    *   *Fallback:* High-speed `TF-IDF` vectorization handles low-resource environments.
-4.  **Similarity Scoring:** Scikit-learn computes the exact Cosine Similarity across the multi-dimensional space.
-5.  **Weighted Prediction Algorithm:**
-    *   `30%` Semantic Context Similarity
-    *   `25%` Engagement Quality Index
-    *   `20%` Category/Niche Alignment
-    *   `15%` Direct Keyword Overlap
-    *   `10%` Fraud Safety Penalty
-6.  **Ranking & Explanation:** The system sorts results and generates English-language XAI labels explaining *why* the match was made.
+<br>
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technology Stack
 
-<details>
-<summary><b>Frontend Technologies</b></summary>
+<div align="center">
 
-*   **HTML5 / Vanilla CSS3:** Zero-dependency, lightweight footprint.
-*   **JavaScript (ES6+):** Reactive UI updates without frameworks.
-*   **Chart.js (v4.4):** Interactive analytics visualizations.
-*   **CSS Custom Properties:** Modular dark/light design system.
-</details>
+### **Frontend Engineering**
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
 
-<details>
-<summary><b>Backend Technologies</b></summary>
+### **Backend & APIs**
+![Python](https://img.shields.io/badge/Python_3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask_2.3-000000?style=for-the-badge&logo=flask&logoColor=white)
+![YouTube API](https://img.shields.io/badge/YouTube_Data_v3-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
 
-*   **Python (3.12):** Core language.
-*   **Flask (2.3):** Application routing and API gateway.
-*   **python-dotenv:** Environment variable security.
-</details>
+### **AI / Machine Learning**
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![SentenceTransformers](https://img.shields.io/badge/Sentence--BERT-FF9900?style=for-the-badge&logo=huggingface&logoColor=white)
 
-<details>
-<summary><b>AI / ML Ecosystem</b></summary>
+</div>
 
-*   **SentenceTransformers:** Dense vector embeddings.
-*   **scikit-learn:** Cosine similarity and ML utilities.
-*   **Pandas & NumPy:** Dataframe manipulation and linear algebra.
-</details>
-
-<details>
-<summary><b>Integrations & Deployment</b></summary>
-
-*   **YouTube Data API v3:** Live data syncing.
-*   **Gunicorn:** Production WSGI server.
-*   **Render / Vercel:** Cloud deployment ready.
-</details>
+<br>
 
 ---
 
-## 📁 Folder Structure
+## 💻 Deployment & Setup
 
-```text
-influenceiq/
-├── config.py                 # Core environment configurations
-├── app.py                    # Flask server & REST endpoints
-├── ml_engine.py              # ML Pipeline & scoring logic
-├── youtube_api.py            # External service integration
-├── dataset.csv               # Ground-truth AI training corpus
-├── requirements.txt          # Explicit dependency locks
-├── .env.example              # Environment templates
-├── templates/                # Server-rendered Jinja2 views
-│   ├── auth.html             # Secure login/signup UI
-│   ├── dashboard.html        # Main Brand analytics interface
-│   └── landing.html          # Public marketing site
-└── static/                   # Compiled assets
-    ├── css/main.css          # Global design system
-    └── js/
-        ├── dashboard.js      # Client-side reactivity & Charts
-        └── theme.js          # Persistent dark-mode engine
-```
+InfluenceIQ is built for rapid local deployment and seamless cloud scaling.
 
----
-
-## 💻 Installation & Setup
-
-InfluenceIQ is designed for rapid local development.
-
-### 1. Clone the Repository
+### 1. Environment Preparation
 ```bash
+# Clone the repository
 git clone https://github.com/JiveshCodes/InfluenceIQ.git
 cd InfluenceIQ
-```
 
-### 2. Initialize Virtual Environment
-```bash
+# Initialize virtual environment
 python -m venv venv
-
-# On Windows:
-venv\Scripts\activate
-# On macOS/Linux:
-source venv/bin/activate
+source venv/bin/activate  # Windows: venv\Scripts\activate
 ```
 
-### 3. Install Dependencies
+### 2. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-*(Optional: For advanced ML, install `sentence-transformers torch`)*
-
-### 4. Run the Platform
-```bash
-python app.py
-```
-View the live application at: `http://localhost:5000`
-
----
-
-## 🔐 Environment Configuration
-
-InfluenceIQ utilizes an encrypted environment pattern. Copy `.env.example` to `.env` and configure:
-
+### 3. Configure Secrets
+Create a `.env` file in the root directory:
 ```env
-# Application Context
 FLASK_ENV=development
-SECRET_KEY=generate_a_secure_random_key
-
-# External Integrations
+SECRET_KEY=your_secure_random_hash
 YOUTUBE_API_KEY=your_google_cloud_youtube_key
 ```
 
----
-
-## 📡 API Workflow
-
-The application operates as a hybrid monolithic/headless system. The core API endpoint powers the dashboard:
-
-**`POST /api/predict`**
-Receives user criteria and executes the ML pipeline.
-
-```json
-// Request Payload
-{
-  "category": "Tech",
-  "subcategory": "AI/ML",
-  "platform": "YouTube",
-  "budget": 20000
-}
+### 4. Launch Application
+```bash
+python app.py
 ```
-*Response time is typically `< 120ms` when running on pre-computed embeddings.*
+*Application runs on `http://localhost:5000`*
+
+<br>
 
 ---
 
-## ☁️ Deployment Guide
+## ☁️ Production Deployment (Render/Vercel)
 
-InfluenceIQ is fully containerization and cloud-ready. 
+For enterprise scaling, use the provided `gunicorn` WSGI configuration.
 
-### Deploying to Render / Railway
-1. Connect your GitHub repository to the PaaS provider.
-2. Set the Build Command: `pip install -r requirements.txt`
-3. Set the Start Command (WSGI): 
-   ```bash
-   gunicorn -w 4 -b 0.0.0.0:$PORT app:app
-   ```
-4. Inject your `.env` variables into the host's Secret Manager.
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/)
 
----
+**Start Command:**
+```bash
+gunicorn -w 4 -b 0.0.0.0:$PORT app:app
+```
+*Note: Ensure all `.env` variables are securely injected into your cloud provider's Secret Manager.*
 
-## 📸 Screenshots & Demo
-
-| Landing Page | Analytics Dashboard |
-| :---: | :---: |
-| *(Add your high-res screenshot here: `![Landing](path)`) * | *(Add your high-res screenshot here: `![Dashboard](path)`)* |
-| **Creator Profiling** | **ML Insights (XAI)** |
-| *(Add your high-res screenshot here)* | *(Add your high-res screenshot here)* |
+<br>
 
 ---
 
-## 🗺️ Future Roadmap
+## 🛣️ Strategic Roadmap
 
-- [ ] **Phase 2.1:** Implement secure JWT/Session Authentication logic.
-- [ ] **Phase 2.2:** Migrate from CSV to PostgreSQL + SQLAlchemy ORM.
-- [ ] **Phase 3.0:** Integrate a Vector Database (Pinecone/Milvus) for O(1) embedding retrieval.
-- [ ] **Phase 3.1:** Automated daily cron-jobs for YouTube API synchronization.
-- [ ] **Phase 4.0:** LLM-powered Chat Assistant for conversational influencer discovery.
+- [x] **v1.0** — TF-IDF Heuristic Matching & Basic Flask Gateway
+- [x] **v2.0** — Sentence-BERT Integration, Live YouTube Sync, and XAI
+- [ ] **v2.5** — PostgreSQL Migration & Secure JWT User Authentication
+- [ ] **v3.0** — Vector Database (Pinecone) Implementation for O(1) latency
+- [ ] **v4.0** — LLM-Powered Chatbot for conversational brand interactions
 
----
-
-## 🚀 Performance & Scalability
-
-InfluenceIQ is engineered to scale. By pre-computing embeddings during application startup, the `predict()` route executes highly optimized NumPy matrix multiplications in memory. Moving forward, the modular `ml_engine.py` structure allows seamless detachment into a microservice (e.g., FastAPI running on GPU instances) without breaking the primary Flask frontend.
+<br>
 
 ---
 
-## 🛡️ Security Practices
+## 🛡️ Security & Contribution
 
-*   **Secrets Management:** API keys and cryptographic salts are strictly isolated in `.env` variables and excluded via `.gitignore`.
-*   **Sanitization:** All JSON inputs to the ML engine are sanitized and cast to prevent prompt-injection and type-errors.
-*   **Stateless Operations:** The core ML pipeline is stateless, allowing for infinite horizontal scaling across multiple Gunicorn workers.
+### Security
+*   All API keys and cryptographic salts are strictly isolated via `.env`.
+*   Incoming JSON payloads are sanitized to prevent prompt-injection and overflow errors.
+*   Stateless architecture ensures safe horizontal scaling across worker nodes.
 
----
-
-## 🤝 Contribution Guidelines
-
-We welcome contributions from the open-source community! 
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature/advanced-analytics`
-3. Commit your changes utilizing [Conventional Commits](https://www.conventionalcommits.org/).
-4. Open a Pull Request detailing your architectural logic.
-
----
-
-## ⚖️ License
-
-Distributed under the MIT License. See `LICENSE` for more information.
+### Contributing
+We welcome elite engineering contributions. Please fork the repository, adhere to `Conventional Commits`, and open a detailed Pull Request outlining your architectural changes.
 
 ---
 
 <div align="center">
-<i>Engineered with precision for the modern creator economy.</i>
+  <i>Architected with precision for the future of the creator economy.</i><br><br>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
 </div>
