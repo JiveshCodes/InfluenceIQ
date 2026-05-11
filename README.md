@@ -30,9 +30,40 @@
 
 **InfluenceIQ** is an enterprise-grade AI analytics platform engineered to solve the multi-billion dollar problem of influencer misclassification and audience bot fraud. 
 
+In the modern creator economy, brands struggle with "vanity metrics"—high follower counts that don't translate to actual sales. InfluenceIQ solves this by providing a comprehensive suite of tools for:
+- **Discovery:** Finding the perfect niche creator from a verified pool of 400+ influencers.
+- **Vetting:** Real-time engagement analysis and automated fraud risk detection.
+- **Outreach:** AI-generated negotiation scripts tailored to each creator's performance.
+- **Management:** End-to-end campaign structuring and offer tracking.
+
 By utilizing dense vector embeddings and heuristic machine learning pipelines, InfluenceIQ intelligently matches brands with the exact right creators. It bypasses shallow keyword searching to understand the deep semantic context of a campaign, executing real-time fraud analysis via live YouTube API telemetry.
 
 > **Our Mission:** Replace days of manual influencer outreach and guesswork with milliseconds of data-driven, mathematically proven AI curation.
+
+<br>
+
+---
+
+## 🧠 Intelligence Models & Algorithms
+
+The precision of InfluenceIQ is driven by several state-of-the-art models and custom algorithmic pipelines:
+
+### 1. Semantic Embedding Model: `Sentence-BERT (all-MiniLM-L6-v2)`
+*   **Purpose:** Converts complex creator profiles and brand requirements into 384-dimensional dense vectors.
+*   **Why:** Traditional keyword search fails if a brand says "Streetwear" and a creator uses "Urban Style". S-BERT understands these are semantically identical, ensuring high-quality matches even with different terminology.
+*   **Fallback:** For low-resource environments, the system includes a `TF-IDF` (Term Frequency-Inverse Document Frequency) fallback to maintain basic functionality.
+
+### 2. Matching Algorithm: `Cosine Similarity`
+*   **Purpose:** Measures the "angle" between the brand requirement vector and all 400+ influencer vectors in the database.
+*   **Logic:** This provides a mathematical "Suitability Score" from 0-100%, ranking creators based on how closely their content matches the brand's vision.
+
+### 3. Fraud Risk Heuristic: `Telemetry-Based Anomaly Detection`
+*   **Purpose:** Analyzes the ratio of followers to engagement and likes to comments.
+*   **Logic:** It flags influencers with "Low", "Medium", or "High" fraud risk based on statistical deviations from platform norms, protecting brands from investing in bot-inflated audiences.
+
+### 4. Real-time Telemetry: `YouTube Data API v3`
+*   **Purpose:** Fetches live subscriber counts, views, and engagement metrics directly from the source.
+*   **Impact:** Ensures that the data is never stale. Influencer "Suitability Scores" fluctuate in real-time based on their latest content performance.
 
 <br>
 
@@ -73,10 +104,15 @@ By utilizing dense vector embeddings and heuristic machine learning pipelines, I
 | <img src="static/assets/Analysis_diagram.jpeg" width="400" style="border-radius:8px;"> | <img src="static/assets/result.jpeg" width="400" style="border-radius:8px;"> |
 | *Real-time visualization of creator ROI, engagement metrics, and campaign budget forecasting.* | *Ranked, explainable AI results showing exact cosine similarity scores and fraud risk labels.* |
 
-| **AI Negotiation Script** | **Influencer Offer Generation** |
+| **Influencer Registration** | **AI Negotiation Script** |
 | :---: | :---: |
-| <img src="static/assets/Negotiation.jpeg" width="400" style="border-radius:8px;"> | <img src="static/assets/influencer_offer.jpeg" width="400" style="border-radius:8px;"> |
-| *Automated AI drafting of personalized creator outreach emails based on match metrics.* | *Seamless campaign offer structuring and pricing recommendations.* |
+| <img src="static/assets/influencer_login.jpeg" width="400" style="border-radius:8px;"> | <img src="static/assets/Negotiation.jpeg" width="400" style="border-radius:8px;"> |
+| *Streamlined onboarding for creators to join the verified InfluenceIQ talent pool.* | *Automated AI drafting of personalized creator outreach emails based on match metrics.* |
+
+| **Influencer Campaign Offer** | **Influencer Offer Generation** |
+| :---: | :---: |
+| <img src="static/assets/Raj_user_offer.jpeg" width="400" style="border-radius:8px;"> | <img src="static/assets/influencer_offer.jpeg" width="400" style="border-radius:8px;"> |
+| *Personalized dashboard for creators to view and accept incoming brand campaign invitations.* | *Seamless campaign offer structuring and pricing recommendations.* |
 
 | **Secure Authentication** | **Creator Settings** |
 | :---: | :---: |
