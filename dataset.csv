@@ -1,151 +1,401 @@
 id,name,category,subcategory,platform,followers,engagement_rate,avg_likes,avg_comments,keywords,fraud_risk,fraud_risk_label,location,content_type,price_usd,verified
-1,Komal Pandey,Fashion,Streetwear,Instagram,1200000,4.8,57600,1200,"streetwear,ootd,fashion,style,urban",0.08,Low,Delhi India,Reels & Photos,3500,true
-2,Masoom Minawala,Fashion,Luxury fashion,Instagram,980000,3.9,38220,890,"luxury,designer,highend,fashion,lifestyle",0.07,Low,Mumbai India,Photos & Stories,8000,true
-3,Kusha Kapila,Fashion,Streetwear,Instagram,2100000,5.2,109200,2100,"fashion,comedy,reels,trending,style",0.05,Low,Delhi India,Reels,6000,true
-4,Santoshi Shetty,Fashion,Ethnic wear,Instagram,870000,4.1,35670,780,"ethnic,saree,traditional,Indian fashion,culture",0.07,Low,Bangalore India,Photos,2800,true
-5,Niki Mehra,Fashion,Sustainable fashion,Instagram,650000,5.8,37700,920,"sustainable,eco,fashion,environment,conscious",0.06,Low,Mumbai India,Reels & Blog,2200,true
-6,Kritika Khurana,Fashion,Streetwear,YouTube,1800000,3.7,66600,1300,"streetwear,fashion,ootd,styling,lookbook",0.09,Low,Delhi India,Vlogs,5000,true
-7,Masaba Gupta,Fashion,Ethnic wear,Instagram,1450000,4.3,62350,1100,"ethnic,designer,Indian,fashion,culture",0.06,Low,Mumbai India,Photos & Stories,9000,true
-8,Aashna Shroff,Fashion,Sustainable fashion,Instagram,750000,5.1,38250,850,"sustainable,fashion,beauty,lifestyle,conscious",0.07,Low,Mumbai India,Reels,2500,true
-9,Isha Bhansali,Fashion,Ethnic wear,YouTube,530000,6.2,32860,980,"ethnic,dance,fashion,Indian,cultural",0.07,Low,Jaipur India,Vlogs,1800,true
-10,Dolly Singh,Fashion,Streetwear,Instagram,1200000,5.4,64800,1500,"fashion,comedy,streetwear,India,reels",0.06,Low,Delhi India,Reels,4000,true
-11,Sejal Kumar,Fashion,Sustainable fashion,YouTube,1400000,5.1,71400,1600,"fashion,sustainable,lifestyle,India,DIY",0.06,Low,Delhi India,Vlogs,5000,true
-12,Nidhi Katiyar,Fashion,Ethnic wear,Instagram,540000,6.8,36720,1000,"ethnic,fashion,Indian,saree,traditional",0.05,Low,Lucknow India,Photos,2000,true
-13,Diipa Buller Khosla,Fashion,Luxury fashion,Instagram,1700000,4.2,71400,1600,"luxury,fashion,lifestyle,India,international",0.07,Low,Netherlands,Photos,6000,true
-14,Debasree Banerjee,Fashion,Ethnic wear,Instagram,820000,5.3,43460,1100,"ethnic,fashion,Bengali,saree,lifestyle",0.06,Low,Kolkata India,Photos,3000,true
-15,Wisdom Kaye,Fashion,Streetwear,Instagram,4200000,6.8,285600,7000,"streetwear,style,menswear,creative,USA",0.04,Low,USA,Reels,14000,true
-16,Natalie Offerman,Fashion,Sustainable fashion,Instagram,980000,6.8,66640,1700,"sustainable,fashion,eco,lifestyle,organic",0.04,Low,USA,Photos,3500,true
-17,Venetia La Manna,Fashion,Sustainable fashion,Instagram,1400000,7.2,100800,2500,"sustainable,fashion,secondhand,thrift,activist",0.03,Low,UK,Reels,5000,true
-18,Aimee Song,Fashion,Luxury fashion,Instagram,6800000,3.8,258400,5600,"luxury,fashion,travel,lifestyle,Korean-American",0.08,Low,USA,Photos,18000,true
-19,Gaurav Kapur,Sports,Cricket,YouTube,890000,4.5,40050,1100,"cricket,interview,sports,entertainment,show",0.06,Low,Delhi India,Shows,3500,true
-20,Sohrab Elias,Sports,Football,Instagram,420000,6.8,28560,890,"football,soccer,skills,training,sport",0.05,Low,Kolkata India,Reels,1500,true
-21,Milind Soman,Sports,Fitness training,Instagram,1900000,4.1,77900,1600,"fitness,running,ironman,health,lifestyle",0.06,Low,Mumbai India,Photos & Videos,7000,true
-22,Ankur Warikoo,Sports,Fitness training,YouTube,3200000,5.8,185600,4200,"entrepreneurship,fitness,mindset,growth,education",0.05,Low,Delhi India,Videos,10000,true
-23,Sunil Chhetri,Sports,Football,Instagram,2100000,4.8,100800,2300,"football,India,ISL,captain,sports",0.05,Low,Bangalore India,Photos,7000,true
-24,Aditi Ashok,Sports,Outdoor adventure,Instagram,280000,6.5,18200,520,"golf,sports,outdoor,India,Olympics",0.04,Low,Bangalore India,Photos,1000,true
-25,Riya Desai,Sports,Outdoor adventure,Instagram,150000,8.2,12300,380,"outdoor,hiking,adventure,nature,travel",0.03,Low,Gujarat India,Reels,600,true
-26,Suniel Shetty,Sports,Fitness training,Instagram,3800000,3.7,140600,3100,"fitness,action,Bollywood,martial arts,lifestyle",0.08,Low,Mumbai India,Photos,11000,true
-27,Tiger Shroff,Sports,Fitness training,Instagram,17000000,4.1,697000,14000,"fitness,dance,action,Bollywood,martial arts",0.09,Low,Mumbai India,Reels,45000,true
-28,Vidyut Jammwal,Sports,Fitness training,Instagram,8900000,4.8,427200,9400,"fitness,martial arts,action,Bollywood,Kalaripayattu",0.07,Low,Mumbai India,Reels,25000,true
-29,Aakash Chopra,Sports,Cricket,YouTube,4200000,5.3,222600,4800,"cricket,analysis,commentary,India,education",0.05,Low,Delhi India,Education,12000,true
-30,Smriti Mandhana,Sports,Cricket,Instagram,5800000,4.5,261000,5400,"cricket,women,India,sports,BCCI",0.05,Low,Mumbai India,Photos,16000,true
-31,Harmanpreet Kaur,Sports,Cricket,Instagram,3200000,4.2,134400,2900,"cricket,women,India,captain,sports",0.06,Low,Moga India,Photos,9000,true
-32,Yashasvi Jaiswal,Sports,Cricket,Instagram,4800000,6.2,297600,6500,"cricket,India,Rajasthan,IPL,youngster",0.05,Low,Mumbai India,Photos,14000,true
-33,Shubman Gill,Sports,Cricket,Instagram,12000000,5.1,612000,12200,"cricket,India,Gujarat,IPL,youngster",0.06,Low,Punjab India,Photos,32000,true
-34,Jasprit Bumrah,Sports,Cricket,Instagram,16000000,4.2,672000,13500,"cricket,IPL,MI,India,bowling",0.07,Low,Ahmedabad India,Photos,42000,true
-35,Neeraj Chopra,Sports,Outdoor adventure,Instagram,7800000,5.2,405600,8700,"athletics,javelin,India,Olympics,gold",0.05,Low,Panipat India,Photos,22000,true
-36,PV Sindhu,Sports,Fitness training,Instagram,6200000,4.1,254200,5500,"badminton,India,sports,Olympics,champion",0.05,Low,Hyderabad India,Photos,17000,true
-37,Mirabai Chanu,Sports,Fitness training,Instagram,2200000,5.8,127600,2800,"weightlifting,India,Olympics,champion,sports",0.04,Low,Manipur India,Photos,7000,true
-38,Ishan Sharma,Tech,Smartphones,YouTube,2800000,5.1,142800,3200,"tech,smartphones,review,unboxing,gadgets",0.06,Low,Delhi India,Reviews,8000,true
-39,Trakin Tech,Tech,Smartphones,YouTube,8500000,4.3,365500,7800,"tech,smartphones,budget,review,India",0.07,Low,Surat India,Reviews,18000,true
-40,Technical Guruji,Tech,Smartphones,YouTube,22000000,3.8,836000,16500,"tech,Hindi,review,smartphone,gadgets",0.09,Low,Dubai UAE,Reviews,45000,true
-41,Mrwhosetheboss,Tech,Smartphones,YouTube,18000000,5.2,936000,18200,"tech,review,flagship,comparison,premium",0.06,Low,London UK,Reviews,40000,true
-42,Gaurav Chaudhary,Tech,AI/ML,YouTube,5200000,4.6,239200,5100,"AI,ML,tech,future,innovation,India",0.07,Low,Dubai UAE,Education,14000,true
-43,Two Minute Papers,Tech,AI/ML,YouTube,1600000,6.8,108800,2800,"AI,research,ML,papers,science",0.04,Low,Austria,Education,6000,true
-44,Krish Naik,Tech,AI/ML,YouTube,980000,7.2,70560,1900,"AI,ML,datascience,python,tutorial",0.04,Low,Bangalore India,Tutorials,3500,true
-45,TheAIGRID,Tech,AI/ML,YouTube,680000,8.1,55080,1600,"AI,AGI,future,technology,automation",0.05,Low,UK,Education,2500,true
-46,Dynamo Gaming,Tech,Gaming,YouTube,9800000,4.8,470400,9800,"gaming,BGMI,mobile,esports,India",0.08,Low,Mumbai India,Gaming,22000,true
-47,Scout,Tech,Gaming,YouTube,4200000,5.3,222600,4800,"gaming,BGMI,esports,streaming,India",0.07,Low,Mumbai India,Gaming,10000,true
-48,Mortal,Tech,Gaming,YouTube,7500000,4.5,337500,7200,"gaming,esports,BGMI,commentary,India",0.08,Low,Mumbai India,Gaming,16000,true
-49,Shraddha Khapra,Tech,Software development,YouTube,720000,7.8,56160,1500,"programming,tutorial,India,coding,beginner",0.03,Low,Delhi India,Tutorials,2800,true
-50,CodeWithHarry,Tech,Software development,YouTube,4800000,6.2,297600,6500,"coding,Hindi,tutorial,programming,India",0.04,Low,India,Tutorials,14000,true
-51,Fireship,Tech,Software development,YouTube,2900000,7.8,226200,5200,"programming,webdev,coding,tech,tutorials",0.03,Low,USA,Tutorials,9000,true
-52,Hitesh Choudhary,Tech,Software development,YouTube,840000,6.5,54600,1400,"programming,coding,tutorial,webdev,India",0.04,Low,Jaipur India,Tutorials,3000,true
-53,Linus Tech Tips,Tech,Smartphones,YouTube,15800000,4.5,711000,14300,"tech,review,hardware,PC,Canada",0.04,Low,Canada,Reviews,38000,true
-54,Marques Brownlee,Tech,Smartphones,YouTube,18500000,5.3,980500,19600,"tech,review,design,premium,USA",0.04,Low,USA,Reviews,45000,true
-55,Kurzgesagt,Tech,AI/ML,YouTube,21000000,7.2,1512000,30000,"science,animation,education,future,tech",0.02,Low,Germany,Animation,55000,true
-56,Lex Fridman,Tech,AI/ML,YouTube,4200000,5.9,247800,5400,"AI,science,technology,interview,philosophy",0.03,Low,USA,Podcasts,12000,true
-57,Kamiya Jani,Lifestyle,Travel,YouTube,1500000,5.2,78000,1800,"travel,explore,India,food,culture",0.07,Low,Mumbai India,Vlogs,5000,true
-58,Bruised Passports,Lifestyle,Travel,Instagram,1100000,4.7,51700,1200,"travel,luxury,destination,couple,photography",0.06,Low,India,Photos,4000,true
-59,Savi and Vid,Lifestyle,Travel,YouTube,680000,6.1,41480,1100,"travel,couple,budget,backpacking,India",0.05,Low,India,Vlogs,2500,true
-60,Nikunj Lotia,Lifestyle,Food,YouTube,1900000,4.4,83600,1900,"food,review,Mumbai,restaurant,street food",0.07,Low,Mumbai India,Reviews,5500,true
-61,Food Ranger,Lifestyle,Food,YouTube,5600000,5.8,324800,7200,"food,travel,street food,global,adventure",0.05,Low,Canada,Vlogs,15000,true
-62,Kabita's Kitchen,Lifestyle,Food,YouTube,8200000,4.1,336200,6800,"cooking,recipe,Indian,food,kitchen",0.04,Low,Bhubaneswar India,Tutorials,18000,true
-63,Nisha Madhulika,Lifestyle,Food,YouTube,13000000,4.1,533000,10700,"food,recipe,vegetarian,Hindi,cooking",0.05,Low,Noida India,Tutorials,30000,true
-64,Chef Ranveer,Lifestyle,Food,Instagram,2400000,5.1,122400,2700,"food,chef,recipe,India,restaurant",0.06,Low,Mumbai India,Reels,7000,true
-65,Flying Beast,Lifestyle,Daily vlogging,YouTube,8900000,3.7,329300,6800,"vlog,family,daily,travel,lifestyle",0.09,Low,Delhi India,Vlogs,20000,true
-66,Mumbiker Nikhil,Lifestyle,Daily vlogging,YouTube,3100000,4.5,139500,3000,"vlog,bike,travel,daily,lifestyle",0.08,Low,Mumbai India,Vlogs,8000,true
-67,Prajakta Koli,Lifestyle,Daily vlogging,YouTube,7200000,5.1,367200,7800,"vlog,comedy,lifestyle,daily,India",0.07,Low,Mumbai India,Vlogs,16000,true
-68,The Urban Fight,Lifestyle,Minimalism,Instagram,280000,8.9,24920,780,"minimalism,lifestyle,design,clean,urban",0.03,Low,Bangalore India,Photos,1000,true
-69,Jay Shetty,Lifestyle,Minimalism,YouTube,7200000,5.8,417600,8900,"mindfulness,motivation,wisdom,lifestyle,purpose",0.05,Low,USA,Podcasts,22000,true
-70,Matt D'Avella,Lifestyle,Minimalism,YouTube,4800000,6.2,297600,6500,"minimalism,documentary,lifestyle,film,design",0.03,Low,USA,Videos,14000,true
-71,Sadhguru,Lifestyle,Minimalism,YouTube,9800000,5.2,509600,10400,"spirituality,yoga,wellness,India,mindfulness",0.04,Low,Coimbatore India,Talks,28000,true
-72,Ranveer Allahbadia,Lifestyle,Daily vlogging,YouTube,8500000,5.8,493000,10600,"podcast,lifestyle,motivation,India,entrepreneur",0.06,Low,Mumbai India,Podcasts,22000,true
-73,Dhruv Rathee,Lifestyle,Daily vlogging,YouTube,18000000,6.2,1116000,22800,"politics,education,India,analysis,awareness",0.05,Low,Germany,Videos,45000,true
-74,Ashish Chanchlani,Lifestyle,Daily vlogging,YouTube,29000000,4.8,1392000,27800,"comedy,vlog,India,entertainment,YouTube",0.08,Low,Ulhasnagar India,Vlogs,65000,true
-75,Shilpa Shetty,Fitness,Yoga,Instagram,9200000,3.4,312800,6200,"yoga,fitness,wellness,health,Bollywood",0.09,Low,Mumbai India,Photos & Videos,28000,true
-76,Sarvesh Shashi,Fitness,Yoga,Instagram,450000,6.8,30600,890,"yoga,wellness,mindfulness,health,fitness",0.05,Low,Chennai India,Reels,1800,true
-77,Yoga with Adriene,Fitness,Yoga,YouTube,12000000,5.9,708000,14200,"yoga,beginner,wellness,mindfulness,daily",0.04,Low,USA,Tutorials,32000,true
-78,Nikhil Workout,Fitness,Bodybuilding,YouTube,1200000,5.4,64800,1500,"bodybuilding,gym,fitness,workout,India",0.06,Low,Bangalore India,Tutorials,4000,true
-79,Guru Mann,Fitness,Bodybuilding,YouTube,3800000,4.7,178600,3900,"bodybuilding,fitness,nutrition,India,transformation",0.07,Low,USA,Tutorials,10000,true
-80,Jeff Nippard,Fitness,Bodybuilding,YouTube,5400000,6.8,367200,8200,"bodybuilding,science,fitness,nutrition,evidence",0.03,Low,Canada,Education,16000,true
-81,Chloe Ting,Fitness,Home workouts,YouTube,25000000,5.1,1275000,24000,"fitness,home,workout,challenge,transformation",0.06,Low,Australia,Tutorials,60000,true
-82,Blogilates,Fitness,Home workouts,YouTube,8900000,4.8,427200,9100,"fitness,pilates,home,workout,lifestyle",0.04,Low,USA,Tutorials,22000,true
-83,Fit Tuber,Fitness,Nutrition,YouTube,6200000,5.3,328600,7100,"nutrition,health,fitness,food,science India",0.05,Low,Delhi India,Education,16000,true
-84,Rujuta Diwekar,Fitness,Nutrition,Instagram,1100000,4.6,50600,1200,"nutrition,diet,health,Indian food,wellness",0.06,Low,Mumbai India,Posts,4000,true
-85,Luke Coutinho,Fitness,Nutrition,Instagram,1400000,5.8,81200,1900,"nutrition,health,holistic,wellness,India",0.05,Low,Mumbai India,Posts,5000,true
-86,Abbey Sharp,Fitness,Nutrition,YouTube,1400000,5.7,79800,1800,"nutrition,dietitian,food,health,science",0.04,Low,Canada,Education,5000,true
-87,Emma Chamberlain,Lifestyle,Daily vlogging,Instagram,16800000,3.9,655200,13200,"lifestyle,fashion,coffee,daily,USA",0.09,Low,USA,Reels,42000,true
-88,Casey Neistat,Lifestyle,Daily vlogging,YouTube,12500000,5.2,650000,13000,"vlog,NYC,filmmaking,storytelling,travel",0.05,Low,USA,Films,35000,true
-89,Zakir Khan,Lifestyle,Daily vlogging,YouTube,5800000,4.8,278400,5900,"comedy,standup,India,storytelling,Indore",0.05,Low,Mumbai India,Comedy,16000,true
-90,Gaur Gopal Das,Lifestyle,Minimalism,YouTube,3800000,6.1,231800,5000,"spirituality,motivation,wisdom,India,lifestyle",0.04,Low,Mumbai India,Talks,12000,true
-91,Rohit Sharma,Sports,Cricket,Instagram,30000000,3.3,990000,19800,"cricket,IPL,MI,India,captain",0.07,Low,Mumbai India,Photos,80000,true
-92,KL Rahul,Sports,Cricket,Instagram,18000000,3.7,666000,13200,"cricket,IPL,India,batsman,sports",0.08,Low,Bangalore India,Photos,48000,true
-93,Rishabh Pant,Sports,Cricket,Instagram,14000000,4.1,574000,11500,"cricket,IPL,wicketkeeper,India,comeback",0.07,Low,Delhi India,Photos,38000,true
-94,Ravindra Jadeja,Sports,Cricket,Instagram,9500000,3.4,323000,6700,"cricket,IPL,CSK,India,allrounder",0.09,Low,Jamnagar India,Photos,28000,true
-95,MS Dhoni,Sports,Cricket,Instagram,38000000,3.1,1178000,23000,"cricket,IPL,CSK,India,legend",0.07,Low,Ranchi India,Photos,100000,true
-96,Virat Kohli,Sports,Cricket,Instagram,269000000,3.5,9415000,183000,"cricket,India,captain,lifestyle,sports",0.06,Low,Delhi India,Photos,200000,true
-97,Sachin Tendulkar,Sports,Cricket,Instagram,28000000,3.2,896000,17800,"cricket,India,legend,sports,inspiration",0.05,Low,Mumbai India,Photos,90000,true
-98,Yuvraj Singh,Sports,Cricket,Instagram,15000000,3.9,585000,11700,"cricket,India,legend,sports,motivation",0.07,Low,Chandigarh India,Photos,40000,true
-99,Suresh Raina,Sports,Cricket,Instagram,16000000,3.8,608000,12200,"cricket,IPL,CSK,India,retired",0.08,Low,Ghaziabad India,Photos,42000,true
-100,Irfan Pathan,Sports,Cricket,Instagram,4200000,4.1,172200,3800,"cricket,India,allrounder,Kashmir,media",0.06,Low,Baroda India,Photos,12000,true
-101,Vinicius Jr,Sports,Football,Instagram,26000000,5.1,1326000,26500,"football,RealMadrid,Brazil,soccer,skills",0.05,Low,Brazil,Photos,65000,true
-102,Gavi,Sports,Football,Instagram,18000000,4.5,810000,16200,"football,Barcelona,Spain,soccer,sports",0.06,Low,Spain,Photos,48000,true
-103,Simone Biles,Sports,Fitness training,Instagram,9800000,5.1,499800,10500,"gymnastics,sports,fitness,champion,USA",0.05,Low,USA,Photos,28000,true
-104,Naomi Osaka,Sports,Fitness training,Instagram,5400000,4.2,226800,5000,"tennis,sports,Japan,fashion,activism",0.05,Low,USA,Photos,16000,true
-105,Sania Mirza,Sports,Fitness training,Instagram,5200000,4.5,234000,5200,"tennis,India,sports,fitness,lifestyle",0.06,Low,Hyderabad India,Photos,15000,true
-106,Pooja Dhingra,Lifestyle,Food,Instagram,780000,5.9,46020,1200,"food,pastry,chef,India,desserts",0.05,Low,Mumbai India,Photos,3000,true
-107,Sanjeev Kapoor,Lifestyle,Food,YouTube,8500000,3.9,331500,6800,"food,chef,recipe,Indian,cooking",0.06,Low,Mumbai India,Tutorials,22000,true
-108,Shalini Chopra,Lifestyle,Food,YouTube,980000,5.8,56840,1300,"food,vegetarian,recipe,Indian,cooking",0.05,Low,Chandigarh India,Tutorials,3500,true
-109,Nikita Bawa,Lifestyle,Travel,Instagram,420000,7.2,30240,880,"travel,solo,budget,India,lifestyle",0.05,Low,Delhi India,Photos & Reels,1600,true
-110,Rohan Khandelwal,Lifestyle,Minimalism,Instagram,180000,9.1,16380,520,"minimalism,design,lifestyle,clean,aesthetic",0.02,Low,Pune India,Photos,700,true
-111,Andrew Ng,Tech,AI/ML,LinkedIn,5800000,4.1,237800,5100,"AI,ML,education,deeplearning,technology",0.02,Low,USA,Articles,18000,true
-112,Shraddha Kapoor Fan,Fashion,Streetwear,Instagram,3800000,3.9,148200,3200,"fashion,style,actor,India,lifestyle",0.09,Low,Mumbai India,Photos,10000,false
-113,MensXP,Fashion,Streetwear,Instagram,2200000,3.8,83600,1900,"men,fashion,grooming,lifestyle,India",0.08,Low,Delhi India,Posts,6000,true
-114,GQ India,Fashion,Luxury fashion,Instagram,1800000,3.2,57600,1300,"luxury,men,fashion,lifestyle,India",0.08,Low,Mumbai India,Photos,5500,true
-115,Vogue India,Fashion,Luxury fashion,Instagram,5200000,3.1,161200,3500,"luxury,fashion,editorial,India,style",0.09,Low,Mumbai India,Photos,14000,true
-116,Amit Panghal,Sports,Outdoor adventure,Instagram,680000,6.8,46240,1300,"boxing,India,sports,Olympics,outdoor",0.05,Low,Haryana India,Photos,2500,true
-117,Bajrang Punia,Sports,Outdoor adventure,Instagram,2800000,5.1,142800,3100,"wrestling,India,sports,Olympics,outdoor",0.06,Low,Jhajjar India,Photos,8000,true
-118,Lovlina Borgohain,Sports,Fitness training,Instagram,1200000,6.2,74400,1700,"boxing,India,Olympics,sports,Assam",0.04,Low,Assam India,Photos,4000,true
-119,Gurpreet Sandhu,Sports,Football,Instagram,1100000,5.2,57200,1300,"football,India,goalkeeper,ISL,Bengaluru FC",0.05,Low,Punjab India,Photos,4000,true
-120,Sandesh Jhingan,Sports,Football,Instagram,340000,6.2,21080,580,"football,India,defence,ISL,sports",0.04,Low,Kerala India,Photos,1200,true
-121,Hitesh Sharma,Tech,Smartphones,YouTube,840000,6.5,54600,1400,"tech,smartphones,review,budget,India",0.04,Low,India,Reviews,3000,true
-122,Dave2D,Tech,Smartphones,YouTube,3700000,5.1,188700,3900,"tech,laptop,review,clean,design",0.04,Low,USA,Reviews,10000,true
-123,JerryRigEverything,Tech,Smartphones,YouTube,8900000,4.8,427200,8900,"tech,durability,teardown,review,USA",0.04,Low,USA,Reviews,22000,true
-124,ThePrimeagen,Tech,Software development,YouTube,540000,8.9,48060,1400,"programming,Rust,vim,developer,culture",0.02,Low,USA,Education,2000,true
-125,Traversy Media,Tech,Software development,YouTube,2100000,5.5,115500,2500,"webdev,javascript,react,css,tutorials",0.03,Low,USA,Tutorials,6500,true
-126,Six Pack Band,Fitness,Bodybuilding,YouTube,1800000,5.4,97200,2200,"bodybuilding,fitness,sixpack,India,transformation",0.06,Low,Delhi India,Tutorials,5500,true
-127,Malaika Arora,Fitness,Yoga,Instagram,7800000,3.1,241800,4800,"yoga,fitness,fashion,Bollywood,wellness",0.11,Medium,Mumbai India,Photos,24000,true
-128,Sourav Ganguly,Sports,Cricket,Instagram,4800000,3.3,158400,3400,"cricket,India,Bengal,BCCI,captain",0.07,Low,Kolkata India,Photos,14000,true
-129,Harbhajan Singh,Sports,Cricket,Twitter,6800000,3.2,217600,4600,"cricket,India,spin,IPL,legend",0.08,Low,Jalandhar India,Tweets,18000,true
-130,Virender Sehwag,Sports,Cricket,Twitter,9200000,3.5,322000,6900,"cricket,India,opening,legend,humour",0.07,Low,Delhi India,Tweets,24000,true
-131,Robin Sharma,Lifestyle,Minimalism,YouTube,2100000,4.8,100800,2200,"leadership,mindset,minimalism,success,books",0.03,Low,Canada,Talks,7000,true
-132,Kapil Dev,Sports,Cricket,Twitter,4200000,3.1,130200,2800,"cricket,India,legend,1983,captain",0.06,Low,Chandigarh India,Tweets,12000,true
-133,VVS Laxman,Sports,Cricket,Twitter,3200000,3.2,102400,2200,"cricket,India,Hyderabad,batting,legend",0.06,Low,Hyderabad India,Tweets,9000,true
-134,Zaheer Khan,Sports,Cricket,Instagram,2400000,3.7,88800,2000,"cricket,India,bowling,swing,legend",0.06,Low,Shrirampur India,Photos,7000,true
-135,Leonie Hanne,Fashion,Luxury fashion,Instagram,5400000,4.1,221400,4900,"luxury,fashion,travel,glam,Germany",0.07,Low,Dubai UAE,Photos,16000,true
-136,Tamara Kalinic,Fashion,Luxury fashion,Instagram,1600000,4.8,76800,1800,"luxury,fashion,beauty,lifestyle,Croatia",0.06,Low,UK,Photos,5500,true
-137,Imaan Hammam,Fashion,Streetwear,Instagram,2800000,4.5,126000,2800,"streetwear,model,fashion,diversity,Netherlands",0.05,Low,Netherlands,Photos,8000,true
-138,Bretman Rock,Fashion,Streetwear,Instagram,17000000,4.2,714000,14300,"streetwear,beauty,comedy,Hawaii,lifestyle",0.08,Low,Philippines,Reels,42000,true
-139,Wisdom Kiteri,Fashion,Ethnic wear,Instagram,580000,7.1,41180,1100,"ethnic,African,fashion,cultural,traditional",0.04,Low,Kenya,Photos,2200,true
-140,Santanu Hazarika,Fashion,Ethnic wear,Instagram,480000,6.5,31200,850,"ethnic,art,fashion,India,northeast",0.04,Low,Assam India,Photos,1800,true
-141,K11 Academy,Fitness,Bodybuilding,Instagram,340000,6.8,23120,640,"fitness,bodybuilding,gym,training,India",0.05,Low,Mumbai India,Reels,1300,true
-142,Max Verstappen,Sports,Outdoor adventure,Instagram,12000000,4.8,576000,12000,"F1,racing,sports,outdoor,Netherlands",0.06,Low,Netherlands,Photos,32000,true
-143,Lewis Hamilton,Sports,Outdoor adventure,Instagram,34000000,3.9,1326000,26500,"F1,racing,sports,fashion,activist",0.07,Low,UK,Photos,85000,true
-144,Nelly Korda,Sports,Outdoor adventure,Instagram,680000,5.8,39440,1000,"golf,sports,outdoor,USA,champion",0.04,Low,USA,Photos,2500,true
-145,Dutee Chand,Sports,Outdoor adventure,Instagram,820000,5.9,48380,1200,"athletics,India,sports,sprinting,outdoor",0.05,Low,Odisha India,Photos,3000,true
-146,Lex Fridman AI,Tech,AI/ML,Twitter,2800000,4.5,126000,2800,"AI,science,robotics,interview,future",0.03,Low,USA,Tweets,9000,true
-147,Tanmay Bhat,Tech,Software development,YouTube,1800000,4.2,75600,1800,"comedy,tech,programming,content,India",0.06,Low,Mumbai India,Vlogs & Comedy,5500,true
-148,Rahul Dravid,Sports,Cricket,Instagram,3800000,3.4,129200,2800,"cricket,India,wall,coach,legend",0.05,Low,Bangalore India,Photos,11000,true
-149,Nikita Sharma,Lifestyle,Travel,Instagram,680000,6.1,41480,1100,"travel,India,photography,nature,adventure",0.05,Low,Delhi India,Photos,2500,true
-150,Pooja Bedi,Fitness,Yoga,Instagram,450000,5.9,26550,750,"yoga,wellness,holistic,India,lifestyle",0.06,Low,Goa India,Reels,1600,true
+1,Komal Pandey,Fashion,Streetwear,Instagram,1350000,4.8,64800,1350,"streetwear,ootd,fashion,style,urban,reels",0.06,Low,Delhi India,Reels & Photos,3500,true
+2,Masoom Minawala,Fashion,Luxury fashion,Instagram,1050000,3.9,40950,920,"luxury,designer,highend,fashion,lifestyle",0.06,Low,Mumbai India,Photos & Stories,8500,true
+3,Kusha Kapila,Fashion,Streetwear,Instagram,2300000,5.2,119600,2300,"fashion,comedy,reels,trending,style",0.05,Low,Delhi India,Reels,6500,true
+4,Santoshi Shetty,Fashion,Ethnic wear,Instagram,920000,4.1,37720,820,"ethnic,saree,traditional,Indian fashion,culture",0.06,Low,Bangalore India,Photos,3000,true
+5,Niki Mehra,Fashion,Sustainable fashion,Instagram,700000,5.8,40600,980,"sustainable,eco,fashion,environment,conscious",0.05,Low,Mumbai India,Reels & Blog,2400,true
+6,Kritika Khurana,Fashion,Streetwear,YouTube,1950000,3.7,72150,1400,"streetwear,fashion,ootd,styling,lookbook",0.08,Low,Delhi India,Vlogs,5500,true
+7,Masaba Gupta,Fashion,Ethnic wear,Instagram,1550000,4.3,66650,1200,"ethnic,designer,Indian,fashion,culture",0.05,Low,Mumbai India,Photos & Stories,9500,true
+8,Aashna Shroff,Fashion,Sustainable fashion,Instagram,800000,5.1,40800,900,"sustainable,fashion,beauty,lifestyle,conscious",0.06,Low,Mumbai India,Reels,2700,true
+9,Isha Bhansali,Fashion,Ethnic wear,YouTube,580000,6.2,35960,1050,"ethnic,dance,fashion,Indian,cultural",0.06,Low,Jaipur India,Vlogs,1900,true
+10,Dolly Singh,Fashion,Streetwear,Instagram,1300000,5.4,70200,1600,"fashion,comedy,streetwear,India,reels",0.05,Low,Delhi India,Reels,4200,true
+11,Sejal Kumar,Fashion,Sustainable fashion,YouTube,1500000,5.1,76500,1700,"fashion,sustainable,lifestyle,India,DIY",0.05,Low,Delhi India,Vlogs,5200,true
+12,Nidhi Katiyar,Fashion,Ethnic wear,Instagram,580000,6.8,39440,1050,"ethnic,fashion,Indian,saree,traditional",0.04,Low,Lucknow India,Photos,2100,true
+13,Diipa Buller Khosla,Fashion,Luxury fashion,Instagram,1800000,4.2,75600,1700,"luxury,fashion,lifestyle,India,international",0.06,Low,Netherlands,Photos,6500,true
+14,Debasree Banerjee,Fashion,Ethnic wear,Instagram,880000,5.3,46640,1150,"ethnic,fashion,Bengali,saree,lifestyle",0.05,Low,Kolkata India,Photos,3200,true
+15,Wisdom Kaye,Fashion,Streetwear,Instagram,4500000,6.8,306000,7500,"streetwear,style,menswear,creative,USA",0.04,Low,USA,Reels,15000,true
+16,Natalie Offerman,Fashion,Sustainable fashion,Instagram,1050000,6.8,71400,1800,"sustainable,fashion,eco,lifestyle,organic",0.04,Low,USA,Photos,3800,true
+17,Venetia La Manna,Fashion,Sustainable fashion,Instagram,1500000,7.2,108000,2600,"sustainable,fashion,secondhand,thrift,activist",0.03,Low,UK,Reels,5200,true
+18,Aimee Song,Fashion,Luxury fashion,Instagram,7200000,3.8,273600,5900,"luxury,fashion,travel,lifestyle,Korean-American",0.07,Low,USA,Photos,19000,true
+19,Chiara Ferragni,Fashion,Luxury fashion,Instagram,28000000,2.9,812000,16200,"luxury,fashion,Italy,lifestyle,business",0.11,Medium,Italy,Photos,62000,true
+20,Leonie Hanne,Fashion,Luxury fashion,Instagram,5600000,4.1,229600,5100,"luxury,fashion,travel,glam,Germany",0.06,Low,Dubai UAE,Photos,17000,true
+21,Tamara Kalinic,Fashion,Luxury fashion,Instagram,1700000,4.8,81600,1900,"luxury,fashion,beauty,lifestyle,Croatia",0.06,Low,UK,Photos,5800,true
+22,Imaan Hammam,Fashion,Streetwear,Instagram,3000000,4.5,135000,3000,"streetwear,model,fashion,diversity,Netherlands",0.05,Low,Netherlands,Photos,8500,true
+23,Bretman Rock,Fashion,Streetwear,Instagram,18000000,4.2,756000,15100,"streetwear,beauty,comedy,Hawaii,lifestyle",0.08,Low,Philippines,Reels,44000,true
+24,Wisdom Kiteri,Fashion,Ethnic wear,Instagram,620000,7.1,44020,1150,"ethnic,African,fashion,cultural,traditional",0.04,Low,Kenya,Photos,2400,true
+25,Santanu Hazarika,Fashion,Ethnic wear,Instagram,520000,6.5,33800,900,"ethnic,art,fashion,India,northeast",0.04,Low,Assam India,Photos,1900,true
+26,Prabal Gurung,Fashion,Luxury fashion,Instagram,980000,4.5,44100,1050,"luxury,fashion,designer,Nepal,NYC",0.05,Low,USA,Photos,4500,true
+27,Ritu Kumar,Fashion,Ethnic wear,Instagram,420000,5.2,21840,580,"ethnic,Indian,designer,heritage,fashion",0.05,Low,Delhi India,Photos,2000,true
+28,Anita Dongre,Fashion,Sustainable fashion,Instagram,890000,4.8,42720,980,"sustainable,Indian,fashion,designer,ethnic",0.05,Low,Mumbai India,Photos,4000,true
+29,Sabyasachi Mukherjee,Fashion,Ethnic wear,Instagram,3200000,3.8,121600,2800,"ethnic,luxury,Indian,bridal,designer",0.06,Low,Kolkata India,Photos,12000,true
+30,Gaurav Kapur,Sports,Cricket,YouTube,950000,4.5,42750,1150,"cricket,interview,sports,entertainment,show",0.05,Low,Delhi India,Shows,3800,true
+31,Sohrab Elias,Sports,Football,Instagram,460000,6.8,31280,950,"football,soccer,skills,training,sport",0.04,Low,Kolkata India,Reels,1600,true
+32,Milind Soman,Sports,Fitness training,Instagram,2050000,4.1,84050,1700,"fitness,running,ironman,health,lifestyle",0.05,Low,Mumbai India,Photos & Videos,7500,true
+33,Ankur Warikoo,Sports,Fitness training,YouTube,3400000,5.8,197200,4400,"entrepreneurship,fitness,mindset,growth,education",0.04,Low,Delhi India,Videos,11000,true
+34,Sunil Chhetri,Sports,Football,Instagram,2300000,4.8,110400,2500,"football,India,ISL,captain,sports",0.04,Low,Bangalore India,Photos,7500,true
+35,Aditi Ashok,Sports,Outdoor adventure,Instagram,310000,6.5,20150,570,"golf,sports,outdoor,India,Olympics",0.03,Low,Bangalore India,Photos,1100,true
+36,Suniel Shetty,Sports,Fitness training,Instagram,4100000,3.7,151700,3300,"fitness,action,Bollywood,martial arts,lifestyle",0.07,Low,Mumbai India,Photos,12000,true
+37,Tiger Shroff,Sports,Fitness training,Instagram,18500000,4.1,758500,15200,"fitness,dance,action,Bollywood,martial arts",0.08,Low,Mumbai India,Reels,48000,true
+38,Vidyut Jammwal,Sports,Fitness training,Instagram,9500000,4.8,456000,10000,"fitness,martial arts,action,Bollywood,Kalaripayattu",0.06,Low,Mumbai India,Reels,27000,true
+39,Aakash Chopra,Sports,Cricket,YouTube,4500000,5.3,238500,5100,"cricket,analysis,commentary,India,education",0.04,Low,Delhi India,Education,13000,true
+40,Smriti Mandhana,Sports,Cricket,Instagram,6200000,4.5,279000,5800,"cricket,women,India,sports,BCCI",0.04,Low,Mumbai India,Photos,17000,true
+41,Harmanpreet Kaur,Sports,Cricket,Instagram,3500000,4.2,147000,3100,"cricket,women,India,captain,sports",0.05,Low,Moga India,Photos,10000,true
+42,Yashasvi Jaiswal,Sports,Cricket,Instagram,5200000,6.2,322400,7000,"cricket,India,Rajasthan,IPL,youngster",0.04,Low,Mumbai India,Photos,15000,true
+43,Shubman Gill,Sports,Cricket,Instagram,13000000,5.1,663000,13200,"cricket,India,Gujarat,IPL,youngster",0.05,Low,Punjab India,Photos,35000,true
+44,Jasprit Bumrah,Sports,Cricket,Instagram,17000000,4.2,714000,14300,"cricket,IPL,MI,India,bowling",0.06,Low,Ahmedabad India,Photos,45000,true
+45,Neeraj Chopra,Sports,Outdoor adventure,Instagram,8500000,5.2,442000,9400,"athletics,javelin,India,Olympics,gold",0.04,Low,Panipat India,Photos,24000,true
+46,PV Sindhu,Sports,Fitness training,Instagram,6800000,4.1,278800,6000,"badminton,India,sports,Olympics,champion",0.04,Low,Hyderabad India,Photos,18500,true
+47,Mirabai Chanu,Sports,Fitness training,Instagram,2400000,5.8,139200,3000,"weightlifting,India,Olympics,champion,sports",0.03,Low,Manipur India,Photos,7500,true
+48,Rohit Sharma,Sports,Cricket,Instagram,32000000,3.3,1056000,21100,"cricket,IPL,MI,India,captain",0.06,Low,Mumbai India,Photos,85000,true
+49,KL Rahul,Sports,Cricket,Instagram,19500000,3.7,721500,14300,"cricket,IPL,India,batsman,sports",0.07,Low,Bangalore India,Photos,52000,true
+50,Rishabh Pant,Sports,Cricket,Instagram,15000000,4.1,615000,12300,"cricket,IPL,wicketkeeper,India,comeback",0.06,Low,Delhi India,Photos,40000,true
+51,Ravindra Jadeja,Sports,Cricket,Instagram,10200000,3.4,346800,7200,"cricket,IPL,CSK,India,allrounder",0.08,Low,Jamnagar India,Photos,30000,true
+52,MS Dhoni,Sports,Cricket,Instagram,40000000,3.1,1240000,24800,"cricket,IPL,CSK,India,legend",0.06,Low,Ranchi India,Photos,110000,true
+53,Virat Kohli,Sports,Cricket,Instagram,272000000,3.5,9520000,185000,"cricket,India,captain,lifestyle,sports",0.05,Low,Delhi India,Photos,210000,true
+54,Sachin Tendulkar,Sports,Cricket,Instagram,30000000,3.2,960000,19200,"cricket,India,legend,sports,inspiration",0.04,Low,Mumbai India,Photos,95000,true
+55,Yuvraj Singh,Sports,Cricket,Instagram,16000000,3.9,624000,12500,"cricket,India,legend,sports,motivation",0.06,Low,Chandigarh India,Photos,42000,true
+56,Suresh Raina,Sports,Cricket,Instagram,17000000,3.8,646000,12900,"cricket,IPL,CSK,India,retired",0.07,Low,Ghaziabad India,Photos,44000,true
+57,Vinicius Jr,Sports,Football,Instagram,28000000,5.1,1428000,28600,"football,RealMadrid,Brazil,soccer,skills",0.04,Low,Brazil,Photos,70000,true
+58,Gavi,Sports,Football,Instagram,19500000,4.5,877500,17600,"football,Barcelona,Spain,soccer,sports",0.05,Low,Spain,Photos,52000,true
+59,Simone Biles,Sports,Fitness training,Instagram,10500000,5.1,535500,11200,"gymnastics,sports,fitness,champion,USA",0.04,Low,USA,Photos,30000,true
+60,Naomi Osaka,Sports,Fitness training,Instagram,5800000,4.2,243600,5400,"tennis,sports,Japan,fashion,activism",0.04,Low,USA,Photos,17500,true
+61,Sania Mirza,Sports,Fitness training,Instagram,5600000,4.5,252000,5600,"tennis,India,sports,fitness,lifestyle",0.05,Low,Hyderabad India,Photos,16000,true
+62,Amit Panghal,Sports,Outdoor adventure,Instagram,740000,6.8,50320,1400,"boxing,India,sports,Olympics,outdoor",0.04,Low,Haryana India,Photos,2700,true
+63,Bajrang Punia,Sports,Outdoor adventure,Instagram,3000000,5.1,153000,3300,"wrestling,India,sports,Olympics,outdoor",0.05,Low,Jhajjar India,Photos,8500,true
+64,Lovlina Borgohain,Sports,Fitness training,Instagram,1300000,6.2,80600,1800,"boxing,India,Olympics,sports,Assam",0.03,Low,Assam India,Photos,4200,true
+65,Gurpreet Sandhu,Sports,Football,Instagram,1200000,5.2,62400,1400,"football,India,goalkeeper,ISL,Bengaluru FC",0.04,Low,Punjab India,Photos,4300,true
+66,Sandesh Jhingan,Sports,Football,Instagram,380000,6.2,23560,640,"football,India,defence,ISL,sports",0.03,Low,Kerala India,Photos,1300,true
+67,Max Verstappen,Sports,Outdoor adventure,Instagram,13000000,4.8,624000,13000,"F1,racing,sports,outdoor,Netherlands",0.05,Low,Netherlands,Photos,35000,true
+68,Lewis Hamilton,Sports,Outdoor adventure,Instagram,36000000,3.9,1404000,28100,"F1,racing,sports,fashion,activist",0.06,Low,UK,Photos,90000,true
+69,Ishan Sharma,Tech,Smartphones,YouTube,3000000,5.1,153000,3400,"tech,smartphones,review,unboxing,gadgets",0.05,Low,Delhi India,Reviews,8500,true
+70,Trakin Tech,Tech,Smartphones,YouTube,9200000,4.3,395600,8400,"tech,smartphones,budget,review,India",0.06,Low,Surat India,Reviews,20000,true
+71,Technical Guruji,Tech,Smartphones,YouTube,23500000,3.8,893000,17600,"tech,Hindi,review,smartphone,gadgets",0.08,Low,Dubai UAE,Reviews,48000,true
+72,Mrwhosetheboss,Tech,Smartphones,YouTube,19500000,5.2,1014000,19600,"tech,review,flagship,comparison,premium",0.05,Low,London UK,Reviews,43000,true
+73,Gaurav Chaudhary,Tech,AI/ML,YouTube,5600000,4.6,257600,5500,"AI,ML,tech,future,innovation,India",0.06,Low,Dubai UAE,Education,15000,true
+74,Two Minute Papers,Tech,AI/ML,YouTube,1750000,6.8,119000,3000,"AI,research,ML,papers,science",0.03,Low,Austria,Education,6500,true
+75,Krish Naik,Tech,AI/ML,YouTube,1050000,7.2,75600,2000,"AI,ML,datascience,python,tutorial",0.03,Low,Bangalore India,Tutorials,3800,true
+76,TheAIGRID,Tech,AI/ML,YouTube,750000,8.1,60750,1750,"AI,AGI,future,technology,automation",0.04,Low,UK,Education,2700,true
+77,Dynamo Gaming,Tech,Gaming,YouTube,10500000,4.8,504000,10500,"gaming,BGMI,mobile,esports,India",0.07,Low,Mumbai India,Gaming,24000,true
+78,Scout,Tech,Gaming,YouTube,4500000,5.3,238500,5100,"gaming,BGMI,esports,streaming,India",0.06,Low,Mumbai India,Gaming,11000,true
+79,Mortal,Tech,Gaming,YouTube,8000000,4.5,360000,7700,"gaming,esports,BGMI,commentary,India",0.07,Low,Mumbai India,Gaming,18000,true
+80,Shraddha Khapra,Tech,Software development,YouTube,780000,7.8,60840,1600,"programming,tutorial,India,coding,beginner",0.03,Low,Delhi India,Tutorials,3000,true
+81,CodeWithHarry,Tech,Software development,YouTube,5200000,6.2,322400,7000,"coding,Hindi,tutorial,programming,India",0.04,Low,India,Tutorials,15000,true
+82,Fireship,Tech,Software development,YouTube,3100000,7.8,241800,5500,"programming,webdev,coding,tech,tutorials",0.02,Low,USA,Tutorials,9500,true
+83,Hitesh Choudhary,Tech,Software development,YouTube,920000,6.5,59800,1550,"programming,coding,tutorial,webdev,India",0.03,Low,Jaipur India,Tutorials,3200,true
+84,Linus Tech Tips,Tech,Smartphones,YouTube,16800000,4.5,756000,15200,"tech,review,hardware,PC,Canada",0.03,Low,Canada,Reviews,40000,true
+85,Marques Brownlee,Tech,Smartphones,YouTube,19500000,5.3,1033500,20700,"tech,review,design,premium,USA",0.03,Low,USA,Reviews,48000,true
+86,Kurzgesagt,Tech,AI/ML,YouTube,22500000,7.2,1620000,32400,"science,animation,education,future,tech",0.02,Low,Germany,Animation,58000,true
+87,Lex Fridman,Tech,AI/ML,YouTube,4500000,5.9,265500,5800,"AI,science,technology,interview,philosophy",0.02,Low,USA,Podcasts,13000,true
+88,Andrew Ng,Tech,AI/ML,LinkedIn,6200000,4.1,254200,5500,"AI,ML,education,deeplearning,technology",0.02,Low,USA,Articles,19000,true
+89,Traversy Media,Tech,Software development,YouTube,2300000,5.5,126500,2700,"webdev,javascript,react,css,tutorials",0.02,Low,USA,Tutorials,7000,true
+90,ThePrimeagen,Tech,Software development,YouTube,600000,8.9,53400,1550,"programming,Rust,vim,developer,culture",0.02,Low,USA,Education,2200,true
+91,Dave2D,Tech,Smartphones,YouTube,4000000,5.1,204000,4200,"tech,laptop,review,clean,design",0.03,Low,USA,Reviews,11000,true
+92,JerryRigEverything,Tech,Smartphones,YouTube,9500000,4.8,456000,9500,"tech,durability,teardown,review,USA",0.03,Low,USA,Reviews,24000,true
+93,Tanmay Bhat,Tech,Software development,YouTube,1950000,4.2,81900,1950,"comedy,tech,programming,content,India",0.05,Low,Mumbai India,Vlogs & Comedy,5800,true
+94,Kamiya Jani,Lifestyle,Travel,YouTube,1650000,5.2,85800,1980,"travel,explore,India,food,culture",0.06,Low,Mumbai India,Vlogs,5500,true
+95,Bruised Passports,Lifestyle,Travel,Instagram,1200000,4.7,56400,1300,"travel,luxury,destination,couple,photography",0.05,Low,India,Photos,4300,true
+96,Savi and Vid,Lifestyle,Travel,YouTube,750000,6.1,45750,1200,"travel,couple,budget,backpacking,India",0.04,Low,India,Vlogs,2700,true
+97,Nikunj Lotia,Lifestyle,Food,YouTube,2050000,4.4,90200,2050,"food,review,Mumbai,restaurant,street food",0.06,Low,Mumbai India,Reviews,5800,true
+98,Food Ranger,Lifestyle,Food,YouTube,6000000,5.8,348000,7700,"food,travel,street food,global,adventure",0.04,Low,Canada,Vlogs,16000,true
+99,Kabita's Kitchen,Lifestyle,Food,YouTube,8800000,4.1,360800,7300,"cooking,recipe,Indian,food,kitchen",0.03,Low,Bhubaneswar India,Tutorials,19000,true
+100,Nisha Madhulika,Lifestyle,Food,YouTube,14000000,4.1,574000,11500,"food,recipe,vegetarian,Hindi,cooking",0.04,Low,Noida India,Tutorials,32000,true
+101,Chef Ranveer,Lifestyle,Food,Instagram,2600000,5.1,132600,2900,"food,chef,recipe,India,restaurant",0.05,Low,Mumbai India,Reels,7500,true
+102,Pooja Dhingra,Lifestyle,Food,Instagram,840000,5.9,49560,1300,"food,pastry,chef,India,desserts",0.04,Low,Mumbai India,Photos,3200,true
+103,Sanjeev Kapoor,Lifestyle,Food,YouTube,9200000,3.9,358800,7400,"food,chef,recipe,Indian,cooking",0.05,Low,Mumbai India,Tutorials,24000,true
+104,Flying Beast,Lifestyle,Daily vlogging,YouTube,9600000,3.7,355200,7300,"vlog,family,daily,travel,lifestyle",0.08,Low,Delhi India,Vlogs,22000,true
+105,Mumbiker Nikhil,Lifestyle,Daily vlogging,YouTube,3300000,4.5,148500,3200,"vlog,bike,travel,daily,lifestyle",0.07,Low,Mumbai India,Vlogs,8500,true
+106,Prajakta Koli,Lifestyle,Daily vlogging,YouTube,7800000,5.1,397800,8500,"vlog,comedy,lifestyle,daily,India",0.06,Low,Mumbai India,Vlogs,17500,true
+107,Jay Shetty,Lifestyle,Minimalism,YouTube,7800000,5.8,452400,9600,"mindfulness,motivation,wisdom,lifestyle,purpose",0.04,Low,USA,Podcasts,24000,true
+108,Matt D'Avella,Lifestyle,Minimalism,YouTube,5100000,6.2,316200,6900,"minimalism,documentary,lifestyle,film,design",0.02,Low,USA,Videos,15000,true
+109,Sadhguru,Lifestyle,Minimalism,YouTube,10500000,5.2,546000,11100,"spirituality,yoga,wellness,India,mindfulness",0.03,Low,Coimbatore India,Talks,30000,true
+110,Ranveer Allahbadia,Lifestyle,Daily vlogging,YouTube,9200000,5.8,533600,11500,"podcast,lifestyle,motivation,India,entrepreneur",0.05,Low,Mumbai India,Podcasts,24000,true
+111,Dhruv Rathee,Lifestyle,Daily vlogging,YouTube,19500000,6.2,1209000,24700,"politics,education,India,analysis,awareness",0.04,Low,Germany,Videos,48000,true
+112,Ashish Chanchlani,Lifestyle,Daily vlogging,YouTube,31000000,4.8,1488000,29800,"comedy,vlog,India,entertainment,YouTube",0.08,Low,Ulhasnagar India,Vlogs,70000,true
+113,Gaur Gopal Das,Lifestyle,Minimalism,YouTube,4100000,6.1,250100,5400,"spirituality,motivation,wisdom,India,lifestyle",0.03,Low,Mumbai India,Talks,13000,true
+114,Robin Sharma,Lifestyle,Minimalism,YouTube,2300000,4.8,110400,2400,"leadership,mindset,minimalism,success,books",0.02,Low,Canada,Talks,7500,true
+115,Zakir Khan,Lifestyle,Daily vlogging,YouTube,6200000,4.8,297600,6300,"comedy,standup,India,storytelling,Indore",0.04,Low,Mumbai India,Comedy,17000,true
+116,Nikita Bawa,Lifestyle,Travel,Instagram,460000,7.2,33120,960,"travel,solo,budget,India,lifestyle",0.04,Low,Delhi India,Photos & Reels,1700,true
+117,Rohan Khandelwal,Lifestyle,Minimalism,Instagram,200000,9.1,18200,580,"minimalism,design,lifestyle,clean,aesthetic",0.02,Low,Pune India,Photos,750,true
+118,Shalini Chopra,Lifestyle,Food,YouTube,1050000,5.8,60900,1400,"food,vegetarian,recipe,Indian,cooking",0.04,Low,Chandigarh India,Tutorials,3800,true
+119,Shilpa Shetty,Fitness,Yoga,Instagram,9800000,3.4,333200,6600,"yoga,fitness,wellness,health,Bollywood",0.08,Low,Mumbai India,Photos & Videos,30000,true
+120,Sarvesh Shashi,Fitness,Yoga,Instagram,490000,6.8,33320,960,"yoga,wellness,mindfulness,health,fitness",0.04,Low,Chennai India,Reels,1900,true
+121,Yoga with Adriene,Fitness,Yoga,YouTube,13000000,5.9,767000,15400,"yoga,beginner,wellness,mindfulness,daily",0.03,Low,USA,Tutorials,35000,true
+122,Malaika Arora,Fitness,Yoga,Instagram,8400000,3.1,260400,5200,"yoga,fitness,fashion,Bollywood,wellness",0.10,Low,Mumbai India,Photos,26000,true
+123,Nikhil Workout,Fitness,Bodybuilding,YouTube,1300000,5.4,70200,1600,"bodybuilding,gym,fitness,workout,India",0.05,Low,Bangalore India,Tutorials,4200,true
+124,Guru Mann,Fitness,Bodybuilding,YouTube,4100000,4.7,192700,4200,"bodybuilding,fitness,nutrition,India,transformation",0.06,Low,USA,Tutorials,11000,true
+125,Jeff Nippard,Fitness,Bodybuilding,YouTube,5800000,6.8,394400,8800,"bodybuilding,science,fitness,nutrition,evidence",0.02,Low,Canada,Education,17000,true
+126,Chloe Ting,Fitness,Home workouts,YouTube,26500000,5.1,1351500,25600,"fitness,home,workout,challenge,transformation",0.05,Low,Australia,Tutorials,64000,true
+127,Blogilates,Fitness,Home workouts,YouTube,9500000,4.8,456000,9700,"fitness,pilates,home,workout,lifestyle",0.04,Low,USA,Tutorials,24000,true
+128,Fit Tuber,Fitness,Nutrition,YouTube,6600000,5.3,349800,7600,"nutrition,health,fitness,food,science India",0.04,Low,Delhi India,Education,17000,true
+129,Rujuta Diwekar,Fitness,Nutrition,Instagram,1200000,4.6,55200,1300,"nutrition,diet,health,Indian food,wellness",0.05,Low,Mumbai India,Posts,4300,true
+130,Luke Coutinho,Fitness,Nutrition,Instagram,1500000,5.8,87000,2000,"nutrition,health,holistic,wellness,India",0.04,Low,Mumbai India,Posts,5500,true
+131,Abbey Sharp,Fitness,Nutrition,YouTube,1500000,5.7,85500,1900,"nutrition,dietitian,food,health,science",0.03,Low,Canada,Education,5500,true
+132,Six Pack Band,Fitness,Bodybuilding,YouTube,1950000,5.4,105300,2400,"bodybuilding,fitness,sixpack,India,transformation",0.05,Low,Delhi India,Tutorials,5800,true
+133,K11 Academy,Fitness,Bodybuilding,Instagram,370000,6.8,25160,700,"fitness,bodybuilding,gym,training,India",0.04,Low,Mumbai India,Reels,1400,true
+134,Pooja Bedi,Fitness,Yoga,Instagram,490000,5.9,28910,810,"yoga,wellness,holistic,India,lifestyle",0.05,Low,Goa India,Reels,1700,true
+135,Sourav Ganguly,Sports,Cricket,Instagram,5100000,3.3,168300,3600,"cricket,India,Bengal,BCCI,captain",0.06,Low,Kolkata India,Photos,15000,true
+136,Harbhajan Singh,Sports,Cricket,Twitter,7200000,3.2,230400,4900,"cricket,India,spin,IPL,legend",0.07,Low,Jalandhar India,Tweets,19000,true
+137,Virender Sehwag,Sports,Cricket,Twitter,9800000,3.5,343000,7400,"cricket,India,opening,legend,humour",0.06,Low,Delhi India,Tweets,26000,true
+138,Kapil Dev,Sports,Cricket,Twitter,4500000,3.1,139500,3000,"cricket,India,legend,1983,captain",0.05,Low,Chandigarh India,Tweets,13000,true
+139,VVS Laxman,Sports,Cricket,Twitter,3400000,3.2,108800,2300,"cricket,India,Hyderabad,batting,legend",0.05,Low,Hyderabad India,Tweets,9500,true
+140,Zaheer Khan,Sports,Cricket,Instagram,2600000,3.7,96200,2200,"cricket,India,bowling,swing,legend",0.05,Low,Shrirampur India,Photos,7500,true
+141,Irfan Pathan,Sports,Cricket,Instagram,4500000,4.1,184500,4100,"cricket,India,allrounder,Kashmir,media",0.05,Low,Baroda India,Photos,13000,true
+142,Rahul Dravid,Sports,Cricket,Instagram,4100000,3.4,139400,3000,"cricket,India,wall,coach,legend",0.04,Low,Bangalore India,Photos,12000,true
+143,Nelly Korda,Sports,Outdoor adventure,Instagram,740000,5.8,42920,1100,"golf,sports,outdoor,USA,champion",0.03,Low,USA,Photos,2700,true
+144,Dutee Chand,Sports,Outdoor adventure,Instagram,900000,5.9,53100,1350,"athletics,India,sports,sprinting,outdoor",0.04,Low,Odisha India,Photos,3200,true
+145,Nikita Sharma,Lifestyle,Travel,Instagram,740000,6.1,45140,1200,"travel,India,photography,nature,adventure",0.04,Low,Delhi India,Photos,2700,true
+146,Emma Chamberlain,Lifestyle,Daily vlogging,Instagram,17800000,3.9,694200,13900,"lifestyle,fashion,coffee,daily,USA",0.08,Low,USA,Reels,44000,true
+147,Casey Neistat,Lifestyle,Daily vlogging,YouTube,13500000,5.2,702000,14000,"vlog,NYC,filmmaking,storytelling,travel",0.04,Low,USA,Films,37000,true
+148,Riya Desai,Sports,Outdoor adventure,Instagram,170000,8.2,13940,430,"outdoor,hiking,adventure,nature,travel",0.03,Low,Gujarat India,Reels,650,true
+149,GQ India,Fashion,Luxury fashion,Instagram,1950000,3.2,62400,1400,"luxury,men,fashion,lifestyle,India",0.07,Low,Mumbai India,Photos,5800,true
+150,Vogue India,Fashion,Luxury fashion,Instagram,5600000,3.1,173600,3800,"luxury,fashion,editorial,India,style",0.08,Low,Mumbai India,Photos,15000,true
+151,Manvir Singh,Sports,Football,Instagram,210000,7.8,16380,490,"football,India,ISL,sports,goals",0.03,Low,Punjab India,Reels,850,true
+152,Devdutt Padikkal,Sports,Cricket,Instagram,2400000,6.1,146400,3200,"cricket,India,RR,IPL,youngster",0.04,Low,Bangalore India,Photos,7500,true
+153,Ruturaj Gaikwad,Sports,Cricket,Instagram,3700000,5.8,214600,4600,"cricket,CSK,India,IPL,batsman",0.05,Low,Pune India,Photos,11000,true
+154,Rinku Singh,Sports,Cricket,Instagram,2800000,7.2,201600,5200,"cricket,India,IPL,KKR,finisher",0.04,Low,Aligarh India,Photos,8500,true
+155,Tilak Varma,Sports,Cricket,Instagram,1800000,6.8,122400,3200,"cricket,India,IPL,MI,youngster",0.04,Low,Hyderabad India,Photos,5500,true
+156,Surya Kumar Yadav,Sports,Cricket,Instagram,8200000,4.8,393600,8600,"cricket,India,T20,360degree,Mumbai",0.05,Low,Mumbai India,Photos,24000,true
+157,Hardik Pandya,Sports,Cricket,Instagram,22000000,3.8,836000,18300,"cricket,IPL,allrounder,Mumbai,fitness",0.08,Low,Baroda India,Photos,60000,true
+158,Shreyas Iyer,Sports,Cricket,Instagram,5800000,4.5,261000,5800,"cricket,India,IPL,KKR,captain",0.05,Low,Mumbai India,Photos,17000,true
+159,Ishan Kishan,Sports,Cricket,Instagram,4200000,5.1,214200,4700,"cricket,India,IPL,wicketkeeper,youngster",0.05,Low,Patna India,Photos,12500,true
+160,Washington Sundar,Sports,Cricket,Instagram,2100000,5.8,121800,2800,"cricket,India,allrounder,IPL,spin",0.04,Low,Chennai India,Photos,6500,true
+161,Nitish Rana,Sports,Cricket,Instagram,1600000,5.5,88000,2100,"cricket,India,IPL,KKR,batsman",0.04,Low,Delhi India,Photos,5000,true
+162,Sanju Samson,Sports,Cricket,Instagram,5200000,4.8,249600,5500,"cricket,Kerala,IPL,RR,wicketkeeper",0.05,Low,Kerala India,Photos,15500,true
+163,Axar Patel,Sports,Cricket,Instagram,3800000,4.5,171000,3800,"cricket,India,IPL,DC,allrounder",0.04,Low,Gujarat India,Photos,11000,true
+164,Mohammed Siraj,Sports,Cricket,Instagram,4600000,5.2,239200,5200,"cricket,India,IPL,RCB,fast bowling",0.04,Low,Hyderabad India,Photos,13500,true
+165,Deepak Chahar,Sports,Cricket,Instagram,3200000,4.8,153600,3400,"cricket,India,IPL,CSK,swing bowling",0.04,Low,Rajasthan India,Photos,9500,true
+166,Prithvi Shaw,Sports,Cricket,Instagram,2800000,5.5,154000,3600,"cricket,India,IPL,DC,youngster",0.05,Low,Mumbai India,Photos,8500,true
+167,Daniel Ricciardo,Sports,Outdoor adventure,Instagram,5800000,5.2,301600,6600,"F1,racing,sports,fun,Australia",0.05,Low,Australia,Photos,17000,true
+168,Charles Leclerc,Sports,Outdoor adventure,Instagram,8200000,5.8,475600,10400,"F1,Ferrari,racing,Monaco,sports",0.04,Low,Monaco,Photos,24000,true
+169,Lando Norris,Sports,Outdoor adventure,Instagram,7500000,6.2,465000,10200,"F1,McLaren,racing,UK,gaming",0.04,Low,UK,Photos,22000,true
+170,Tech Burner,Tech,Smartphones,YouTube,8500000,5.2,442000,9600,"tech,review,India,smartphones,Hindi",0.06,Low,Delhi India,Reviews,20000,true
+171,Beebom,Tech,Smartphones,YouTube,3200000,4.8,153600,3400,"tech,review,India,gadgets,comparison",0.05,Low,India,Reviews,9500,true
+172,Geekyranjit,Tech,Smartphones,YouTube,2800000,4.5,126000,2800,"tech,review,India,smartphones,detailed",0.05,Low,Delhi India,Reviews,8000,true
+173,Geeky Soumya,Tech,Smartphones,YouTube,980000,5.8,56840,1300,"tech,review,India,gadgets,unboxing",0.04,Low,Odisha India,Reviews,3000,true
+174,Abhishek Pathak,Tech,Gaming,YouTube,2200000,5.5,121000,2800,"gaming,India,YouTube,entertainment,commentary",0.05,Low,UP India,Gaming,6500,true
+175,Nischay Malhan,Tech,Gaming,YouTube,3800000,4.8,182400,4000,"gaming,India,YouTube,comedy,entertainment",0.06,Low,Delhi India,Gaming,11000,true
+176,Triggered Insaan,Lifestyle,Daily vlogging,YouTube,23500000,5.1,1198500,24000,"comedy,reaction,India,roast,entertainment",0.07,Low,Delhi India,Comedy,56000,true
+177,Harsh Beniwal,Lifestyle,Daily vlogging,YouTube,11000000,4.7,517000,11000,"comedy,vlog,India,entertainment,Delhi",0.08,Low,Delhi India,Comedy,27000,true
+178,BB Ki Vines,Lifestyle,Daily vlogging,YouTube,25000000,4.5,1125000,22500,"comedy,India,vlog,entertainment,Hindi",0.08,Low,Delhi India,Comedy,60000,true
+179,Round2Hell,Lifestyle,Daily vlogging,YouTube,30000000,4.2,1260000,25200,"comedy,India,vlog,entertainment,viral",0.09,Low,Rajasthan India,Comedy,65000,true
+180,Kanan Gill,Lifestyle,Daily vlogging,YouTube,3100000,4.2,130200,2800,"comedy,standup,India,tech,bangalore",0.04,Low,Bangalore India,Comedy,8500,true
+181,Nikhil Kamath,Lifestyle,Minimalism,Instagram,1950000,4.1,79950,1750,"nutrition,business,finance,health,India",0.06,Low,Bangalore India,Posts,6500,true
+182,Sahil Bloom,Lifestyle,Minimalism,Twitter,960000,5.8,55680,1500,"minimalism,finance,growth,writing,ideas",0.03,Low,USA,Tweets,4200,true
+183,James Clear,Lifestyle,Minimalism,Twitter,2100000,3.2,67200,1350,"habits,minimalism,self improvement,atomic habits",0.03,Low,USA,Tweets,8500,true
+184,Ranveer Brar,Lifestyle,Food,YouTube,2800000,5.5,154000,3600,"food,chef,recipe,India,culinary",0.04,Low,Mumbai India,Tutorials,8500,true
+185,Pankaj Bhadouria,Lifestyle,Food,YouTube,1800000,4.8,86400,2000,"food,recipe,Indian,cooking,masterchef",0.04,Low,Lucknow India,Tutorials,5500,true
+186,Tarla Dalal,Lifestyle,Food,YouTube,1200000,4.2,50400,1200,"food,recipe,vegetarian,Indian,cooking",0.04,Low,Mumbai India,Tutorials,3800,true
+187,Hebbar's Kitchen,Lifestyle,Food,YouTube,7200000,4.5,324000,7000,"food,recipe,vegetarian,South Indian,cooking",0.04,Low,Bangalore India,Tutorials,18000,true
+188,CookingShooking,Lifestyle,Food,YouTube,3800000,4.8,182400,4000,"food,recipe,Hindi,Indian,cooking",0.05,Low,Delhi India,Tutorials,11000,true
+189,Kunal Kapur,Lifestyle,Food,Instagram,980000,5.2,50960,1200,"food,chef,recipe,India,restaurant",0.04,Low,Delhi India,Photos & Reels,3800,true
+190,Vikas Khanna,Lifestyle,Food,Instagram,1800000,4.5,81000,1900,"food,chef,Michelin,India,USA",0.04,Low,USA,Photos,6000,true
+191,Bong Eats,Lifestyle,Food,YouTube,980000,6.2,60760,1400,"food,Bengali,recipe,cooking,India",0.03,Low,Kolkata India,Tutorials,3200,true
+192,Vahchef,Lifestyle,Food,YouTube,2200000,4.8,105600,2400,"food,recipe,Hyderabadi,Indian,cooking",0.04,Low,Hyderabad India,Tutorials,6500,true
+193,Fit Morph,Fitness,Bodybuilding,Instagram,580000,6.5,37700,1000,"bodybuilding,fitness,gym,India,transformation",0.04,Low,Mumbai India,Reels,2000,true
+194,Tushar Bhatt,Fitness,Bodybuilding,YouTube,420000,7.2,30240,840,"bodybuilding,fitness,gym,India,natural",0.03,Low,Gujarat India,Tutorials,1500,true
+195,Mukesh Gahlot,Fitness,Bodybuilding,YouTube,680000,6.8,46240,1300,"bodybuilding,gym,India,fitness,powerlifting",0.04,Low,Delhi India,Tutorials,2200,true
+196,Abhinav Mahajan,Fitness,Bodybuilding,Instagram,920000,5.8,53360,1300,"fitness,bodybuilding,gym,India,transformation",0.04,Low,Punjab India,Reels,3000,true
+197,Yasmin Karachiwala,Fitness,Home workouts,Instagram,1100000,5.5,60500,1400,"fitness,pilates,home,workout,India",0.04,Low,Mumbai India,Reels,3800,true
+198,Namrata Purohit,Fitness,Home workouts,Instagram,680000,6.2,42160,1050,"fitness,pilates,home,workout,India",0.04,Low,Mumbai India,Reels,2400,true
+199,Anshuka Parwani,Fitness,Yoga,Instagram,580000,6.8,39440,1050,"yoga,wellness,Bollywood,India,mindfulness",0.04,Low,Mumbai India,Reels,2000,true
+200,Grand Master Akshar,Fitness,Yoga,Instagram,1800000,5.2,93600,2200,"yoga,India,spiritual,wellness,teacher",0.04,Low,Bangalore India,Reels,5500,true
+201,Arjun Kumar,Tech,Smartphones,YouTube,50000,8.5,4250,150,"tech,smartphones,review,unboxing,gadgets",0.05,Low,Delhi India,Reviews,250,true
+202,Priya Shah,Fashion,Streetwear,Instagram,35000,9.2,3220,120,"streetwear,ootd,fashion,style,urban",0.04,Low,Mumbai India,Photos,150,true
+203,Rahul Mehra,Sports,Cricket,YouTube,45000,7.8,3510,140,"cricket,India,sports,tips,beginner",0.05,Low,Delhi India,Tutorials,200,true
+204,Sneha Rao,Lifestyle,Food,Instagram,28000,10.5,2940,180,"food,recipe,Indian,homemade,cooking",0.03,Low,Bangalore India,Photos,100,true
+205,Kevin Smith,Tech,AI/ML,LinkedIn,12000,12.1,1452,110,"AI,ML,datascience,tech,future",0.02,Low,USA,Articles,80,true
+206,Anita J,Fitness,Yoga,Instagram,15000,11.5,1725,130,"yoga,fitness,wellness,health,daily",0.03,Low,Mumbai India,Reels,75,true
+207,Micro Chris,Lifestyle,Travel,YouTube,8000,15.2,1216,95,"travel,solo,budget,vlog,adventure",0.02,Low,UK,Vlogs,50,true
+208,Maya Patil,Fashion,Ethnic wear,Instagram,22000,8.8,1936,85,"ethnic,saree,traditional,Indian,fashion",0.04,Low,Pune India,Photos,120,true
+209,David Miller Jr,Sports,Football,Instagram,31000,9.5,2945,115,"football,soccer,skills,sport,training",0.04,Low,USA,Reels,180,true
+210,Sophia Chen,Tech,Software development,YouTube,18000,13.4,2412,145,"programming,coding,tutorial,webdev,tech",0.02,Low,Canada,Tutorials,130,true
+211,Rohan Varma,Fashion,Streetwear,Instagram,45000,7.2,3240,80,"streetwear,sneakers,mumbai,style,urban",0.05,Low,Mumbai India,Photos,350,true
+212,Ayesha Khan,Fashion,Ethnic wear,Instagram,82000,5.8,4756,120,"ethnic,saree,traditional,style,pakistani",0.04,Low,Delhi India,Reels,600,true
+213,Liam Wilson,Fashion,Luxury fashion,Instagram,1200000,3.2,38400,900,"luxury,london,fashion,suit,gentleman",0.06,Low,London UK,Photos,4500,true
+214,Sasha Grey (Fashion),Fashion,Sustainable fashion,Instagram,250000,6.1,15250,400,"sustainable,eco,vintage,thrift,green",0.05,Low,USA,Reels,1200,true
+215,Aditya Roy,Fashion,Streetwear,YouTube,150000,4.5,6750,200,"streetwear,unboxing,hypebeast,fashion,india",0.07,Low,Pune India,Vlogs,800,true
+216,Elena Rossi,Fashion,Luxury fashion,Instagram,850000,4.1,34850,750,"luxury,milan,fashion,italy,style",0.05,Low,Milan Italy,Photos,3200,true
+217,Priya Mehra,Fashion,Ethnic wear,Instagram,65000,8.2,5330,150,"ethnic,jewelry,traditional,bride,indian",0.03,Low,Jaipur India,Photos,450,true
+218,Mark Thorne,Fashion,Streetwear,Instagram,30000,9.5,2850,110,"streetwear,skate,nyc,urban,style",0.04,Low,USA,Photos,250,true
+219,Sonal Chauhan,Fashion,Sustainable fashion,Instagram,180000,5.4,9720,280,"sustainable,lifestyle,nature,vegan,fashion",0.05,Low,Bangalore India,Reels,950,true
+220,Hiroshi Sato,Fashion,Streetwear,Instagram,500000,3.8,19000,450,"streetwear,tokyo,japan,minimal,urban",0.06,Low,Tokyo Japan,Photos,2100,true
+221,Anaya Singh,Fashion,Ethnic wear,YouTube,320000,5.1,16320,380,"ethnic,saree,vlog,indian,styling",0.05,Low,Delhi India,Vlogs,1500,true
+222,Chloe Bennett,Fashion,Luxury fashion,Instagram,2100000,2.8,58800,1200,"luxury,paris,fashion,travel,glam",0.07,Low,Paris France,Photos,7500,true
+223,Arjun Kapoor (Stylist),Fashion,Streetwear,Instagram,95000,6.4,6080,180,"streetwear,styling,menswear,india,hype",0.04,Low,Mumbai India,Photos,750,true
+224,Zara Ahmed,Fashion,Ethnic wear,Instagram,42000,7.8,3276,95,"ethnic,hijab,fashion,dubai,style",0.03,Low,Dubai UAE,Photos,380,true
+225,Noah Miller,Fashion,Sustainable fashion,YouTube,120000,6.5,7800,210,"sustainable,thrift,diy,fashion,canada",0.04,Low,Canada,Tutorials,850,true
+226,Ishita Das,Fashion,Ethnic wear,Instagram,150000,5.2,7800,190,"ethnic,bengali,kolkata,traditional,saree",0.05,Low,Kolkata India,Reels,900,true
+227,Kai Chen,Fashion,Streetwear,Instagram,750000,4.2,31500,700,"streetwear,shanghai,china,hype,urban",0.06,Low,Shanghai China,Photos,2800,true
+228,Meera Reddy,Fashion,Ethnic wear,Instagram,28000,11.2,3136,105,"ethnic,hyderabad,traditional,jewelry,south",0.02,Low,Hyderabad India,Photos,250,true
+229,Lucas Garcia,Fashion,Luxury fashion,Instagram,450000,4.8,21600,520,"luxury,madrid,spain,fashion,lifestyle",0.05,Low,Madrid Spain,Photos,2200,true
+230,Amelia Watson,Fashion,Sustainable fashion,Instagram,88000,7.1,6248,165,"sustainable,slowfashion,uk,eco,ethical",0.03,Low,UK,Photos,650,true
+231,Vikram Rathore,Sports,Cricket,YouTube,550000,5.8,31900,750,"cricket,tips,coaching,india,batting",0.04,Low,Rajasthan India,Tutorials,2400,true
+232,Sarah Jenkins,Sports,Football,Instagram,180000,6.2,11160,320,"football,soccer,uk,women,training",0.03,Low,UK,Reels,1100,true
+233,Manish Pandey (Fitness),Sports,Fitness training,Instagram,92000,7.5,6900,210,"fitness,athlete,india,workout,sports",0.04,Low,Bangalore India,Reels,750,true
+234,Alex Rivera,Sports,Outdoor adventure,YouTube,250000,5.1,12750,340,"adventure,hiking,mountains,usa,travel",0.05,Low,USA,Vlogs,1400,true
+235,Deepak Hooda,Sports,Cricket,Instagram,1200000,4.1,49200,980,"cricket,ipl,india,sports,athlete",0.06,Low,Haryana India,Photos,4200,true
+236,Marta Silva,Sports,Football,Instagram,3500000,3.5,122500,2100,"football,brazil,soccer,legend,sports",0.07,Low,Brazil,Photos,11000,true
+237,Rahul Bose (Rugby),Sports,Outdoor adventure,Instagram,85000,4.8,4080,115,"rugby,adventure,sports,india,actor",0.05,Low,Mumbai India,Photos,650,true
+238,Evelyn Reed,Sports,Fitness training,Instagram,42000,8.9,3738,105,"fitness,yoga,pilates,australia,health",0.02,Low,Australia,Photos,350,true
+239,Sandeep Singh,Sports,Fitness training,YouTube,750000,4.5,33750,850,"fitness,hockey,india,training,motivation",0.05,Low,Punjab India,Education,2800,true
+240,Chris Hemsworth (Fitness),Sports,Fitness training,Instagram,58000000,2.1,1218000,24000,"fitness,centr,action,actor,lifestyle",0.12,Medium,USA,Reels,180000,true
+241,Yusuf Pathan,Sports,Cricket,Instagram,2800000,3.8,106400,2200,"cricket,india,ipl,legend,sports",0.06,Low,Baroda India,Photos,9500,true
+242,Megan Rapinoe,Sports,Football,Instagram,2200000,4.2,92400,1900,"football,usa,soccer,activism,sports",0.05,Low,USA,Photos,8000,true
+243,Abhinav Bindra,Sports,Outdoor adventure,Instagram,450000,5.1,22950,580,"shooting,olympics,gold,india,motivation",0.03,Low,Chandigarh India,Photos,2100,true
+244,Tyson Fury,Sports,Fitness training,Instagram,6800000,3.4,231200,5100,"boxing,heavyweight,uk,fitness,sports",0.08,Low,UK,Photos,19000,true
+245,Prithvi Sekhar,Sports,Outdoor adventure,Instagram,15000,12.5,1875,95,"tennis,deaflympics,india,sports,gold",0.02,Low,Chennai India,Photos,150,true
+246,Zion Williamson,Sports,Fitness training,Instagram,5200000,4.1,213200,4400,"basketball,nba,usa,dunk,sports",0.06,Low,USA,Photos,17000,true
+247,Ravi Shastri,Sports,Cricket,Instagram,1200000,3.2,38400,900,"cricket,commentary,india,coach,legend",0.07,Low,Mumbai India,Photos,3800,true
+248,Sam Kerr,Sports,Football,Instagram,1500000,5.8,87000,2000,"football,australia,chelsea,soccer,sports",0.04,Low,UK,Photos,5500,true
+249,Rajesh Chauhan,Sports,Cricket,YouTube,45000,6.5,2925,110,"cricket,analysis,hindi,india,ipl",0.04,Low,MP India,Vlogs,200,true
+250,Katelyn Ohashi,Sports,Fitness training,Instagram,1100000,8.2,90200,2500,"gymnastics,dance,fitness,usa,sports",0.03,Low,USA,Reels,5200,true
+251,Tech Specs,Tech,Smartphones,YouTube,350000,6.1,21350,540,"tech,smartphones,budget,review,specs",0.04,Low,India,Reviews,1400,true
+252,AI Explainer,Tech,AI/ML,YouTube,120000,7.8,9360,280,"ai,ml,future,explanation,tech",0.03,Low,USA,Education,650,true
+253,Gamer Girl India,Tech,Gaming,YouTube,85000,8.2,6970,240,"gaming,mobile,india,streaming,girl",0.04,Low,Mumbai India,Gaming,450,true
+254,Python Dev,Tech,Software development,YouTube,220000,5.5,12100,320,"programming,python,coding,tutorial,tech",0.04,Low,India,Tutorials,950,true
+255,Gadget Guru,Tech,Smartphones,Instagram,450000,4.2,18900,480,"tech,gadgets,unboxing,india,mobile",0.05,Low,Delhi India,Reels,180,true
+256,Data Wizard,Tech,AI/ML,LinkedIn,15000,10.5,1575,105,"datascience,ai,ml,career,tech",0.02,Low,Bangalore India,Articles,120,true
+257,Indie Game Dev,Tech,Software development,YouTube,28000,11.2,3136,130,"gamedev,unity,coding,indie,tech",0.03,Low,USA,Tutorials,250,true
+258,Mobile Tech Review,Tech,Smartphones,YouTube,1200000,3.8,45600,1100,"tech,smartphones,laptop,review,usa",0.06,Low,USA,Reviews,4200,true
+259,AI Ethics,Tech,AI/ML,Twitter,52000,6.8,3536,140,"ai,ethics,tech,future,discussion",0.03,Low,UK,Tweets,350,true
+260,Code Ninja,Tech,Software development,Instagram,12000,14.5,1740,95,"coding,setup,desk,tech,programmer",0.02,Low,India,Photos,100,true
+261,Gadget Byte,Tech,Smartphones,YouTube,2050000,4.8,98400,2400,"tech,review,nepal,smartphones,gadgets",0.05,Low,Nepal,Reviews,7500,true
+262,Computerphile,Tech,AI/ML,YouTube,2200000,5.1,112200,2600,"tech,science,ai,computer,education",0.03,Low,UK,Education,8500,true
+263,Pro Gamer,Tech,Gaming,YouTube,4500000,4.5,202500,4800,"gaming,pc,esports,streaming,usa",0.06,Low,USA,Gaming,15000,true
+264,The Coding Train,Tech,Software development,YouTube,1600000,7.2,115200,3100,"programming,creative,coding,javascript,education",0.03,Low,USA,Tutorials,6500,true
+265,MKBHD (Clone),Tech,Smartphones,Twitter,520000,3.9,20280,650,"tech,review,smartphone,design,usa",0.05,Low,USA,Tweets,2100,true
+266,Lex Fridman (Shorts),Tech,AI/ML,YouTube,850000,5.8,49300,1400,"ai,science,tech,shorts,clips",0.04,Low,USA,Clips,3200,true
+267,Gaming With Garry,Tech,Gaming,YouTube,12000,18.2,2184,150,"gaming,indie,small,streamer,tech",0.02,Low,Australia,Gaming,80,true
+268,Web Dev Simplified,Tech,Software development,YouTube,1400000,6.5,91000,2400,"webdev,coding,react,tutorial,tech",0.04,Low,USA,Tutorials,5500,true
+269,Tech Insider,Tech,Smartphones,YouTube,6800000,3.1,210800,5400,"tech,innovation,future,gadgets,usa",0.07,Low,USA,Videos,22000,true
+270,Andrew Karpathy (Fake),Tech,AI/ML,Twitter,150000,8.1,12150,450,"ai,tesla,ml,coding,tech",0.02,Low,USA,Tweets,1100,true
+271,Travel With Tara,Lifestyle,Travel,Instagram,35000,8.5,2975,120,"travel,budget,india,vlog,girl",0.04,Low,Delhi India,Reels,250,true
+272,Healthy Bites,Lifestyle,Food,Instagram,12000,12.2,1464,115,"food,healthy,vegan,recipe,mumbai",0.03,Low,Mumbai India,Photos,100,true
+273,Daily Life Vlogs,Lifestyle,Daily vlogging,YouTube,45000,7.1,3195,145,"vlog,daily,family,india,routine",0.05,Low,UP India,Vlogs,200,true
+274,Minimalist Home,Lifestyle,Minimalism,Instagram,18000,11.5,2070,110,"minimalism,home,decor,design,clean",0.02,Low,Bangalore India,Photos,130,true
+275,Backpack Abroad,Lifestyle,Travel,YouTube,150000,5.8,8700,280,"travel,backpack,europe,budget,vlog",0.05,Low,Germany,Vlogs,950,true
+276,Street Food King,Lifestyle,Food,Instagram,750000,4.2,31500,850,"food,streetfood,india,delhi,eat",0.06,Low,Delhi India,Reels,2800,true
+277,Family Fun Vlogs,Lifestyle,Daily vlogging,YouTube,1200000,3.5,42000,1200,"vlog,family,kids,fun,usa",0.07,Low,USA,Vlogs,4500,true
+278,Zen Living,Lifestyle,Minimalism,LinkedIn,8000,15.2,1216,105,"minimalism,wellness,career,mindful,tech",0.02,Low,UK,Articles,60,true
+279,Luxury Escapes,Lifestyle,Travel,Instagram,2100000,2.5,52500,1400,"travel,luxury,hotel,resort,global",0.08,Low,Dubai UAE,Photos,8000,true
+280,Chef's Secret,Lifestyle,Food,YouTube,950000,4.8,45600,1200,"food,recipe,chef,cooking,pro",0.05,Low,France,Tutorials,3800,true
+281,Morning Routine,Lifestyle,Daily vlogging,Instagram,250000,6.4,16000,550,"vlog,routine,morning,lifestyle,aesthetic",0.05,Low,USA,Reels,1400,true
+282,Zero Waste Life,Lifestyle,Minimalism,YouTube,45000,9.5,4275,210,"minimalism,zerowaste,eco,green,lifestyle",0.03,Low,Canada,Education,350,true
+283,Euro Trip,Lifestyle,Travel,YouTube,52000,8.2,4264,180,"travel,europe,budget,tips,train",0.04,Low,Netherlands,Vlogs,450,true
+284,Baking Bliss,Lifestyle,Food,Instagram,180000,7.1,12780,450,"food,baking,cake,dessert,recipe",0.04,Low,UK,Reels,1200,true
+285,Urban Nomad,Lifestyle,Travel,Instagram,92000,7.8,7176,240,"travel,urban,city,guide,lifestyle",0.04,Low,Tokyo Japan,Photos,750,true
+286,Quick Recipes,Lifestyle,Food,YouTube,3100000,4.2,130200,3500,"food,recipe,quick,easy,cooking",0.05,Low,USA,Tutorials,11000,true
+287,Aesthetic Vlogs,Lifestyle,Daily vlogging,Instagram,580000,5.2,30160,1100,"vlog,aesthetic,lifestyle,daily,girl",0.06,Low,Korea,Reels,2800,true
+288,Digital Nomad,Lifestyle,Minimalism,Twitter,12000,14.2,1704,95,"minimalism,remote,work,travel,lifestyle",0.02,Low,Bali Indonesia,Tweets,90,true
+289,Honeymoon Diaries,Lifestyle,Travel,YouTube,85000,6.5,5525,210,"travel,couple,honeymoon,luxury,vlog",0.04,Low,Maldives,Vlogs,550,true
+290,Kitchen Nightmares,Lifestyle,Food,YouTube,15000000,3.8,570000,14000,"food,gordonramsay,funny,cooking,chef",0.07,Low,UK,Shows,55000,true
+291,Yoga For All,Fitness,Yoga,YouTube,45000,9.2,4140,165,"yoga,beginner,free,wellness,health",0.03,Low,India,Tutorials,350,true
+292,Gym Freak,Fitness,Bodybuilding,Instagram,12000,15.5,1860,120,"bodybuilding,gym,muscle,motivation,mumbai",0.03,Low,Mumbai India,Reels,100,true
+293,Home HIIT,Fitness,Home workouts,YouTube,220000,6.8,14960,450,"fitness,hiit,home,workout,cardio",0.04,Low,USA,Tutorials,950,true
+294,Nutrition Facts,Fitness,Nutrition,LinkedIn,18000,11.2,2016,130,"nutrition,science,health,diet,tech",0.02,Low,UK,Articles,150,true
+295,Pilates Pro,Fitness,Home workouts,Instagram,85000,8.5,7225,240,"fitness,pilates,home,workout,girl",0.03,Low,Australia,Reels,650,true
+296,Vegan Gains,Fitness,Nutrition,YouTube,450000,4.1,18450,550,"nutrition,vegan,bodybuilding,debate,fitness",0.08,Medium,Canada,Education,1800,true
+297,Flexibility King,Fitness,Yoga,Instagram,150000,6.2,9300,310,"yoga,stretch,flexibility,fitness,india",0.04,Low,Pune India,Photos,950,true
+298,Crossfit Champ,Fitness,Bodybuilding,YouTube,1200000,3.9,46800,1200,"fitness,crossfit,games,athlete,usa",0.06,Low,USA,Vlogs,4500,true
+299,Weight Loss Journey,Fitness,Nutrition,Instagram,52000,9.5,4940,220,"fitness,weightloss,transformation,health,diet",0.03,Low,India,Photos,450,true
+300,Iron Man,Fitness,Bodybuilding,YouTube,750000,4.8,36000,950,"bodybuilding,gym,training,india,strong",0.05,Low,Delhi India,Tutorials,2800,true
+301,Meditation Guide,Fitness,Yoga,Instagram,35000,10.2,3570,140,"yoga,meditation,peace,mindful,india",0.02,Low,Rishikesh India,Photos,280,true
+302,Powerlifter,Fitness,Bodybuilding,Instagram,120000,7.5,9000,320,"bodybuilding,powerlift,squat,bench,deadlift",0.04,Low,USA,Reels,850,true
+303,Healthy Heart,Fitness,Nutrition,YouTube,15000,12.8,1920,110,"nutrition,heart,health,diet,india",0.03,Low,India,Education,120,true
+304,Ab Specialist,Fitness,Home workouts,Instagram,28000,11.8,3304,125,"fitness,abs,sixpack,home,workout",0.03,Low,UK,Reels,220,true
+305,Yogi Nomad,Fitness,Yoga,YouTube,85000,7.1,6035,190,"yoga,travel,nature,wellness,vlog",0.04,Low,Bali Indonesia,Vlogs,550,true
+306,Bulk Up,Fitness,Bodybuilding,Instagram,52000,8.5,4420,180,"bodybuilding,bulk,muscle,gym,india",0.04,Low,Mumbai India,Photos,400,true
+307,Smoothie Queen,Fitness,Nutrition,Instagram,18000,13.2,2376,145,"nutrition,smoothie,fruit,health,breakfast",0.02,Low,USA,Photos,150,true
+308,Yoga In Park,Fitness,Yoga,YouTube,12000,14.5,1740,115,"yoga,outdoor,park,nature,free",0.02,Low,Canada,Tutorials,90,true
+309,Squat Master,Fitness,Bodybuilding,Instagram,45000,9.1,4095,185,"bodybuilding,legs,squat,gym,usa",0.03,Low,USA,Reels,350,true
+310,HIIT Warrior,Fitness,Home workouts,YouTube,750000,5.2,39000,1100,"fitness,hiit,warrior,home,workout",0.05,Low,UK,Tutorials,2800,true
+311,Cricket Guru,Sports,Cricket,Twitter,12000,15.8,1896,110,"cricket,stats,ipl,india,news",0.03,Low,India,Tweets,80,true
+312,Fashion Finds,Fashion,Streetwear,Instagram,35000,10.2,3570,145,"streetwear,budget,finds,india,style",0.03,Low,Delhi India,Photos,280,true
+313,Goal Scorer,Sports,Football,YouTube,45000,8.5,3825,180,"football,goals,skills,india,soccer",0.04,Low,Kolkata India,Reels,350,true
+314,Recipe Box,Lifestyle,Food,Instagram,28000,12.5,3500,210,"food,recipe,box,easy,cooking",0.02,Low,Mumbai India,Photos,220,true
+315,Tech Tips 101,Tech,Smartphones,YouTube,52000,9.2,4784,240,"tech,tips,tricks,android,ios",0.03,Low,India,Tutorials,450,true
+316,Yoga Glow,Fitness,Yoga,Instagram,18000,14.1,2538,155,"yoga,glow,skin,wellness,india",0.02,Low,Pune India,Photos,150,true
+317,Gym Rats,Fitness,Bodybuilding,YouTube,15000,13.5,2025,130,"bodybuilding,gym,rats,funny,india",0.03,Low,Delhi India,Vlogs,120,true
+318,Travel Cheap,Lifestyle,Travel,Instagram,22000,11.8,2596,150,"travel,cheap,hacks,india,budget",0.02,Low,Bangalore India,Reels,180,true
+319,Code Daily,Tech,Software development,Twitter,31000,10.5,3255,165,"coding,daily,tips,javascript,tech",0.02,Low,USA,Tweets,250,true
+320,Healthy Mind,Lifestyle,Minimalism,Instagram,8000,16.2,1296,110,"minimalism,mind,peace,wellness,tech",0.02,Low,UK,Photos,60,true
+321,Street Style,Fashion,Streetwear,Instagram,120000,6.5,7800,240,"streetwear,style,nyc,urban,menswear",0.04,Low,USA,Photos,950,true
+322,Indian Saree,Fashion,Ethnic wear,Instagram,450000,4.8,21600,520,"ethnic,saree,india,traditional,fashion",0.05,Low,Kolkata India,Photos,2800,true
+323,Luxury Watch,Fashion,Luxury fashion,YouTube,750000,4.2,31500,850,"luxury,watch,rolex,collector,premium",0.05,Low,Switzerland,Reviews,3800,true
+324,Eco Fashion,Fashion,Sustainable fashion,Instagram,52000,8.5,4420,180,"sustainable,eco,fashion,vintage,green",0.03,Low,USA,Photos,450,true
+325,IPL King,Sports,Cricket,Instagram,1500000,4.5,67500,1500,"cricket,ipl,india,sports,fan",0.06,Low,Chennai India,Photos,5500,true
+326,Soccer Skills,Sports,Football,YouTube,3100000,4.2,130200,3200,"football,soccer,skills,tutorial,sports",0.05,Low,UK,Tutorials,11000,true
+327,Gym Beast,Sports,Fitness training,Instagram,180000,6.8,12240,320,"fitness,gym,beast,motivation,india",0.04,Low,Mumbai India,Reels,1200,true
+328,Adrenaline,Sports,Outdoor adventure,YouTube,580000,5.1,29580,750,"adventure,adrenaline,extreme,sports,outdoor",0.05,Low,USA,Vlogs,3500,true
+329,Smartphone Lab,Tech,Smartphones,YouTube,920000,5.3,48760,1100,"tech,smartphones,lab,test,review",0.04,Low,India,Reviews,3500,true
+330,AI Today,Tech,AI/ML,Twitter,120000,6.2,7440,250,"ai,ml,news,tech,future",0.03,Low,USA,Tweets,950,true
+331,Gamer Zone,Tech,Gaming,YouTube,10500000,3.8,399000,9500,"gaming,pc,esports,india,battlegrounds",0.07,Low,India,Gaming,24000,true
+332,Coding Hub,Tech,Software development,YouTube,1750000,5.1,89250,2100,"programming,coding,hub,tutorial,tech",0.04,Low,USA,Tutorials,8500,true
+333,Solo Traveler,Lifestyle,Travel,Instagram,45000,8.2,3690,140,"travel,solo,india,vlog,adventure",0.03,Low,Delhi India,Reels,350,true
+334,Foodie India,Lifestyle,Food,YouTube,750000,5.5,41250,950,"food,india,streetfood,review,eat",0.05,Low,Mumbai India,Reviews,2800,true
+335,Daily Dose,Lifestyle,Daily vlogging,YouTube,3200000,3.9,124800,3100,"vlog,daily,dose,life,india",0.06,Low,Delhi India,Vlogs,8500,true
+336,Mindful Life,Lifestyle,Minimalism,Instagram,120000,7.1,8520,240,"minimalism,mindful,life,clean,design",0.03,Low,USA,Photos,950,true
+337,Yoga Vibes,Fitness,Yoga,YouTube,450000,5.4,24300,650,"yoga,vibes,wellness,health,india",0.04,Low,Rishikesh India,Tutorials,2400,true
+338,Body Builder,Fitness,Bodybuilding,Instagram,1500000,3.8,57000,1400,"bodybuilding,gym,india,muscle,motivation",0.06,Low,Delhi India,Photos,5500,true
+339,Home Fit,Fitness,Home workouts,YouTube,2300000,4.2,96600,2400,"fitness,home,fit,workout,training",0.05,Low,USA,Tutorials,8500,true
+340,Health Nut,Fitness,Nutrition,Instagram,120000,6.2,7440,210,"nutrition,health,nut,diet,wellness",0.04,Low,UK,Photos,950,true
+341,Style Icon,Fashion,Streetwear,Instagram,35000,8.8,3080,115,"streetwear,icon,style,india,fashion",0.03,Low,Mumbai India,Photos,280,true
+342,Royal Ethnic,Fashion,Ethnic wear,Instagram,45000,7.5,3375,120,"ethnic,royal,india,traditional,fashion",0.04,Low,Delhi India,Photos,350,true
+343,Luxe Life,Fashion,Luxury fashion,YouTube,12000,15.5,1860,110,"luxury,luxe,life,premium,tech",0.02,Low,Dubai UAE,Vlogs,100,true
+344,Green Fashion,Fashion,Sustainable fashion,Instagram,28000,10.8,3024,140,"sustainable,green,fashion,eco,green",0.03,Low,Canada,Photos,220,true
+345,Cricket Talk,Sports,Cricket,YouTube,15000,12.2,1830,115,"cricket,talk,india,ipl,analysis",0.03,Low,India,Vlogs,120,true
+346,Soccer Star,Sports,Football,Instagram,31000,9.2,2852,130,"football,soccer,star,india,skills",0.04,Low,Goa India,Reels,180,true
+347,Active Living,Sports,Fitness training,YouTube,52000,8.5,4420,180,"fitness,active,living,india,training",0.03,Low,Pune India,Tutorials,450,true
+348,Wild Adventurer,Sports,Outdoor adventure,Instagram,18000,13.8,2484,145,"adventure,wild,nature,india,outdoor",0.02,Low,Assam India,Photos,150,true
+349,Tech Reviewer,Tech,Smartphones,Twitter,45000,8.1,3645,150,"tech,review,smartphone,india,gadgets",0.03,Low,India,Tweets,350,true
+350,AI Insights,Tech,AI/ML,LinkedIn,12000,14.5,1740,115,"ai,insights,ml,tech,future",0.02,Low,USA,Articles,100,true
+351,Gamer Pro,Tech,Gaming,YouTube,580000,5.5,31900,850,"gaming,pro,pc,esports,india",0.05,Low,Mumbai India,Gaming,2400,true
+352,Code Master,Tech,Software development,YouTube,920000,4.8,44160,1100,"programming,code,master,tutorial,tech",0.04,Low,USA,Tutorials,3500,true
+353,Global Nomad,Lifestyle,Travel,Instagram,15000,12.2,1830,105,"travel,global,nomad,vlog,adventure",0.03,Low,Thailand,Reels,120,true
+354,Veggie Kitchen,Lifestyle,Food,YouTube,28000,11.5,3220,140,"food,veggie,kitchen,recipe,india",0.03,Low,Delhi India,Tutorials,220,true
+355,Life In City,Lifestyle,Daily vlogging,Instagram,18000,13.4,2412,130,"vlog,city,life,mumbai,daily",0.02,Low,Mumbai India,Reels,150,true
+356,Simple Living,Lifestyle,Minimalism,YouTube,12000,14.2,1704,115,"minimalism,simple,living,india,wellness",0.02,Low,Pune India,Vlogs,100,true
+357,Yoga Path,Fitness,Yoga,Instagram,45000,9.1,4095,180,"yoga,path,peace,wellness,india",0.03,Low,Rishikesh India,Photos,350,true
+358,Iron Will,Fitness,Bodybuilding,YouTube,52000,8.8,4576,210,"bodybuilding,gym,iron,will,india",0.03,Low,Delhi India,Tutorials,450,true
+359,Nutritionist Pro,Fitness,Nutrition,Instagram,31000,10.5,3255,145,"nutrition,health,diet,india,wellness",0.02,Low,Mumbai India,Photos,180,true
+360,Workout At Home,Fitness,Home workouts,YouTube,18000,13.2,2376,150,"fitness,home,workout,india,training",0.02,Low,Bangalore India,Tutorials,150,true
+361,Hype Street,Fashion,Streetwear,Instagram,15000,12.8,1920,110,"streetwear,hype,india,style,urban",0.03,Low,Delhi India,Photos,120,true
+362,Ethnic Vibes,Fashion,Ethnic wear,YouTube,22000,11.5,2530,140,"ethnic,vibes,india,traditional,fashion",0.03,Low,Mumbai India,Vlogs,180,true
+363,Luxury Spot,Fashion,Luxury fashion,Instagram,12000,14.8,1776,120,"luxury,spot,premium,lifestyle,tech",0.02,Low,Dubai UAE,Photos,100,true
+364,Pure Fashion,Fashion,Sustainable fashion,YouTube,28000,11.2,3136,150,"sustainable,pure,fashion,eco,green",0.03,Low,USA,Vlogs,220,true
+365,Cricket Fanatic,Sports,Cricket,Instagram,12000,15.2,1824,115,"cricket,fan,india,ipl,sports",0.03,Low,India,Photos,100,true
+366,Soccer Skills Pro,Sports,Football,YouTube,35000,10.5,3675,180,"football,soccer,skills,tutorial,sports",0.03,Low,UK,Tutorials,280,true
+367,Fitness Coach,Sports,Fitness training,Instagram,45000,9.5,4275,190,"fitness,coach,training,india,workout",0.03,Low,Mumbai India,Reels,350,true
+368,Mountain Guide,Sports,Outdoor adventure,YouTube,52000,8.2,4264,210,"adventure,mountain,guide,outdoor,climb",0.03,Low,USA,Vlogs,450,true
+369,Tech Wizard,Tech,Smartphones,Instagram,18000,13.8,2484,155,"tech,wizard,smartphone,india,gadgets",0.02,Low,Delhi India,Reels,150,true
+370,AI Lab,Tech,AI/ML,YouTube,12000,14.5,1740,130,"ai,lab,ml,tech,future",0.02,Low,USA,Education,100,true
+371,Gamer Hub,Tech,Gaming,Instagram,28000,12.1,3388,165,"gaming,hub,india,battlegrounds,mobile",0.03,Low,Mumbai India,Reels,220,true
+372,Coding Camp,Tech,Software development,YouTube,15000,13.4,2010,145,"programming,coding,camp,tutorial,tech",0.02,Low,India,Tutorials,120,true
+373,World Explorer,Lifestyle,Travel,Instagram,31000,11.2,3472,180,"travel,world,explore,adventure,vlog",0.03,Low,Global,Photos,180,true
+374,Tasty Recipes,Lifestyle,Food,YouTube,45000,9.8,4410,210,"food,recipe,tasty,cooking,india",0.03,Low,Delhi India,Tutorials,350,true
+375,Daily Vlog Pro,Lifestyle,Daily vlogging,Instagram,52000,8.5,4420,240,"vlog,daily,life,india,routine",0.04,Low,Mumbai India,Reels,450,true
+376,Simple Mind,Lifestyle,Minimalism,YouTube,18000,13.5,2430,165,"minimalism,simple,mind,india,wellness",0.02,Low,Pune India,Vlogs,150,true
+377,Yoga Flow Pro,Fitness,Yoga,Instagram,12000,14.8,1776,150,"yoga,flow,wellness,india,health",0.02,Low,Rishikesh India,Photos,100,true
+378,Muscle Mind,Fitness,Bodybuilding,YouTube,28000,11.5,3220,180,"bodybuilding,muscle,mind,gym,india",0.03,Low,Delhi India,Tutorials,220,true
+379,Healthy Diet,Fitness,Nutrition,Instagram,15000,12.8,1920,155,"nutrition,health,diet,india,wellness",0.02,Low,Mumbai India,Photos,120,true
+380,Home Gym Pro,Fitness,Home workouts,YouTube,31000,10.2,3162,185,"fitness,home,gym,workout,india",0.03,Low,Bangalore India,Tutorials,180,true
+381,Style Guide,Fashion,Streetwear,Instagram,45000,8.8,3960,210,"streetwear,guide,style,india,fashion",0.03,Low,Delhi India,Photos,350,true
+382,Traditional Wear,Fashion,Ethnic wear,YouTube,52000,8.5,4420,240,"ethnic,traditional,india,fashion,saree",0.04,Low,Mumbai India,Vlogs,450,true
+383,Luxury Vlogs,Fashion,Luxury fashion,Instagram,18000,13.2,2376,165,"luxury,vlog,premium,lifestyle,tech",0.02,Low,Dubai UAE,Reels,150,true
+384,Slow Fashion,Fashion,Sustainable fashion,YouTube,12000,14.5,1740,150,"sustainable,slow,fashion,eco,green",0.02,Low,USA,Vlogs,100,true
+385,Cricket News,Sports,Cricket,Instagram,28000,12.1,3388,180,"cricket,news,india,ipl,sports",0.03,Low,India,Photos,220,true
+386,Soccer Skills Hub,Sports,Football,YouTube,15000,13.4,2010,145,"football,soccer,skills,tutorial,sports",0.02,Low,UK,Tutorials,120,true
+387,Fitness Motivation,Sports,Fitness training,Instagram,31000,11.2,3472,180,"fitness,motivation,training,india,workout",0.03,Low,Mumbai India,Reels,180,true
+388,Outdoor Life,Sports,Outdoor adventure,YouTube,45000,9.8,4410,210,"adventure,outdoor,life,nature,climb",0.03,Low,USA,Vlogs,350,true
+389,Tech Review Pro,Tech,Smartphones,Instagram,52000,8.5,4420,240,"tech,review,pro,smartphone,gadgets",0.04,Low,Delhi India,Reels,450,true
+390,AI Future,Tech,AI/ML,YouTube,18000,13.5,2430,165,"ai,future,ml,tech,science",0.02,Low,USA,Education,150,true
+391,Gaming World,Tech,Gaming,Instagram,12000,14.8,1776,150,"gaming,world,india,esports,mobile",0.02,Low,Mumbai India,Reels,100,true
+392,Code Academy,Tech,Software development,YouTube,28000,11.5,3220,180,"programming,code,academy,tutorial,tech",0.03,Low,India,Tutorials,220,true
+393,Travel Blog,Lifestyle,Travel,Instagram,15000,12.8,1920,155,"travel,blog,world,explore,adventure",0.02,Low,Global,Photos,120,true
+394,Cooking Show,Lifestyle,Food,YouTube,31000,10.2,3162,185,"food,recipe,show,cooking,india",0.03,Low,Delhi India,Tutorials,180,true
+395,Vlog Life,Lifestyle,Daily vlogging,Instagram,45000,8.8,3960,210,"vlog,life,daily,india,routine",0.03,Low,Mumbai India,Reels,350,true
+396,Mindful Living,Lifestyle,Minimalism,YouTube,52000,8.5,4420,240,"minimalism,mindful,living,india,wellness",0.04,Low,Pune India,Vlogs,450,true
+397,Yoga Spirit,Fitness,Yoga,Instagram,18000,13.2,2376,165,"yoga,spirit,wellness,india,health",0.02,Low,Rishikesh India,Photos,150,true
+398,Gym Life,Fitness,Bodybuilding,YouTube,12000,14.5,1740,150,"bodybuilding,gym,life,muscle,india",0.02,Low,Delhi India,Tutorials,100,true
+399,Healthy Eating,Fitness,Nutrition,Instagram,28000,12.1,3388,180,"nutrition,health,eating,india,wellness",0.03,Low,Mumbai India,Photos,220,true
+400,Workout Pro,Fitness,Home workouts,YouTube,15000,13.4,2010,145,"fitness,workout,pro,india,training",0.02,Low,Bangalore India,Tutorials,120,true
