@@ -91,6 +91,10 @@
   <header class="app-topbar">
     <div class="topbar-left">
       <button class="menu-btn" onclick="openSidebar()">☰</button>
+      <div class="nav-history-btns">
+        <button class="nav-hist-btn" id="navBackBtn" onclick="navHistoryBack()" disabled title="Go back">←</button>
+        <button class="nav-hist-btn" id="navForwardBtn" onclick="navHistoryForward()" disabled title="Go forward">→</button>
+      </div>
       <div class="topbar-title">
         <h1 id="viewTitle">New Campaign</h1>
         <p id="viewSub" class="topbar-sub">Find influencers for your brand</p>

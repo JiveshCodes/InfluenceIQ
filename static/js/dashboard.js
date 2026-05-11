@@ -22,6 +22,10 @@ let visibleCount = 6;
 let currentOfferTarget = null;
 let currentOfferData = null;
 
+let viewHistory = ['campaign'];
+let historyIndex = 0;
+let isNavigating = false;
+
 // ── Init ─────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initUser();
@@ -49,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadTrending();
   renderInbox();
+  updateNavButtons();
 });
 
 window.addEventListener('scroll', () => {
@@ -74,21 +79,62 @@ function initUser() {
 }
 
 // ── View switching ────────────────────────────────────────────
-function switchView(name, el) {
+function switchView(name, el, skipHistory = false) {
   document.querySelectorAll('.s-nav-item').forEach(i => i.classList.remove('active'));
-  if (el) el.classList.add('active');
+  
+  const navItem = el || document.querySelector(`.s-nav-item[data-view="${name}"]`);
+  if (navItem) navItem.classList.add('active');
 
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  document.getElementById('view-' + name)?.classList.add('active');
+  const targetView = document.getElementById('view-' + name);
+  if (targetView) targetView.classList.add('active');
 
   const titles = { campaign:'New Campaign', results:'Results', trending:'Trending', analytics:'Analytics Dashboard', negotiate:'AI Negotiator', inbox:'Inbox & Offers' };
   const subs   = { campaign:'Find influencers for your brand', results:'AI-matched influencer recommendations', trending:'Trending by engagement quality', analytics:'Track campaign performance', negotiate:'Draft personalized outreach', inbox:'Manage pending collaborations' };
-  document.getElementById('viewTitle').textContent = titles[name] || name;
-  document.getElementById('viewSub').textContent   = subs[name] || '';
+  
+  const titleEl = document.getElementById('viewTitle');
+  const subEl = document.getElementById('viewSub');
+  if (titleEl) titleEl.textContent = titles[name] || name;
+  if (subEl) subEl.textContent = subs[name] || '';
   
   if(name === 'analytics') renderAnalytics();
   if(name === 'inbox') renderInbox();
   if(name === 'negotiate') populateNegDropdown();
+
+  // History logic
+  if (!skipHistory && !isNavigating) {
+    if (viewHistory[historyIndex] !== name) {
+      viewHistory = viewHistory.slice(0, historyIndex + 1);
+      viewHistory.push(name);
+      historyIndex++;
+    }
+  }
+  updateNavButtons();
+}
+
+function updateNavButtons() {
+  const backBtn = document.getElementById('navBackBtn');
+  const forwardBtn = document.getElementById('navForwardBtn');
+  if (backBtn) backBtn.disabled = historyIndex <= 0;
+  if (forwardBtn) forwardBtn.disabled = historyIndex >= viewHistory.length - 1;
+}
+
+function navHistoryBack() {
+  if (historyIndex > 0) {
+    isNavigating = true;
+    historyIndex--;
+    switchView(viewHistory[historyIndex], null, true);
+    isNavigating = false;
+  }
+}
+
+function navHistoryForward() {
+  if (historyIndex < viewHistory.length - 1) {
+    isNavigating = true;
+    historyIndex++;
+    switchView(viewHistory[historyIndex], null, true);
+    isNavigating = false;
+  }
 }
 
 function onCategoryChange() {
