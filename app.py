@@ -61,17 +61,55 @@ def predict():
     data = request.get_json(silent=True) or {}
     category    = data.get('category','')
     subcategory = data.get('subcategory','')
-    platform    = data.get('platform') or None
+    platforms   = data.get('platforms') or []
+    gender      = data.get('gender') or None
     budget      = data.get('budget') or None
     country     = data.get('country') or None
     state       = data.get('state') or None
+    contract    = data.get('contract_type') or '1_post'
     limit       = data.get('limit', 12)
     page        = data.get('page', 1)
 
     if not category or not subcategory:
         return jsonify({'error':'category and subcategory required'}), 400
 
-    res_data = ml.predict(category, subcategory, platform, budget, country, state, limit, page)
+    # ── YOUTUBE DISCOVERY: Find new people if YouTube is selected ──
+    youtube_error = None
+    if platforms and 'youtube' in [p.lower() for p in platforms]:
+        print(f"[Discovery] Searching YouTube for new {category} influencers...")
+        discovery_res = youtube_api.search_influencers(category, subcategory, max_results=8)
+        
+        if isinstance(discovery_res, dict) and discovery_res.get('error') == 'quota_exceeded':
+            youtube_error = "YouTube recommendations temporarily unavailable (Quota Exceeded)"
+            print("[Discovery] YouTube Quota Exceeded. Skipping discovery.")
+        elif isinstance(discovery_res, list):
+            for person in discovery_res:
+                # Enrich with search context so they pass strict filters
+                person['category'] = category
+                person['subcategory'] = subcategory
+                person['location'] = country if country and country.lower() != 'any location' else 'India'
+                person['gender'] = gender if gender and gender.lower() != 'any gender' else 'Female'
+                ml.add_influencer(person)
+
+    res_data = ml.predict(category, subcategory, platforms, gender, budget, country, state, contract, limit, page)
+
+    # ── AUTO-SYNC LOGIC: If YouTube is selected, fetch live data for top results ──
+    if 'YouTube' in platforms and res_data['results'] and not youtube_error:
+        for influencer in res_data['results'][:8]:
+            if influencer.get('platform') == 'YouTube':
+                name = influencer['name']
+                sync_res = youtube_api.sync_influencer(name)
+                
+                if isinstance(sync_res, dict) and sync_res.get('error') == 'quota_exceeded':
+                    youtube_error = "YouTube live sync temporarily unavailable (Quota Exceeded)"
+                    break # Stop syncing further to save time/requests
+                
+                if sync_res.get('success'):
+                    influencer.update(sync_res)
+                    # Re-analyze live
+                    live_analysis = ml.recompute_analysis(influencer, category, subcategory)
+                    influencer.update(live_analysis)
+                    ml.update_influencer_stats(name, sync_res)
 
     return jsonify({
         'results':         res_data['results'],
@@ -80,13 +118,17 @@ def predict():
         'limit':           res_data['limit'],
         'has_more':        res_data['has_more'],
         'total':           len(res_data['results']), # Backward compatibility
+        'youtube_error':   youtube_error,
         'meta': {
             'category':    category,
             'subcategory': subcategory,
-            'platform':    platform,
+            'platforms':   platforms,
+            'gender':      gender,
             'country':     country,
             'state':       state,
+            'contract':    contract,
             'algorithm':   res_data.get('algorithm', 'Transformer Cosine Similarity + Weighted ML Scoring'),
+            'live_sync':   'YouTube' in platforms and not youtube_error
         }
     })
 
@@ -140,19 +182,32 @@ def negotiate():
 
 @app.route('/api/sync_youtube', methods=['POST'])
 def sync_youtube():
-    data = request.json or {}
-    name = data.get('name')
-    
-    if not name:
-        return jsonify({'error': 'Name is required'}), 400
+    try:
+        data = request.json or {}
+        name = data.get('name')
         
-    res = youtube_api.sync_influencer(name)
-    if res.get('error'):
-        return jsonify(res), 500
+        if not name:
+            return jsonify({'success': False, 'error': 'Name is required'})
+            
+        res = youtube_api.sync_influencer(name)
         
-    # Dynamically update the ml_engine dataframe so the ML accuracy uses real live data!
-    ml.update_influencer_stats(name, res)
-    return jsonify(res)
+        if isinstance(res, dict) and res.get('error') == 'quota_exceeded':
+            return jsonify({'success': False, 'error': 'YouTube API Quota Exceeded. Please try again later.'})
+
+        if res.get('error'):
+            # Return 200 but with success False so the UI can show the message
+            return jsonify({'success': False, 'error': res['error']})
+            
+        # Dynamically update the ml_engine dataframe
+        ml.update_influencer_stats(name, res)
+        
+        # Return recomputed analysis
+        analysis = ml.recompute_analysis({**res, 'name': name, 'fraud_risk': 0.05, 'keywords': '', 'content_type': ''}, 'Fashion', 'General')
+        return jsonify({'success': True, **res, **analysis})
+        
+    except Exception as e:
+        print(f"[Server] Crash in sync_youtube: {e}")
+        return jsonify({'success': False, 'error': str(e)})
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000, host='0.0.0.0')
