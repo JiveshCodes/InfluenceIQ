@@ -1,390 +1,429 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard — InfluenceIQ</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/static/css/main.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<script>(function(){const t=localStorage.getItem('iq_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — InfluenceIQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script>(function () { const t = localStorage.getItem('iq_theme') || 'dark'; document.documentElement.setAttribute('data-theme', t); })();</script>
 </head>
+
 <body class="app-page">
 
-<!-- OFFER MODAL -->
-<div class="modal-overlay" id="offerModal">
-  <div class="modal-card">
-    <div class="modal-header">
-      <h3>Send Offer to <span id="offerTargetName"></span></h3>
-      <button class="modal-close" onclick="closeOfferModal()">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="field-group mb-3">
-        <label>Campaign Deliverables or Message</label>
-        <textarea id="offerMessage" rows="4" placeholder="E.g. 1 dedicated YouTube video + 1 Community post"></textarea>
+  <!-- OFFER MODAL -->
+  <div class="modal-overlay" id="offerModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Send Offer to <span id="offerTargetName"></span></h3>
+        <button class="modal-close" onclick="closeOfferModal()">✕</button>
       </div>
-      <div class="field-group mb-3">
-        <label>Proposed Budget (USD)</label>
-        <input type="number" id="offerAmount" placeholder="e.g. 1500" />
-      </div>
-      <button class="btn-find" onclick="submitOffer()">Send Offer 🚀</button>
-    </div>
-  </div>
-</div>
-
-<!-- SIDEBAR -->
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-top">
-    <a href="/" class="sidebar-brand">
-      <span class="brand-mark sm">IQ</span>
-      <span class="brand-name">InfluenceIQ</span>
-    </a>
-    <button class="sidebar-close" onclick="closeSidebar()">✕</button>
-  </div>
-  <nav class="sidebar-nav">
-    <div class="nav-group-label">Main</div>
-    <a href="#" class="s-nav-item active" data-view="campaign" onclick="switchView('campaign',this)">
-      <span class="sni-icon">🎯</span><span>New Campaign</span>
-    </a>
-    <a href="#" class="s-nav-item" data-view="results" onclick="switchView('results',this)">
-      <span class="sni-icon">📊</span><span>Results</span>
-      <span class="sni-badge" id="resultsBadge" style="display:none"></span>
-    </a>
-    <a href="#" class="s-nav-item" data-view="trending" onclick="switchView('trending',this)">
-      <span class="sni-icon">🔥</span><span>Trending</span>
-    </a>
-    <div class="nav-group-label">Tools</div>
-    <a href="#" class="s-nav-item" data-view="analytics" onclick="switchView('analytics',this)">
-      <span class="sni-icon">📈</span><span>Analytics</span>
-    </a>
-    <a href="#" class="s-nav-item" data-view="negotiate" onclick="switchView('negotiate',this)">
-      <span class="sni-icon">🤝</span><span>AI Negotiate</span>
-    </a>
-    <a href="#" class="s-nav-item" data-view="inbox" onclick="switchView('inbox',this)">
-      <span class="sni-icon">✉️</span><span>Inbox / Offers</span>
-      <span class="sni-badge" id="inboxBadge" style="display:none"></span>
-    </a>
-    <div class="nav-group-label">Account</div>
-    <a href="/settings" class="s-nav-item">
-      <span class="sni-icon">⚙️</span><span>Settings</span>
-    </a>
-    <a href="/about" class="s-nav-item">
-      <span class="sni-icon">ℹ️</span><span>About</span>
-    </a>
-  </nav>
-  <div class="sidebar-footer">
-    <button class="theme-toggle-btn" onclick="toggleTheme()">
-      <span id="themeIcon">🌙</span> <span id="themeLabel">Dark mode</span>
-    </button>
-    <a href="/login" onclick="localStorage.removeItem('iq_user')" class="sidebar-home-link">Log out</a>
-  </div>
-</aside>
-
-<!-- OVERLAY -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
-
-<!-- MAIN -->
-<div class="app-main" id="appMain">
-
-  <!-- TOPBAR -->
-  <header class="app-topbar">
-    <div class="topbar-left">
-      <button class="menu-btn" onclick="openSidebar()">☰</button>
-      <div class="nav-history-btns">
-        <button class="nav-hist-btn" id="navBackBtn" onclick="navHistoryBack()" disabled title="Go back">←</button>
-        <button class="nav-hist-btn" id="navForwardBtn" onclick="navHistoryForward()" disabled title="Go forward">→</button>
-      </div>
-      <div class="topbar-title">
-        <h1 id="viewTitle">New Campaign</h1>
-        <p id="viewSub" class="topbar-sub">Find influencers for your brand</p>
-      </div>
-    </div>
-    <div class="topbar-right">
-      <!-- Currency selector — live, no refresh -->
-      <div class="currency-wrap">
-        <select class="currency-sel" id="currencySelect" onchange="onCurrencyChange()">
-          <option value="USD">$ USD</option>
-          <option value="INR">₹ INR</option>
-          <option value="EUR">€ EUR</option>
-          <option value="GBP">£ GBP</option>
-          <option value="CAD">C$ CAD</option>
-          <option value="AED">AED</option>
-        </select>
-      </div>
-      <div class="user-chip" id="userChip">
-        <div class="user-avatar" id="userAvatar">G</div>
-        <span class="user-name" id="userName">Guest</span>
-      </div>
-    </div>
-  </header>
-
-  <!-- ── CAMPAIGN VIEW ── -->
-  <div class="view active" id="view-campaign">
-    <div class="view-inner narrow">
-      <div class="campaign-card">
-        <div class="campaign-card-header">
-          <h2>Campaign Setup</h2>
-          <p>Configure your brand requirements and let the AI find the best matches.</p>
-        </div>
-
-        <div class="field-grid">
-          <div class="field-group">
-            <label>Category <span class="req">*</span></label>
-            <select id="category" onchange="onCategoryChange()">
-              <option value="">Select a category…</option>
-              <option value="Fashion">Fashion</option>
-              <option value="Sports">Sports</option>
-              <option value="Tech">Tech</option>
-              <option value="Lifestyle">Lifestyle</option>
-              <option value="Fitness">Fitness</option>
-            </select>
-          </div>
-          <div class="field-group">
-            <label>Sub-category <span class="req">*</span></label>
-            <select id="subcategory">
-              <option value="">Select sub-category…</option>
-            </select>
-          </div>
-          <div class="field-group">
-            <label>Platform Preference</label>
-            <select id="platform">
-              <option value="">Any platform</option>
-              <option value="Instagram">Instagram</option>
-              <option value="YouTube">YouTube</option>
-              <option value="Twitter">Twitter / X</option>
-              <option value="LinkedIn">LinkedIn</option>
-            </select>
-          </div>
-          <div class="field-group">
-            <label>Location Preference</label>
-            <select id="country" onchange="onCountryChange()">
-              <option value="">All Locations</option>
-              <option value="India">India</option>
-              <option value="USA">USA</option>
-              <option value="UK">UK</option>
-              <option value="UAE">UAE</option>
-              <option value="Canada">Canada</option>
-              <option value="Australia">Australia</option>
-              <option value="Global">Global (non-India)</option>
-            </select>
-          </div>
-          <div class="field-group" id="stateGroup" style="display: none;">
-            <label>State / Region</label>
-            <select id="state">
-              <option value="">Any State/Region</option>
-            </select>
-          </div>
-          <div class="field-group">
-            <label id="budgetLabel">Max Budget (USD)</label>
-            <input type="number" id="budget" placeholder="e.g. 15000" min="0" step="500" />
-          </div>
-        </div>
-
-        <!-- ML Scoring Explainer -->
-        <div class="scoring-panel">
-          <div class="sp-header">
-            <span class="sp-icon">🧠</span>
-            <span class="sp-title">AI Scoring Methodology</span>
-            <span class="sp-badge">Transformer ML</span>
-          </div>
-          <div class="sp-bars">
-            <div class="sp-bar-row">
-              <span class="sp-label">Semantic Similarity (BERT)</span>
-              <div class="sp-track"><div class="sp-fill" style="width:30%">30%</div></div>
-            </div>
-            <div class="sp-bar-row">
-              <span class="sp-label">Engagement Quality</span>
-              <div class="sp-track"><div class="sp-fill" style="width:25%">25%</div></div>
-            </div>
-            <div class="sp-bar-row">
-              <span class="sp-label">Category / Niche Match</span>
-              <div class="sp-track"><div class="sp-fill" style="width:20%">20%</div></div>
-            </div>
-            <div class="sp-bar-row">
-              <span class="sp-label">Keyword Alignment (NLP)</span>
-              <div class="sp-track"><div class="sp-fill" style="width:15%">15%</div></div>
-            </div>
-            <div class="sp-bar-row">
-              <span class="sp-label">Fraud Safety Score</span>
-              <div class="sp-track"><div class="sp-fill sp-fill-red" style="width:10%">10%</div></div>
-            </div>
-          </div>
-        </div>
-
-        <button class="btn-find" id="findBtn" onclick="runSearch()">
-          <span id="findBtnText">⚡  Find Influencers</span>
-          <span id="findBtnLoader" style="display:none" class="spinner">●</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── RESULTS VIEW ── -->
-  <div class="view" id="view-results">
-    <div class="view-inner">
-      <div class="results-bar">
-        <div class="results-bar-left">
-          <h2 id="resultsHeading">Results</h2>
-          <p id="resultsSubheading" class="results-sub"></p>
-        </div>
-        <div class="results-bar-right">
-          <div class="sort-wrap">
-            <label>Sort by</label>
-            <select id="sortSelect" onchange="sortResults()">
-              <option value="score">AI Score</option>
-              <option value="engagement">Engagement</option>
-              <option value="followers">Followers</option>
-              <option value="price_asc">Price: Low</option>
-              <option value="price_desc">Price: High</option>
-            </select>
-          </div>
-          <button class="btn-new-search" onclick="switchView('campaign', document.querySelector('[data-view=campaign]'))">← New Search</button>
-        </div>
-      </div>
-
-      <!-- Chart -->
-      <div class="chart-block" style="display:none;">
-        <div class="chart-header">
-          <span>Top Suitability Score Comparison</span>
-          <span class="chart-algo">Algorithm: Transformer Cosine Similarity</span>
-        </div>
-        <canvas id="scoreChart" height="70"></canvas>
-      </div>
-
-      <!-- Cards -->
-      <div class="cards-grid" id="cardsGrid"></div>
-      
-      <!-- Empty State -->
-      <div class="empty-state" id="emptyState" style="display:none;">
-        <div class="empty-icon">🔍</div>
-        <h3>No influencers found for this search</h3>
-        <p>Try a different category or remove the budget filter</p>
-        <button class="btn-sm-outline" onclick="switchView('campaign', document.querySelector('[data-view=campaign]'))">Try Again</button>
-      </div>
-
-      <!-- Load More / Pagination -->
-      <div class="load-more-wrap" id="loadMoreWrap" style="display:none; text-align:center; margin-top:30px;">
-        <p id="loadMoreText" style="color:var(--text2); font-size:13px; margin-bottom:12px;">Showing 6 of 12</p>
-        <button class="btn-new-search" id="loadMoreBtn" onclick="loadMoreCards()">Load More</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── TRENDING VIEW ── -->
-  <div class="view" id="view-trending">
-    <div class="view-inner">
-      <div class="trending-header">
-        <h2>🔥 Trending Influencers</h2>
-        <p>Ranked by engagement quality × audience reach — updated in real time.</p>
-      </div>
-      <div class="trending-grid" id="trendingGrid"></div>
-    </div>
-  </div>
-
-  <!-- ── ANALYTICS VIEW ── -->
-  <div class="view" id="view-analytics">
-    <div class="view-inner">
-      <div class="results-bar">
-        <div class="results-bar-left">
-          <h2>Campaign Analytics</h2>
-          <p class="results-sub">Track budget distribution and platform ROI estimates.</p>
-        </div>
-      </div>
-      <div class="analytics-grid">
-        <div class="an-card">
-          <h3>Simulated Budget Distribution</h3>
-          <canvas id="budgetChart" height="200"></canvas>
-        </div>
-        <div class="an-card">
-          <h3>Engagement vs Platform Reach</h3>
-          <canvas id="engagementChart" height="200"></canvas>
-        </div>
-        <div class="an-card full-width">
-          <h3>Active Campaigns Overview</h3>
-          <div class="campaign-stats-grid">
-            <div class="cs-stat">
-              <div class="cs-val">$12,500</div>
-              <div class="cs-lbl">Total Spent</div>
-            </div>
-            <div class="cs-stat">
-              <div class="cs-val">4.2M</div>
-              <div class="cs-lbl">Est. Reach</div>
-            </div>
-            <div class="cs-stat">
-              <div class="cs-val">128K</div>
-              <div class="cs-lbl">Est. Clicks</div>
-            </div>
-            <div class="cs-stat">
-              <div class="cs-val text-green">+14%</div>
-              <div class="cs-lbl">Avg ROI</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── AI NEGOTIATE VIEW ── -->
-  <div class="view" id="view-negotiate">
-    <div class="view-inner narrow">
-      <div class="campaign-card">
-        <div class="campaign-card-header">
-          <h2>🤝 AI Outreach Negotiator</h2>
-          <p>Generate highly personalized, data-driven negotiation emails using influencer stats.</p>
+      <div class="modal-body">
+        <div class="field-group mb-3">
+          <label>Campaign Deliverables or Message</label>
+          <textarea id="offerMessage" rows="4"
+            placeholder="E.g. 1 dedicated YouTube video + 1 Community post"></textarea>
         </div>
         <div class="field-group mb-3">
-          <label>Target Influencer (Select from recent search)</label>
-          <select id="negTarget" onchange="onNegTargetChange()">
-            <option value="">Search for influencers first...</option>
+          <label>Proposed Budget (USD)</label>
+          <input type="number" id="offerAmount" placeholder="e.g. 1500" />
+        </div>
+        <button class="btn-find" onclick="submitOffer()">Send Offer 🚀</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <a href="/" class="sidebar-brand">
+        <span class="brand-mark sm">IQ</span>
+        <span class="brand-name">InfluenceIQ</span>
+      </a>
+      <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-group-label">Main</div>
+      <a href="#" class="s-nav-item active" data-view="campaign" onclick="switchView('campaign',this)">
+        <span class="sni-icon">🎯</span><span>New Campaign</span>
+      </a>
+      <a href="#" class="s-nav-item" data-view="results" onclick="switchView('results',this)">
+        <span class="sni-icon">📊</span><span>Results</span>
+        <span class="sni-badge" id="resultsBadge" style="display:none"></span>
+      </a>
+      <a href="#" class="s-nav-item" data-view="trending" onclick="switchView('trending',this)">
+        <span class="sni-icon">🔥</span><span>Trending</span>
+      </a>
+      <div class="nav-group-label">Tools</div>
+      <a href="#" class="s-nav-item" data-view="analytics" onclick="switchView('analytics',this)">
+        <span class="sni-icon">📈</span><span>Analytics</span>
+      </a>
+      <a href="#" class="s-nav-item" data-view="negotiate" onclick="switchView('negotiate',this)">
+        <span class="sni-icon">🤝</span><span>AI Negotiate</span>
+      </a>
+      <a href="#" class="s-nav-item" data-view="inbox" onclick="switchView('inbox',this)">
+        <span class="sni-icon">✉️</span><span>Inbox / Offers</span>
+        <span class="sni-badge" id="inboxBadge" style="display:none"></span>
+      </a>
+      <div class="nav-group-label">Account</div>
+      <a href="/settings" class="s-nav-item">
+        <span class="sni-icon">⚙️</span><span>Settings</span>
+      </a>
+      <a href="/about" class="s-nav-item">
+        <span class="sni-icon">ℹ️</span><span>About</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="theme-toggle-btn" onclick="toggleTheme()">
+        <span id="themeIcon">🌙</span> <span id="themeLabel">Dark mode</span>
+      </button>
+      <a href="/login" onclick="localStorage.removeItem('iq_user')" class="sidebar-home-link">Log out</a>
+    </div>
+  </aside>
+
+  <!-- OVERLAY -->
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+  <!-- MAIN -->
+  <div class="app-main" id="appMain">
+
+    <!-- TOPBAR -->
+    <header class="app-topbar">
+      <div class="topbar-left">
+        <button class="menu-btn" onclick="openSidebar()">☰</button>
+        <div class="nav-history-btns">
+          <button class="nav-hist-btn" id="navBackBtn" onclick="navHistoryBack()" disabled title="Go back">←</button>
+          <button class="nav-hist-btn" id="navForwardBtn" onclick="navHistoryForward()" disabled
+            title="Go forward">→</button>
+        </div>
+        <div class="topbar-title">
+          <h1 id="viewTitle">New Campaign</h1>
+          <p id="viewSub" class="topbar-sub">Find influencers for your brand</p>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <!-- Currency selector — live, no refresh -->
+        <div class="currency-wrap">
+          <select class="currency-sel" id="currencySelect" onchange="onCurrencyChange()">
+            <option value="USD">$ USD</option>
+            <option value="INR">₹ INR</option>
+            <option value="EUR">€ EUR</option>
+            <option value="GBP">£ GBP</option>
+            <option value="CAD">C$ CAD</option>
+            <option value="AED">AED</option>
           </select>
         </div>
-        <div class="field-grid">
-          <div class="field-group">
-            <label>Campaign Goal</label>
-            <input type="text" id="negGoal" placeholder="e.g. Brand Awareness, App Installs" value="Brand Awareness" />
+        <div class="user-chip" id="userChip">
+          <div class="user-avatar" id="userAvatar">G</div>
+          <span class="user-name" id="userName">Guest</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── CAMPAIGN VIEW ── -->
+    <div class="view active" id="view-campaign">
+      <div class="view-inner narrow">
+        <div class="campaign-card">
+          <div class="campaign-card-header">
+            <h2>Campaign Setup</h2>
+            <p>Configure your brand requirements and let the AI find the best matches.</p>
           </div>
-          <div class="field-group">
-            <label>Max Budget ($)</label>
-            <input type="number" id="negBudget" placeholder="e.g. 500" value="500" />
+
+          <div class="field-grid">
+            <div class="field-group">
+              <label>Category <span class="req">*</span></label>
+              <select id="category" onchange="onCategoryChange()">
+                <option value="">Select a category…</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Sports">Sports</option>
+                <option value="Tech">Tech</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Fitness">Fitness</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Sub-category <span class="req">*</span></label>
+              <select id="subcategory">
+                <option value="">Select sub-category…</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Platform Preference</label>
+              <button type="button" class="platform-toggle" onclick="togglePlatform()">Select Platforms ▼</button>
+              <div class="platform-checkboxes" id="platformGroup">
+                <label class="plt-cb"><input type="checkbox" value="Instagram" checked> <span>Instagram</span></label>
+                <label class="plt-cb"><input type="checkbox" value="YouTube" checked> <span>YouTube (API)</span></label>
+                <label class="plt-cb"><input type="checkbox" value="Twitter" checked> <span>Twitter</span></label>
+                <label class="plt-cb"><input type="checkbox" value="LinkedIn" checked> <span>LinkedIn</span></label>
+              </div>
+            </div>
+            <div class="field-group">
+              <label>Gender Preference</label>
+              <select id="gender">
+                <option value="">Any Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Location Preference</label>
+              <select id="country" onchange="onCountryChange()">
+                <option value="">All Locations</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="UAE">UAE</option>
+                <option value="Canada">Canada</option>
+                <option value="Australia">Australia</option>
+                <option value="Global">Global (non-India)</option>
+              </select>
+            </div>
+            <div class="field-group" id="stateGroup" style="display: none;">
+              <label>State / Region</label>
+              <select id="state">
+                <option value="">Any State/Region</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Contract Type / Purpose</label>
+              <select id="contractType">
+                <option value="1_post">1 Sponsored Post</option>
+                <option value="2_posts">2 Sponsored Posts</option>
+                <option value="ambassador">Brand Ambassador (Long-term)</option>
+                <option value="product_ad">Product Advertisement</option>
+                <option value="shoutout">Video Shoutout / Mention</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label id="budgetLabel">Max Budget (USD)</label>
+              <input type="number" id="budget" placeholder="e.g. 15000" min="0" step="500" />
+            </div>
+          </div>
+
+          <!-- ML Scoring Explainer -->
+          <div class="scoring-panel">
+            <div class="sp-header">
+              <span class="sp-icon">🧠</span>
+              <span class="sp-title">AI Scoring Methodology</span>
+              <span class="sp-badge">Transformer ML</span>
+            </div>
+            <div class="sp-bars">
+              <div class="sp-bar-row">
+                <span class="sp-label">Semantic Similarity (BERT)</span>
+                <div class="sp-track">
+                  <div class="sp-fill" style="width:30%">30%</div>
+                </div>
+              </div>
+              <div class="sp-bar-row">
+                <span class="sp-label">Engagement Quality</span>
+                <div class="sp-track">
+                  <div class="sp-fill" style="width:25%">25%</div>
+                </div>
+              </div>
+              <div class="sp-bar-row">
+                <span class="sp-label">Category / Niche Match</span>
+                <div class="sp-track">
+                  <div class="sp-fill" style="width:20%">20%</div>
+                </div>
+              </div>
+              <div class="sp-bar-row">
+                <span class="sp-label">Keyword Alignment (NLP)</span>
+                <div class="sp-track">
+                  <div class="sp-fill" style="width:15%">15%</div>
+                </div>
+              </div>
+              <div class="sp-bar-row">
+                <span class="sp-label">Fraud Safety Score</span>
+                <div class="sp-track">
+                  <div class="sp-fill sp-fill-red" style="width:10%">10%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-find" id="findBtn" onclick="runSearch()">
+            <span id="findBtnText">⚡ Find Influencers</span>
+            <span id="findBtnLoader" style="display:none" class="spinner">●</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── RESULTS VIEW ── -->
+    <div class="view" id="view-results">
+      <div class="view-inner">
+        <div class="results-bar">
+          <div class="results-bar-left">
+            <h2 id="resultsHeading">Results</h2>
+            <p id="resultsSubheading" class="results-sub"></p>
+          </div>
+          <div class="results-bar-right">
+            <div class="sort-wrap">
+              <label>Sort by</label>
+              <select id="sortSelect" onchange="sortResults()">
+                <option value="score">AI Score</option>
+                <option value="engagement">Engagement</option>
+                <option value="followers">Followers</option>
+                <option value="price_asc">Price: Low</option>
+                <option value="price_desc">Price: High</option>
+              </select>
+            </div>
+            <button class="btn-new-search"
+              onclick="switchView('campaign', document.querySelector('[data-view=campaign]'))">← New Search</button>
           </div>
         </div>
-        <button class="btn-find mt-3" onclick="generateScript()">✨ Generate AI Script</button>
-        
-        <div class="script-output" id="scriptOutput" style="display:none; margin-top:20px;">
-          <div class="sp-header" style="margin-bottom:0;">
-            <span class="sp-icon">📝</span><span class="sp-title">Generated Outreach Script</span>
+
+        <!-- Chart -->
+        <div class="chart-block" style="display:none;">
+          <div class="chart-header">
+            <span>Top Suitability Score Comparison</span>
+            <span class="chart-algo">Algorithm: Transformer Cosine Similarity</span>
           </div>
-          <textarea id="generatedText" rows="8" style="width:100%; margin-top:10px; background:var(--bg3); border:1px solid var(--border); border-radius:var(--rsm); padding:12px; color:var(--text); font-family:var(--fb); resize:vertical;"></textarea>
-          <div style="display:flex; gap:10px; margin-top:10px;">
-            <button class="btn-sm-outline" onclick="copyScript()">Copy Script</button>
-            <button class="btn-new-search" onclick="sendScriptAsOffer()">Send via In-App Message</button>
+          <canvas id="scoreChart" height="70"></canvas>
+        </div>
+
+        <!-- Cards -->
+        <div class="cards-grid" id="cardsGrid"></div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState" style="display:none;">
+          <div class="empty-icon">🔍</div>
+          <h3>No influencers found for this search</h3>
+          <p>Try a different category or remove the budget filter</p>
+          <button class="btn-sm-outline"
+            onclick="switchView('campaign', document.querySelector('[data-view=campaign]'))">Try Again</button>
+        </div>
+
+        <!-- Load More / Pagination -->
+        <div class="load-more-wrap" id="loadMoreWrap" style="display:none; text-align:center; margin-top:30px;">
+          <p id="loadMoreText" style="color:var(--text2); font-size:13px; margin-bottom:12px;">Showing 6 of 12</p>
+          <button class="btn-new-search" id="loadMoreBtn" onclick="loadMoreCards()">Load More</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TRENDING VIEW ── -->
+    <div class="view" id="view-trending">
+      <div class="view-inner">
+        <div class="trending-header">
+          <h2>🔥 Trending Influencers</h2>
+          <p>Ranked by engagement quality × audience reach — updated in real time.</p>
+        </div>
+        <div class="trending-grid" id="trendingGrid"></div>
+      </div>
+    </div>
+
+    <!-- ── ANALYTICS VIEW ── -->
+    <div class="view" id="view-analytics">
+      <div class="view-inner">
+        <div class="results-bar">
+          <div class="results-bar-left">
+            <h2>Campaign Analytics</h2>
+            <p class="results-sub">Track budget distribution and platform ROI estimates.</p>
+          </div>
+        </div>
+        <div class="analytics-grid">
+          <div class="an-card">
+            <h3>Simulated Budget Distribution</h3>
+            <canvas id="budgetChart" height="200"></canvas>
+          </div>
+          <div class="an-card">
+            <h3>Engagement vs Platform Reach</h3>
+            <canvas id="engagementChart" height="200"></canvas>
+          </div>
+          <div class="an-card full-width">
+            <h3>Active Campaigns Overview</h3>
+            <div class="campaign-stats-grid">
+              <div class="cs-stat">
+                <div class="cs-val">$12,500</div>
+                <div class="cs-lbl">Total Spent</div>
+              </div>
+              <div class="cs-stat">
+                <div class="cs-val">4.2M</div>
+                <div class="cs-lbl">Est. Reach</div>
+              </div>
+              <div class="cs-stat">
+                <div class="cs-val">128K</div>
+                <div class="cs-lbl">Est. Clicks</div>
+              </div>
+              <div class="cs-stat">
+                <div class="cs-val text-green">+14%</div>
+                <div class="cs-lbl">Avg ROI</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- ── INBOX VIEW ── -->
-  <div class="view" id="view-inbox">
-    <div class="view-inner">
-      <div class="results-bar">
-        <div class="results-bar-left">
-          <h2>✉️ Sent Offers & Inbox</h2>
-          <p class="results-sub">Manage your active negotiations and messages with creators.</p>
+    <!-- ── AI NEGOTIATE VIEW ── -->
+    <div class="view" id="view-negotiate">
+      <div class="view-inner narrow">
+        <div class="campaign-card">
+          <div class="campaign-card-header">
+            <h2>🤝 AI Outreach Negotiator</h2>
+            <p>Generate highly personalized, data-driven negotiation emails using influencer stats.</p>
+          </div>
+          <div class="field-group mb-3">
+            <label>Target Influencer (Select from recent search)</label>
+            <select id="negTarget" onchange="onNegTargetChange()">
+              <option value="">Search for influencers first...</option>
+            </select>
+          </div>
+          <div class="field-grid">
+            <div class="field-group">
+              <label>Campaign Goal</label>
+              <input type="text" id="negGoal" placeholder="e.g. Brand Awareness, App Installs"
+                value="Brand Awareness" />
+            </div>
+            <div class="field-group">
+              <label>Max Budget ($)</label>
+              <input type="number" id="negBudget" placeholder="e.g. 500" value="500" />
+            </div>
+          </div>
+          <button class="btn-find mt-3" onclick="generateScript()">✨ Generate AI Script</button>
+
+          <div class="script-output" id="scriptOutput" style="display:none; margin-top:20px;">
+            <div class="sp-header" style="margin-bottom:0;">
+              <span class="sp-icon">📝</span><span class="sp-title">Generated Outreach Script</span>
+            </div>
+            <textarea id="generatedText" rows="8"
+              style="width:100%; margin-top:10px; background:var(--bg3); border:1px solid var(--border); border-radius:var(--rsm); padding:12px; color:var(--text); font-family:var(--fb); resize:vertical;"></textarea>
+            <div style="display:flex; gap:10px; margin-top:10px;">
+              <button class="btn-sm-outline" onclick="copyScript()">Copy Script</button>
+              <button class="btn-new-search" onclick="sendScriptAsOffer()">Send via In-App Message</button>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="inbox-list" id="brandInboxList">
-        <!-- Offers will be rendered here via JS -->
+    </div>
+
+    <!-- ── INBOX VIEW ── -->
+    <div class="view" id="view-inbox">
+      <div class="view-inner">
+        <div class="results-bar">
+          <div class="results-bar-left">
+            <h2>✉️ Sent Offers & Inbox</h2>
+            <p class="results-sub">Manage your active negotiations and messages with creators.</p>
+          </div>
+        </div>
+        <div class="inbox-list" id="brandInboxList">
+          <!-- Offers will be rendered here via JS -->
+        </div>
       </div>
     </div>
-  </div>
 
-</div><!-- end app-main -->
+  </div><!-- end app-main -->
 
-<button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo(0,0)" title="Scroll to top">↑</button>
+  <button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo(0,0)" title="Scroll to top">↑</button>
 
-<script src="/static/js/theme.js"></script>
-<script src="/static/js/dashboard.js"></script>
+  <script src="/static/js/theme.js"></script>
+  <script src="/static/js/dashboard.js"></script>
 </body>
+
 </html>

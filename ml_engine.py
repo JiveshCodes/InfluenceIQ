@@ -9,6 +9,8 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 import os, warnings
+import ml_models
+
 warnings.filterwarnings('ignore')
 
 # ── Global state ──────────────────────────────────────────────
@@ -18,6 +20,7 @@ _tfidf_vec  = None          # fallback vectoriser (shared dim)
 _emb_dim    = None          # actual embedding dimension
 _use_st     = False         # whether sentence-transformers loaded OK
 _st_model   = None
+_ml_engine_models = None    # Scikit-learn models manager
 
 # ── Config ────────────────────────────────────────────────────
 CURRENCY_RATES   = {'USD':1.0,'INR':83.5,'EUR':0.92,'GBP':0.79,'CAD':1.36,'AED':3.67}
@@ -28,6 +31,14 @@ PLATFORM_META = {
     'YouTube':  {'color':'#FF0000','icon':'▶️'},
     'Twitter':  {'color':'#1DA1F2','icon':'🐦'},
     'LinkedIn': {'color':'#0A66C2','icon':'💼'},
+}
+
+CONTRACT_MULTIPLIERS = {
+    '1_post':       1.0,
+    '2_posts':      1.8, # 10% bulk discount
+    'ambassador':   5.0, # 5x for long-term partnership
+    'product_ad':   2.5, # includes usage rights
+    'shoutout':     0.4, # quick mention
 }
 
 CATEGORY_KW = {
@@ -114,7 +125,7 @@ def _embed_query(text):
 
 
 # ── Scoring helpers ───────────────────────────────────────────
-def _quality_score(row):
+def get_quality_score(row):
     s  = min(float(row.get('engagement_rate',0)) / 10.0, 1.0) * 35
     s += min(np.log10(max(float(row.get('followers',1)), 1)) / 8.0, 1.0) * 20
     s += (1.0 - float(row.get('fraud_risk',0.1))) * 25
@@ -124,14 +135,14 @@ def _quality_score(row):
     return round(min(s, 100.0), 1)
 
 
-def _fraud_info(risk):
+def get_fraud_info(risk):
     r = float(risk)
     if r <= 0.07: return {'label':'Low',    'class':'low',    'color':'#22c55e','icon':'✓'}
     if r <= 0.12: return {'label':'Medium', 'class':'medium', 'color':'#f59e0b','icon':'△'}
     return               {'label':'High',   'class':'high',   'color':'#ef4444','icon':'⚠'}
 
 
-def _pop_tag(followers):
+def get_pop_tag(followers):
     f = float(followers)
     if f >= 50_000_000: return 'Mega Celebrity'
     if f >= 10_000_000: return 'Mega Influencer'
@@ -140,7 +151,7 @@ def _pop_tag(followers):
     return 'Micro Creator'
 
 
-def _reasons(row, category, subcategory):
+def get_reasons(row, category, subcategory):
     out = []
     eng    = float(row['engagement_rate'])
     fraud  = float(row['fraud_risk'])
@@ -169,15 +180,27 @@ def _reasons(row, category, subcategory):
     return out[:4]
 
 
+def get_vibe(score):
+    s = float(score)
+    if s >= 0.75: return {'label':'Exceptional Positivity', 'class':'vibe-pos', 'color':'#22c55e', 'icon':'✨'}
+    if s >= 0.55: return {'label':'Strongly Positive',    'class':'vibe-pos', 'color':'#4ade80', 'icon':'😊'}
+    if s >= 0.45: return {'label':'Mixed / Neutral',       'class':'vibe-neu', 'color':'#f59e0b', 'icon':'😐'}
+    return               {'label':'Negative Vibe',        'class':'vibe-neg', 'color':'#ef4444', 'icon':'⚠️'}
+
+
 # ── Public API ────────────────────────────────────────────────
 def load_data():
-    global _df, _embeddings, _st_model, _use_st, _tfidf_vec
+    global _df, _embeddings, _st_model, _use_st, _tfidf_vec, _ml_engine_models
 
     base = os.path.dirname(os.path.abspath(__file__))
     _df  = pd.read_csv(os.path.join(base, 'dataset.csv'))
 
     for col in ['price_usd','fraud_risk','followers','engagement_rate','avg_likes','avg_comments']:
         _df[col] = pd.to_numeric(_df[col], errors='coerce').fillna(0)
+
+    # Initialize Scikit-Learn Models
+    _ml_engine_models = ml_models.MLEngineModels()
+    _ml_engine_models.load_or_train(_df)
 
     # Try sentence-transformers
     _st_model = _try_load_st()
@@ -193,7 +216,7 @@ def load_data():
     return _df
 
 
-def predict(category, subcategory, platform=None, budget=None, country=None, state=None, limit=12, page=1):
+def predict(category, subcategory, platforms=None, gender=None, budget=None, country=None, state=None, contract_type='1_post', limit=12, page=1):
     if _df is None or _embeddings is None:
         load_data()
 
@@ -214,36 +237,45 @@ def predict(category, subcategory, platform=None, budget=None, country=None, sta
         sim      = float(sims[i])
         eng      = min(float(row['engagement_rate']) / 12.0, 1.0)
         fraud    = float(row['fraud_risk'])
-        cat_s    = (0.4 if row['category'].lower() == category.lower() else 0.0 +
-                    0.6 if row['subcategory'].lower() == subcategory.lower() else 0.0)
-
         # Keyword Jaccard
         a = set(str(row['keywords']).lower().replace(',',' ').split())
         b = set(extra_kw.lower().split())
         kw_s = len(a & b) / len(a | b) if (a and b) else 0.0
 
-        plat_bonus = 0.08 if (platform and str(row['platform']).lower() == platform.lower()) else 0.0
-
-        final = (sim * 0.30 + eng * 0.25 + cat_s * 0.20 +
-                 kw_s * 0.15 + (1 - fraud) * 0.10 + plat_bonus)
+        final = (sim * 0.35 + eng * 0.30 + kw_s * 0.15 + (1 - fraud) * 0.10 + float(row.get('sentiment_score', 0.5)) * 0.10)
         scores.append(round(final * 100, 2))
 
     data['suitability_score'] = scores
 
-    # ── Filter ────────────────────────────────────────────────
+    # ── Strict Filtering ────────────────────────────────────────────────
+    # Enforce Category & Subcategory match
+    data = data[data['category'].str.lower() == category.lower()]
+    data = data[data['subcategory'].str.lower() == subcategory.lower()]
+
+    # Enforce Platform match if selected
+    if platforms and len(platforms) > 0:
+        data = data[data['platform'].isin(platforms)]
+
     if country:
         if country.lower() == 'global':
             c_filter = ~data['location'].str.contains('India', case=False, na=False)
         else:
             c_filter = data['location'].str.contains(country, case=False, na=False)
             
-        if c_filter.sum() >= 3:
+        if c_filter.sum() >= 1:
             data = data[c_filter]
             
     if state:
         s_filter = data['location'].str.contains(state, case=False, na=False)
         if s_filter.sum() >= 3:
             data = data[s_filter]
+            
+    if gender:
+        # Check if 'gender' column exists (to prevent errors if dataset is not yet updated)
+        if 'gender' in data.columns:
+            g_filter = data['gender'].str.lower() == gender.lower()
+            if g_filter.sum() >= 1:
+                data = data[g_filter]
 
     relevant = data[data['subcategory'].str.lower() == subcategory.lower()].copy()
     if len(relevant) < 5:
@@ -270,12 +302,24 @@ def predict(category, subcategory, platform=None, budget=None, country=None, sta
     has_more = end_idx < total_available
 
     # ── Build response ────────────────────────────────────────
+    mult = CONTRACT_MULTIPLIERS.get(contract_type, 1.0)
+    
     results = []
     for idx, (_, row) in enumerate(paginated.iterrows()):
-        price   = float(row['price_usd']) if float(row['price_usd']) > 0 else None
-        fi      = _fraud_info(row['fraud_risk'])
+        raw_price = float(row['price_usd'])
+        price   = (raw_price * mult) if raw_price > 0 else None
+        fi      = get_fraud_info(row['fraud_risk'])
         pm      = PLATFORM_META.get(row['platform'], {'color':'#666','icon':'📱'})
         reach   = min(float(row['followers']) / 15_000_000 * 100, 100)
+
+        # Scikit-Learn predictions
+        pred_cat, cat_conf = _ml_engine_models.predict_classification(
+            row['followers'], row['engagement_rate'], row['category'], row['subcategory'], row['avg_likes'], row['avg_comments'], row.get('gender', 'Unknown')
+        )
+        pred_eng = _ml_engine_models.predict_engagement(
+            row['followers'], row['category'], row['subcategory'], row['avg_likes'], row['avg_comments'], row.get('gender', 'Unknown')
+        )
+        similar_infs = _ml_engine_models.recommend_similar(_df, row['name'], top_n=2)
 
         results.append({
             'rank':             start_idx + idx + 1,
@@ -296,15 +340,23 @@ def predict(category, subcategory, platform=None, budget=None, country=None, sta
             'fraud_color':      fi['color'],
             'fraud_icon':       fi['icon'],
             'location':         row['location'],
+            'gender':           row.get('gender', 'Unknown'),
             'content_type':     row['content_type'],
             'price_usd':        price,
             'suitability_score':float(row['suitability_score']),
+            'sentiment_score':  float(row.get('sentiment_score', 0.5)),
+            'vibe':             get_vibe(row.get('sentiment_score', 0.5)),
             'cosine_sim':       round(float(row['_sim']) * 100, 1),
-            'profile_quality':  _quality_score(row),
-            'reasons':          _reasons(row, category, subcategory),
-            'popularity_tag':   _pop_tag(row['followers']),
+            'profile_quality':  get_quality_score(row),
+            'reasons':          get_reasons(row, category, subcategory),
+            'popularity_tag':   get_pop_tag(row['followers']),
             'reach_pct':        round(reach, 1),
             'verified':         str(row.get('verified','false')).lower() == 'true',
+            # ML Enhancements
+            'predicted_category': pred_cat,
+            'category_confidence': round(cat_conf, 1),
+            'predicted_engagement': pred_eng,
+            'similar_influencers': similar_infs
         })
         
     return {
@@ -343,6 +395,93 @@ def update_influencer_stats(name, stats):
             print(f"[ML] Successfully saved synced live data for {name} to dataset.csv")
         except Exception as e:
             print(f"[ML] Error saving live data for {name} to dataset.csv: {e}")
+
+def add_influencer(influencer_data):
+    """Add a newly discovered influencer to the dataset permanently."""
+    global _df, _embeddings
+    if _df is None:
+        load_data()
+        
+    name = influencer_data.get('name')
+    if name and not _df[_df['name'].str.lower() == name.lower()].empty:
+        return # Already exists
+        
+    # Build new row
+    new_id = int(_df['id'].max()) + 1 if not _df.empty else 1
+    # Smart Price Estimation for discovered influencers
+    # Formula: $15 base per 1k followers + Engagement Bonus
+    f_count = float(influencer_data.get('followers', 0))
+    eng     = float(influencer_data.get('engagement_rate', 0.0))
+    
+    # CPM-based pricing ($15 per 1k subs)
+    base_price = (f_count / 1000) * 15
+    
+    # Engagement Multiplier (e.g. 5% engagement gives a 1.2x boost)
+    eng_mult = 1.0 + (eng / 10.0) 
+    
+    # Floor price of $50, cap at $50,000 for safety
+    estimated_price = max(50, min(base_price * eng_mult, 50000))
+
+    new_row = {
+        'id': new_id,
+        'name': name,
+        'category': influencer_data.get('category', 'Tech'),
+        'subcategory': influencer_data.get('subcategory', 'General'),
+        'platform': influencer_data.get('platform', 'YouTube'),
+        'followers': f_count,
+        'engagement_rate': eng,
+        'avg_likes': influencer_data.get('avg_likes', 0),
+        'avg_comments': influencer_data.get('avg_comments', 0),
+        'keywords': influencer_data.get('keywords', ''),
+        'fraud_risk': 0.05, # Default for new
+        'fraud_label': 'Low',
+        'location': influencer_data.get('location', 'India'),
+        'content_type': 'Videos',
+        'price_usd': round(estimated_price, 2),
+        'verified': True,
+        'gender': influencer_data.get('gender', 'Female')
+    }
+    
+    _df = pd.concat([_df, pd.DataFrame([new_row])], ignore_index=True)
+    
+    # Save to CSV
+    try:
+        base = os.path.dirname(os.path.abspath(__file__))
+        _df.to_csv(os.path.join(base, 'dataset.csv'), index=False)
+        # Reload embeddings to include the new person
+        texts = [_profile_text(row) for _, row in _df.iterrows()]
+        _embeddings = _embed_corpus(texts)
+        print(f"[ML] Discovery! Added {name} to dataset.csv and reloaded embeddings.")
+    except Exception as e:
+        print(f"[ML] Error adding new influencer: {e}")
+
+def recompute_analysis(row, category, subcategory):
+    """Re-run the ML analysis for a specific influencer after a live sync."""
+    # 1. Recalculate basic metrics
+    fi = get_fraud_info(row['fraud_risk'])
+    
+    # 2. Recalculate suitability score
+    eng = min(float(row['engagement_rate']) / 12.0, 1.0)
+    fraud = float(row['fraud_risk'])
+    sent = float(row.get('sentiment_score', 0.5))
+    
+    # Updated weighted logic with sentiment
+    final = (0.8 * 0.35 + eng * 0.30 + 0.15 * 0.15 + (1 - fraud) * 0.10 + sent * 0.10)
+    
+    return {
+        'followers':        int(row['followers']),
+        'engagement_rate':  round(float(row['engagement_rate']), 2),
+        'avg_likes':        int(row['avg_likes']),
+        'avg_comments':     int(row['avg_comments']),
+        'sentiment_score':  sent,
+        'vibe':             get_vibe(sent),
+        'suitability_score':round(final * 100, 2),
+        'profile_quality':  get_quality_score(row),
+        'reasons':          get_reasons(row, category, subcategory),
+        'popularity_tag':   get_pop_tag(row['followers']),
+        'fraud_label':      fi['label'],
+        'fraud_class':      fi['class']
+    }
 
 def get_trending(limit=9):
     if _df is None:
