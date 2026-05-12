@@ -61,9 +61,14 @@ The precision of InfluenceIQ is driven by several state-of-the-art models and cu
 *   **Purpose:** Analyzes the ratio of followers to engagement and likes to comments.
 *   **Logic:** It flags influencers with "Low", "Medium", or "High" fraud risk based on statistical deviations from platform norms, protecting brands from investing in bot-inflated audiences.
 
-### 4. Real-time Telemetry: `YouTube Data API v3`
+### 4. Real-time Telemetry: `YouTube Data API v3` (Resilient)
 *   **Purpose:** Fetches live subscriber counts, views, and engagement metrics directly from the source.
-*   **Impact:** Ensures that the data is never stale. Influencer "Suitability Scores" fluctuate in real-time based on their latest content performance.
+*   **Resilience Logic:** Implements a fail-safe mechanism that detects quota limits (HTTP 403). When triggered, the system gracefully falls back to cached/pre-computed ML scores from the local dataset, ensuring 100% platform uptime even during API downtime.
+*   **Impact:** Ensures that the data is never stale when available, while maintaining complete discovery functionality via the local ML engine as a fallback.
+
+### 5. Geographical Intelligence: `State-Level Discovery`
+*   **Purpose:** Enables granular location-based filtering for targeted regional campaigns.
+*   **Logic:** Dynamically populates regional states (e.g., for India) and integrates them into the cosine similarity weighting engine, allowing brands to find hyper-local creators in specific territories like Maharashtra, Delhi, or Punjab.
 
 <br>
 
@@ -73,9 +78,7 @@ The precision of InfluenceIQ is driven by several state-of-the-art models and cu
 
 *(Demo GIF placeholder — imagine a sleek, fast-paced walkthrough of the UI filtering influencers and generating live ML scores)*
 
-<div align="center">
-  <img src="static/assets/hero-dark.jpeg" alt="InfluenceIQ Hero Interface" width="800" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-</div>
+  <img src="static/assets/improved_dashboard.png" alt="InfluenceIQ Improved Dashboard" width="800" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
 
 <br>
 
