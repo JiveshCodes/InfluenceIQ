@@ -78,7 +78,9 @@ The precision of InfluenceIQ is driven by several state-of-the-art models and cu
 
 *(Demo GIF placeholder — imagine a sleek, fast-paced walkthrough of the UI filtering influencers and generating live ML scores)*
 
+<div align="center">
   <img src="static/assets/improved_dashboard.png" alt="InfluenceIQ Improved Dashboard" width="800" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+</div>
 
 <br>
 
@@ -102,25 +104,30 @@ The precision of InfluenceIQ is driven by several state-of-the-art models and cu
 
 <div align="center">
 
-| **Analytics Dashboard** | **AI Match Results** |
+| **Campaign Setup (V2)** | **AI Match Results** |
 | :---: | :---: |
-| <img src="static/assets/Analysis_diagram.jpeg" width="400" style="border-radius:8px;"> | <img src="static/assets/result.jpeg" width="400" style="border-radius:8px;"> |
-| *Real-time visualization of creator ROI, engagement metrics, and campaign budget forecasting.* | *Ranked, explainable AI results showing exact cosine similarity scores and fraud risk labels.* |
+| <img src="static/assets/improved_dashboard.png" width="400" style="border-radius:8px;"> | <img src="static/assets/result.jpeg" width="400" style="border-radius:8px;"> |
+| *Refined campaign setup with regional state filtering and multi-platform sync capability.* | *Ranked, explainable AI results showing exact cosine similarity scores and fraud risk labels.* |
 
-| **Influencer Registration** | **AI Negotiation Script** |
+| **Analytics Dashboard** | **AI Negotiation Script** |
 | :---: | :---: |
-| <img src="static/assets/influencer_login.jpeg" width="400" style="border-radius:8px;"> | <img src="static/assets/Negotiation.jpeg" width="400" style="border-radius:8px;"> |
-| *Streamlined onboarding for creators to join the verified InfluenceIQ talent pool.* | *Automated AI drafting of personalized creator outreach emails based on match metrics.* |
+| <img src="static/assets/Analysis_diagram.jpeg" width="400" style="border-radius:8px;"> | <img src="static/assets/Negotiation.jpeg" width="400" style="border-radius:8px;"> |
+| *Real-time visualization of creator ROI, engagement metrics, and campaign budget forecasting.* | *Automated AI drafting of personalized creator outreach emails based on match metrics.* |
 
-| **Influencer Campaign Offer** | **Influencer Offer Generation** |
+| **Influencer Registration** | **Influencer Campaign Offer** |
 | :---: | :---: |
-| <img src="static/assets/Raj_user_offer.jpeg" width="400" style="border-radius:8px;"> | <img src="static/assets/influencer_offer.jpeg" width="400" style="border-radius:8px;"> |
-| *Personalized dashboard for creators to view and accept incoming brand campaign invitations.* | *Seamless campaign offer structuring and pricing recommendations.* |
+| <img src="static/assets/influencer_login.jpeg" width="400" style="border-radius:8px;"> | <img src="static/assets/Raj_user_offer.jpeg" width="400" style="border-radius:8px;"> |
+| *Streamlined onboarding for creators to join the verified InfluenceIQ talent pool.* | *Personalized dashboard for creators to view and accept brand invitations.* |
 
-| **Secure Authentication** | **Creator Settings** |
+| **Influencer Offer Generation** | **Secure Authentication** |
 | :---: | :---: |
-| <img src="static/assets/log_in.jpeg" width="400" style="border-radius:8px;"> | <img src="static/assets/settings.jpeg" width="400" style="border-radius:8px;"> |
-| *Glassmorphic, enterprise-grade secure authentication entry point.* | *Persistent creator configurations and dark/light mode preference tracking.* |
+| <img src="static/assets/influencer_offer.jpeg" width="400" style="border-radius:8px;"> | <img src="static/assets/log_in.jpeg" width="400" style="border-radius:8px;"> |
+| *Seamless campaign offer structuring and pricing recommendations.* | *Glassmorphic, enterprise-grade secure authentication entry point.* |
+
+| **Creator Settings** | |
+| :---: | :---: |
+| <img src="static/assets/settings.jpeg" width="400" style="border-radius:8px;"> | |
+| *Persistent creator configurations and theme tracking.* | |
 
 </div>
 
