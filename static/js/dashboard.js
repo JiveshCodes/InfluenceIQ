@@ -1,23 +1,23 @@
 /* InfluenceIQ v2 — Dashboard Logic */
 
-const RATES   = { USD:1, INR:83.5, EUR:0.92, GBP:0.79, CAD:1.36, AED:3.67 };
-const SYMBOLS = { USD:'$', INR:'₹', EUR:'€', GBP:'£', CAD:'C$', AED:'AED ' };
+const RATES = { USD: 1, INR: 83.5, EUR: 0.92, GBP: 0.79, CAD: 1.36, AED: 3.67 };
+const SYMBOLS = { USD: '$', INR: '₹', EUR: '€', GBP: '£', CAD: 'C$', AED: 'AED ' };
 const SUBCATS = {
-  Fashion:   ['Streetwear','Luxury fashion','Ethnic wear','Sustainable fashion'],
-  Sports:    ['Cricket','Football','Fitness training','Outdoor adventure'],
-  Tech:      ['Smartphones','AI/ML','Gaming','Software development'],
-  Lifestyle: ['Travel','Food','Daily vlogging','Minimalism'],
-  Fitness:   ['Bodybuilding','Yoga','Home workouts','Nutrition'],
+  Fashion: ['Streetwear', 'Luxury fashion', 'Ethnic wear', 'Sustainable fashion'],
+  Sports: ['Cricket', 'Football', 'Fitness training', 'Outdoor adventure'],
+  Tech: ['Smartphones', 'AI/ML', 'Gaming', 'Software development'],
+  Lifestyle: ['Travel', 'Food', 'Daily vlogging', 'Minimalism'],
+  Fitness: ['Bodybuilding', 'Yoga', 'Home workouts', 'Nutrition'],
 };
 
 const STATES = {
   India: ['Delhi', 'Mumbai', 'Bangalore', 'Kolkata', 'Gujarat', 'Jaipur', 'Lucknow', 'Hyderabad', 'Pune', 'Chennai', 'Chandigarh', 'Kerala', 'Assam', 'Haryana', 'Punjab', 'Odisha', 'Goa', 'Jamnagar', 'Baroda', 'Shrirampur', 'Manipur'],
 };
 
-let currentResults = [];   
+let currentResults = [];
 let currentCurrency = 'USD';
 let chartInst = null;
-let visibleCount = 6;      
+let visibleCount = 6;
 
 let currentOfferTarget = null;
 let currentOfferData = null;
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   currentCurrency = prefCur;
   const sel = document.getElementById('currencySelect');
   if (sel) sel.value = prefCur;
-  
+
   const blbl = document.getElementById('budgetLabel');
   if (blbl) blbl.textContent = `Max Budget (${currentCurrency})`;
 
@@ -68,7 +68,7 @@ function initUser() {
   const data = localStorage.getItem('iq_user');
   if (data) {
     const u = JSON.parse(data);
-    if(u.role === 'creator') {
+    if (u.role === 'creator') {
       window.location.href = '/creator_dashboard';
       return;
     }
@@ -81,7 +81,7 @@ function initUser() {
 // ── View switching ────────────────────────────────────────────
 function switchView(name, el, skipHistory = false) {
   document.querySelectorAll('.s-nav-item').forEach(i => i.classList.remove('active'));
-  
+
   const navItem = el || document.querySelector(`.s-nav-item[data-view="${name}"]`);
   if (navItem) navItem.classList.add('active');
 
@@ -89,17 +89,17 @@ function switchView(name, el, skipHistory = false) {
   const targetView = document.getElementById('view-' + name);
   if (targetView) targetView.classList.add('active');
 
-  const titles = { campaign:'New Campaign', results:'Results', trending:'Trending', analytics:'Analytics Dashboard', negotiate:'AI Negotiator', inbox:'Inbox & Offers' };
-  const subs   = { campaign:'Find influencers for your brand', results:'AI-matched influencer recommendations', trending:'Trending by engagement quality', analytics:'Track campaign performance', negotiate:'Draft personalized outreach', inbox:'Manage pending collaborations' };
-  
+  const titles = { campaign: 'New Campaign', results: 'Results', trending: 'Trending', analytics: 'Analytics Dashboard', negotiate: 'AI Negotiator', inbox: 'Inbox & Offers' };
+  const subs = { campaign: 'Find influencers for your brand', results: 'AI-matched influencer recommendations', trending: 'Trending by engagement quality', analytics: 'Track campaign performance', negotiate: 'Draft personalized outreach', inbox: 'Manage pending collaborations' };
+
   const titleEl = document.getElementById('viewTitle');
   const subEl = document.getElementById('viewSub');
   if (titleEl) titleEl.textContent = titles[name] || name;
   if (subEl) subEl.textContent = subs[name] || '';
-  
-  if(name === 'analytics') renderAnalytics();
-  if(name === 'inbox') renderInbox();
-  if(name === 'negotiate') populateNegDropdown();
+
+  if (name === 'analytics') renderAnalytics();
+  if (name === 'inbox') renderInbox();
+  if (name === 'negotiate') populateNegDropdown();
 
   // History logic
   if (!skipHistory && !isNavigating) {
@@ -148,29 +148,36 @@ function onCategoryChange() {
 }
 
 function onCountryChange() {
-  const c = document.getElementById('country').value;
-  const sg = document.getElementById('stateGroup');
-  const s = document.getElementById('state');
-  s.innerHTML = '<option value="">Any State/Region</option>';
-  if (STATES[c]) {
-    sg.style.display = 'flex';
-    STATES[c].forEach(st => {
+  const country = document.getElementById('country').value;
+  const stateGroup = document.getElementById('stateGroup');
+  const stateSel = document.getElementById('state');
+
+  if (country === 'India') {
+    stateGroup.style.display = 'block';
+    stateSel.innerHTML = '<option value="">Any State/Region</option>';
+    (STATES['India'] || []).forEach(s => {
       const o = document.createElement('option');
-      o.value = st; o.textContent = st; s.appendChild(o);
+      o.value = s; o.textContent = s; stateSel.appendChild(o);
     });
   } else {
-    sg.style.display = 'none';
+    stateGroup.style.display = 'none';
+    stateSel.value = '';
   }
+}
+
+function togglePlatform() {
+  const group = document.getElementById('platformGroup');
+  if (group) group.classList.toggle('open');
 }
 
 function onCurrencyChange() {
   const sel = document.getElementById('currencySelect');
   currentCurrency = sel.value;
   localStorage.setItem('iq_pref_currency', currentCurrency);
-  
+
   const blbl = document.getElementById('budgetLabel');
   if (blbl) blbl.textContent = `Max Budget (${currentCurrency})`;
-  
+
   if (currentResults.length) {
     renderCardsPaginated();
     renderChart(currentResults.slice(0, visibleCount));
@@ -180,27 +187,27 @@ function onCurrencyChange() {
 function fmtPrice(priceUSD) {
   if (!priceUSD) return null;
   const rate = RATES[currentCurrency] || 1;
-  const sym  = SYMBOLS[currentCurrency] || '$';
-  const val  = priceUSD * rate;
-  const fmt  = currentCurrency === 'INR'
-    ? val.toLocaleString('en-IN', {maximumFractionDigits:0})
-    : val.toLocaleString('en-US', {maximumFractionDigits:0});
+  const sym = SYMBOLS[currentCurrency] || '$';
+  const val = priceUSD * rate;
+  const fmt = currentCurrency === 'INR'
+    ? val.toLocaleString('en-IN', { maximumFractionDigits: 0 })
+    : val.toLocaleString('en-US', { maximumFractionDigits: 0 });
   return sym + fmt;
 }
 
 function fmtNum(n) {
-  if (n >= 1e9) return (n/1e9).toFixed(1)+'B';
-  if (n >= 1e6) return (n/1e6).toFixed(1)+'M';
-  if (n >= 1e3) return (n/1e3).toFixed(0)+'K';
+  if (n >= 1e9) return (n / 1e9).toFixed(1) + 'B';
+  if (n >= 1e6) return (n / 1e6).toFixed(1) + 'M';
+  if (n >= 1e3) return (n / 1e3).toFixed(0) + 'K';
   return String(n);
 }
 
 function showSkeletons() {
   const grid = document.getElementById('cardsGrid');
   grid.innerHTML = '';
-  for (let i=0; i<6; i++) {
+  for (let i = 0; i < 6; i++) {
     grid.innerHTML += `
-    <div class="inf-card skeleton-card" style="animation-delay:${i*0.05}s">
+    <div class="inf-card skeleton-card" style="animation-delay:${i * 0.05}s">
       <div class="skel-head">
         <div class="skel-avatar"></div>
         <div class="skel-lines">
@@ -216,27 +223,29 @@ function showSkeletons() {
   document.getElementById('emptyState').style.display = 'none';
   document.getElementById('loadMoreWrap').style.display = 'none';
   const cb = document.querySelector('.chart-block');
-  if(cb) cb.style.display = 'none';
-  
+  if (cb) cb.style.display = 'none';
+
   document.getElementById('resultsHeading').textContent = `Searching...`;
   document.getElementById('resultsSubheading').textContent = `Analyzing influencer data...`;
 }
 
 async function runSearch() {
-  const cat  = document.getElementById('category').value;
-  const sub  = document.getElementById('subcategory').value;
-  const plat = document.getElementById('platform').value;
-  const bud  = document.getElementById('budget').value;
+  const cat = document.getElementById('category').value;
+  const sub = document.getElementById('subcategory').value;
+  const platforms = Array.from(document.querySelectorAll('#platformGroup input[type="checkbox"]:checked')).map(cb => cb.value);
+  const gender = document.getElementById('gender')?.value || '';
+  const bud = document.getElementById('budget').value;
   const country = document.getElementById('country')?.value || '';
-  const state   = document.getElementById('state')?.value || '';
+  const state = document.getElementById('state')?.value || '';
+  const contract = document.getElementById('contractType')?.value || '1_post';
 
-  if (!cat)  { flash('Please select a category.'); return; }
-  if (!sub)  { flash('Please select a sub-category.'); return; }
+  if (!cat) { flash('Please select a category.'); return; }
+  if (!sub) { flash('Please select a sub-category.'); return; }
 
-  const btn  = document.getElementById('findBtn');
-  const txt  = document.getElementById('findBtnText');
-  const ldr  = document.getElementById('findBtnLoader');
-  btn.disabled = true; txt.style.display='none'; ldr.style.display='inline';
+  const btn = document.getElementById('findBtn');
+  const txt = document.getElementById('findBtnText');
+  const ldr = document.getElementById('findBtnLoader');
+  btn.disabled = true; txt.style.display = 'none'; ldr.style.display = 'inline';
 
   const resNav = document.querySelector('[data-view="results"]');
   switchView('results', resNav);
@@ -247,19 +256,27 @@ async function runSearch() {
 
   try {
     const res = await fetch('/api/predict', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ 
-        category:cat, subcategory:sub, platform:plat||null, 
-        budget:usdBudget, country: country||null, 
-        state: state||null, limit: 50
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        category: cat, subcategory: sub, platforms: platforms.length ? platforms : null,
+        gender: gender || null, budget: usdBudget, country: country || null,
+        state: state || null, contract_type: contract, limit: 50
       })
     });
     const data = await res.json();
     if (data.error) { flash(data.error); return; }
 
-    currentResults = data.results;
-    window._lastResults = currentResults;
+    if (data.youtube_error) {
+      // Show non-blocking warning for YouTube quota
+      flash(data.youtube_error, 'warning');
+      console.warn(data.youtube_error);
+    }
+
+    currentResults = data.results || [];
+    populateNegDropdown();
+    renderAnalytics(); // Dynamic Analytics update
+    renderCards(currentResults);
     visibleCount = 6;
 
     const badge = document.getElementById('resultsBadge');
@@ -268,27 +285,26 @@ async function runSearch() {
     const algoDisplay = data.meta.algorithm || 'TF-IDF';
     document.getElementById('resultsHeading').textContent = `Top matches for "${sub}"`;
     document.getElementById('resultsSubheading').innerHTML =
-      `${data.total_available} influencer${data.total_available!==1?'s':''} · ${cat} → ${sub}${plat?' · '+plat:''}${country?' · '+country:''}${state?' · '+state:''} <span class="algo-badge">AI Model: ${algoDisplay}</span>`;
+      `${data.total_available} influencer${data.total_available !== 1 ? 's' : ''} · ${cat} → ${sub}${plat ? ' · ' + plat : ''}${gender ? ' · ' + gender : ''}${country ? ' · ' + country : ''}${state ? ' · ' + state : ''} <span class="algo-badge">AI Model: ${algoDisplay}</span>`;
 
     renderCardsPaginated();
     renderChart(currentResults.slice(0, visibleCount));
 
-  } catch(e) {
-    flash('Server error — please try again.');
+  } catch (e) {
+    console.warn('Optional API/frontend issue:', e);
   }
-
-  btn.disabled=false; txt.style.display=''; ldr.style.display='none';
+  btn.disabled = false; txt.style.display = ''; ldr.style.display = 'none';
 }
 
 function sortResults() {
   if (!currentResults.length) return;
   const by = document.getElementById('sortSelect').value;
-  currentResults = [...currentResults].sort((a,b) => {
-    if (by === 'score')      return b.suitability_score - a.suitability_score;
+  currentResults = [...currentResults].sort((a, b) => {
+    if (by === 'score') return b.suitability_score - a.suitability_score;
     if (by === 'engagement') return b.engagement_rate - a.engagement_rate;
-    if (by === 'followers')  return b.followers - a.followers;
-    if (by === 'price_asc')  return (a.price_usd||999999) - (b.price_usd||999999);
-    if (by === 'price_desc') return (b.price_usd||0) - (a.price_usd||0);
+    if (by === 'followers') return b.followers - a.followers;
+    if (by === 'price_asc') return (a.price_usd || 999999) - (b.price_usd || 999999);
+    if (by === 'price_desc') return (b.price_usd || 0) - (a.price_usd || 0);
     return 0;
   });
   visibleCount = 6;
@@ -303,24 +319,24 @@ function renderCardsPaginated() {
     document.getElementById('emptyState').style.display = 'block';
     document.getElementById('loadMoreWrap').style.display = 'none';
     const cb = document.querySelector('.chart-block');
-    if(cb) cb.style.display = 'none';
+    if (cb) cb.style.display = 'none';
     return;
   }
-  
+
   document.getElementById('emptyState').style.display = 'none';
   const cb = document.querySelector('.chart-block');
-  if(cb) cb.style.display = 'block';
-  
+  if (cb) cb.style.display = 'block';
+
   const currentCount = grid.children.length;
   const toShow = currentResults.slice(0, visibleCount);
-  
+
   if (currentCount === 0 || currentCount > toShow.length || grid.querySelector('.skeleton-card')) {
-    renderCards(toShow, false, 0); 
+    renderCards(toShow, false, 0);
   } else {
     const newItems = toShow.slice(currentCount);
     renderCards(newItems, true, currentCount);
   }
-  
+
   const wrap = document.getElementById('loadMoreWrap');
   if (visibleCount < currentResults.length) {
     wrap.style.display = 'block';
@@ -337,8 +353,8 @@ function loadMoreCards() {
 }
 
 function renderChart(results) {
-  const topN   = results.slice(0,8);
-  const labels = topN.map(r => r.name.length > 14 ? r.name.slice(0,13)+'…' : r.name);
+  const topN = results.slice(0, 8);
+  const labels = topN.map(r => r.name.length > 14 ? r.name.slice(0, 13) + '…' : r.name);
   const scores = topN.map(r => r.suitability_score);
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
   const gc = isDark ? 'rgba(255,255,255,.05)' : 'rgba(0,0,0,.05)';
@@ -347,32 +363,32 @@ function renderChart(results) {
   if (!canvas) return;
   if (window._chartInstance) { window._chartInstance.destroy(); window._chartInstance = null; }
   window._chartInstance = new Chart(canvas.getContext('2d'), {
-    type:'bar',
-    data:{
+    type: 'bar',
+    data: {
       labels,
-      datasets:[{
-        label:'Suitability Score',
+      datasets: [{
+        label: 'Suitability Score',
         data: scores,
-        backgroundColor: scores.map((_,i) => i===0 ? 'rgba(124,92,252,.9)' : 'rgba(124,92,252,.38)'),
-        borderColor:     scores.map((_,i) => i===0 ? '#7c5cfc' : 'rgba(124,92,252,.5)'),
-        borderWidth:1, borderRadius:6,
+        backgroundColor: scores.map((_, i) => i === 0 ? 'rgba(124,92,252,.9)' : 'rgba(124,92,252,.38)'),
+        borderColor: scores.map((_, i) => i === 0 ? '#7c5cfc' : 'rgba(124,92,252,.5)'),
+        borderWidth: 1, borderRadius: 6,
       }]
     },
-    options:{
-      responsive:true,
-      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>` Score: ${c.parsed.y.toFixed(1)}`}} },
-      scales:{
-        y:{beginAtZero:true,max:100,grid:{color:gc},ticks:{color:tc,font:{size:11}}},
-        x:{grid:{display:false},ticks:{color:tc,font:{size:11}}}
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` Score: ${c.parsed.y.toFixed(1)}` } } },
+      scales: {
+        y: { beginAtZero: true, max: 100, grid: { color: gc }, ticks: { color: tc, font: { size: 11 } } },
+        x: { grid: { display: false }, ticks: { color: tc, font: { size: 11 } } }
       }
     }
   });
 }
 
-function renderCards(results, append=false, offset=0) {
+function renderCards(results, append = false, offset = 0) {
   const grid = document.getElementById('cardsGrid');
   if (!append) grid.innerHTML = '';
-  
+
   results.forEach((inf, idx) => {
     const globalIdx = offset + idx;
     const isTop = globalIdx === 0;
@@ -381,10 +397,10 @@ function renderCards(results, append=false, offset=0) {
     const engCls = inf.engagement_rate >= 5 ? 'green' : inf.engagement_rate >= 3 ? 'amber' : 'red';
     const fraudCls = inf.fraud_class === 'low' ? 'green' : inf.fraud_class === 'medium' ? 'amber' : 'red';
     const pct = Math.round(inf.suitability_score);
-    const circumference = 2 * Math.PI * 26; 
+    const circumference = 2 * Math.PI * 26;
     const dash = (pct / 100) * circumference;
 
-    const reasonsHtml = (inf.reasons||[]).map(r =>
+    const reasonsHtml = (inf.reasons || []).map(r =>
       `<div class="why-item"><span class="why-check">✔</span><span>${r}</span></div>`
     ).join('');
 
@@ -399,8 +415,9 @@ function renderCards(results, append=false, offset=0) {
         <div class="card-identity">
           <div class="card-name">${inf.name}</div>
           <div class="card-badges">
-            <span class="badge badge-plat">${inf.platform_icon||'📱'} ${inf.platform}</span>
+            <span class="badge badge-plat">${inf.platform_icon || '📱'} ${inf.platform}</span>
             <span class="badge badge-pop">${inf.popularity_tag}</span>
+            ${inf.vibe ? `<span class="badge vibe-badge" style="background:${inf.vibe.color}">${inf.vibe.icon} ${inf.vibe.label.toUpperCase()}</span>` : ''}
             ${isTop ? '<span class="badge badge-best">⭐ Best Match</span>' : ''}
             ${inf.verified ? '<span class="badge badge-verify">✓ Verified</span>' : ''}
           </div>
@@ -422,6 +439,17 @@ function renderCards(results, append=false, offset=0) {
         </div>
       </div>
 
+<div class="field-group">
+  <label>Platform Preference</label>
+  <button type="button" class="platform-toggle" onclick="togglePlatform()">Select Platforms ▼</button>
+  <div class="platform-checkboxes" id="platformGroup">
+    <label class="plt-cb"><input type="checkbox" value="Instagram" checked> <span>Instagram</span></label>
+    <label class="plt-cb"><input type="checkbox" value="YouTube" checked> <span>YouTube (API)</span></label>
+    <label class="plt-cb"><input type="checkbox" value="Twitter" checked> <span>Twitter</span></label>
+    <label class="plt-cb"><input type="checkbox" value="LinkedIn" checked> <span>LinkedIn</span></label>
+  </div>
+</div>
+
       <div class="card-stats-grid">
         <div class="csg-item"><span class="csg-label">👥 Followers</span><span class="csg-val">${fmtNum(inf.followers)}</span></div>
         <div class="csg-item"><span class="csg-label">📊 Engagement</span><span class="csg-val ${engCls}">${inf.engagement_rate}%</span></div>
@@ -432,8 +460,30 @@ function renderCards(results, append=false, offset=0) {
       <div class="card-pills">
         <span class="pill">💬 ${fmtNum(inf.avg_comments)} comments</span>
         <span class="pill">📱 ${inf.content_type}</span>
-        <span class="pill">📍 ${inf.location.split(' ').slice(0,2).join(' ')}</span>
+        <span class="pill">📍 ${inf.location.split(' ').slice(0, 2).join(' ')}</span>
+        ${inf.gender && inf.gender !== 'Unknown' ? `<span class="pill">👤 ${inf.gender}</span>` : ''}
         <span class="quality-tag q-${qColor}">Quality: ${qual}/100</span>
+      </div>
+
+      <!-- ML Enhancements Block -->
+      <div class="ml-insights-box" style="margin-top:12px; padding:10px; background:var(--bg3); border-radius:6px; border:1px solid rgba(124,92,252,0.2);">
+        <div style="font-size:11px; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6px;">🤖 ML Insights</div>
+        <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
+          <span style="color:var(--text2)">Category Prediction:</span>
+          <span style="color:var(--text)"><b>${inf.predicted_category}</b> (${inf.category_confidence}% conf)</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:8px;">
+          <span style="color:var(--text2)">Est. Engagement:</span>
+          <span style="color:var(--text)"><b>${inf.predicted_engagement}%</b></span>
+        </div>
+        ${inf.similar_influencers && inf.similar_influencers.length > 0 ? `
+          <div style="font-size:11px; color:var(--text2); margin-top:6px; border-top:1px solid var(--border); padding-top:6px;">
+            <b>Similar Profiles (KNN):</b>
+            <div style="display:flex; gap:6px; margin-top:4px;">
+              ${inf.similar_influencers.map(s => `<span class="pill" style="font-size:10px; padding:2px 6px;">${s.name} (${s.similarity_score}%)</span>`).join('')}
+            </div>
+          </div>
+        ` : ''}
       </div>
 
       <div class="reach-bar-wrap">
@@ -449,11 +499,11 @@ function renderCards(results, append=false, offset=0) {
       <div class="card-price-row">
         <div>
           <span class="price-label">💰 Est. Rate</span>
-          <span class="price-val ${isNaPrice?'na-price':''}" data-usd="${inf.price_usd||0}">${priceStr}</span>
+          <span class="price-val ${isNaPrice ? 'na-price' : ''}" data-usd="${inf.price_usd || 0}">${priceStr}</span>
         </div>
         <div style="display:flex; gap:8px;">
           ${inf.platform.toLowerCase() === 'youtube' ? `<button class="btn-sm-outline" style="color:var(--text); border-color:var(--border);" onclick="syncCard(this, '${inf.name}')" title="Fetch live YouTube stats">🔄 Sync Data</button>` : ''}
-          <button class="btn-sm-outline" onclick="openOfferModal('${inf.name}', ${inf.price_usd ? Math.round(inf.price_usd * (RATES[currentCurrency]||1)) : 0})">✉️ Send Offer</button>
+          <button class="btn-sm-outline" onclick="openOfferModal('${inf.name}', ${inf.price_usd ? Math.round(inf.price_usd * (RATES[currentCurrency] || 1)) : 0})">✉️ Send Offer</button>
         </div>
       </div>`;
 
@@ -469,33 +519,65 @@ async function syncCard(btn, name) {
   try {
     const res = await fetch('/api/sync_youtube', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: name })
     });
     const data = await res.json();
-    if(data.success) {
+    if (data.success) {
       const card = btn.closest('.inf-card');
       const stats = card.querySelectorAll('.csg-val');
-      
+
       // Update DOM with live data
       if (stats.length >= 3) {
         stats[0].textContent = fmtNum(data.followers);
         stats[1].textContent = data.engagement_rate + '%';
         stats[2].textContent = fmtNum(data.avg_likes);
-        
-        // Update styling for engagement rate (color change)
         stats[1].className = 'csg-val ' + (data.engagement_rate >= 5 ? 'green' : data.engagement_rate >= 3 ? 'amber' : 'red');
       }
-      
+
+      // Update Score Ring
+      const ring = card.querySelector('.score-num');
+      if (ring) ring.textContent = Math.round(data.suitability_score);
+
+      // Update Quality Tag
+      const qtag = card.querySelector('.quality-tag');
+      if (qtag) {
+        const q = data.profile_quality;
+        qtag.textContent = `Quality: ${q}/100`;
+        qtag.className = `quality-tag q-${q >= 80 ? 'green' : (q >= 60 ? 'amber' : 'red')}`;
+      }
+
+      // Update Reasons
+      const whyBox = card.querySelector('.why-box');
+      if (whyBox && data.reasons) {
+        whyBox.innerHTML = `<div class="why-box-title">✦ Why this influencer? (Refreshed Live)</div>` +
+          data.reasons.map(r => `<div class="why-item"><span class="why-check">✔</span><span>${r}</span></div>`).join('');
+      }
+
+      // Update Vibe Badge
+      const badgesWrap = card.querySelector('.card-badges');
+      if (badgesWrap && data.vibe) {
+        let vibeEl = badgesWrap.querySelector('.vibe-badge');
+        if (!vibeEl) {
+          vibeEl = document.createElement('div');
+          vibeEl.className = 'vibe-badge';
+          badgesWrap.appendChild(vibeEl);
+        }
+        vibeEl.style.background = data.vibe.color;
+        vibeEl.innerHTML = `${data.vibe.icon} ${data.vibe.label.toUpperCase()}`;
+      }
+
       btn.innerHTML = '✅ Synced Live';
       btn.style.color = 'var(--green)';
       btn.style.borderColor = 'rgba(34, 197, 94, 0.3)';
     } else {
       flash(data.error || "Failed to sync.");
       btn.innerHTML = '❌ Failed';
+      btn.disabled = false;
     }
-  } catch(e) {
-    flash("Server error checking API.");
+  } catch (e) {
+    console.error("Sync Error:", e);
+    flash("Network error. Check your connection or API status.");
     btn.innerHTML = ogText;
     btn.disabled = false;
   }
@@ -522,10 +604,10 @@ function closeOfferModal() {
 function submitOffer() {
   const msg = document.getElementById('offerMessage').value;
   const amt = document.getElementById('offerAmount').value;
-  if(!msg || !amt) { flash("Please fill out both fields."); return; }
-  
+  if (!msg || !amt) { flash("Please fill out both fields."); return; }
+
   const uData = JSON.parse(localStorage.getItem('iq_user') || '{"name":"Your Brand"}');
-  
+
   const offer = {
     id: Date.now(),
     brand: uData.name,
@@ -535,11 +617,11 @@ function submitOffer() {
     status: 'pending',
     date: new Date().toISOString()
   };
-  
+
   const offers = getOffers();
   offers.push(offer);
   localStorage.setItem('iq_offers', JSON.stringify(offers));
-  
+
   closeOfferModal();
   flash(`Offer sent to ${currentOfferTarget}!`);
   renderInbox();
@@ -547,15 +629,15 @@ function submitOffer() {
 
 function renderInbox() {
   const list = document.getElementById('brandInboxList');
-  if(!list) return;
+  if (!list) return;
   const offers = getOffers();
   list.innerHTML = '';
-  
-  if(offers.length === 0) {
+
+  if (offers.length === 0) {
     list.innerHTML = `<div class="empty-state"><h3>No active offers</h3><p>Find an influencer and send an offer to start collaborating.</p></div>`;
     return;
   }
-  
+
   offers.forEach(o => {
     const div = document.createElement('div');
     div.className = 'inbox-item';
@@ -575,61 +657,80 @@ function renderInbox() {
 function renderAnalytics() {
   const bc = document.getElementById('budgetChart');
   const ec = document.getElementById('engagementChart');
-  if(!bc || !ec) return;
-  
+  if (!bc || !ec) return;
+
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
   const gridColor = isDark ? '#222' : '#eee';
-  
-  if(window._bChart) window._bChart.destroy();
+
+  // Calculate real metrics from currentResults
+  let platData = { Instagram: 0, YouTube: 0, Twitter: 0, LinkedIn: 0 };
+  let tierEng = { Micro: [], Mid: [], Macro: [], Mega: [] };
+
+  (currentResults || []).forEach(inf => {
+    // 1. Budget Share
+    if (platData.hasOwnProperty(inf.platform)) {
+      platData[inf.platform] += (inf.price_usd || 500);
+    }
+
+    // 2. Engagement by Tier
+    const f = inf.followers;
+    let tier = 'Micro';
+    if (f >= 10_000_000) tier = 'Mega';
+    else if (f >= 1_000_000) tier = 'Macro';
+    else if (f >= 100_000) tier = 'Mid';
+
+    tierEng[tier].push(inf.engagement_rate);
+  });
+
+  const avg = (arr) => arr.length ? (arr.reduce((a, b) => a + b, 0) / arr.length).toFixed(1) : 0;
+
+  if (window._bChart) window._bChart.destroy();
   window._bChart = new Chart(bc.getContext('2d'), {
     type: 'doughnut',
     data: {
-      labels: ['Instagram', 'YouTube', 'TikTok', 'Remaining'],
+      labels: Object.keys(platData),
       datasets: [{
-        data: [4500, 3200, 1500, 3300],
-        backgroundColor: ['#E1306C', '#FF0000', '#25F4EE', isDark?'#333344':'#ddddf0'],
+        data: Object.values(platData),
+        backgroundColor: ['#E1306C', '#FF0000', '#1DA1F2', '#0A66C2'],
         borderWidth: 0,
         hoverOffset: 12
       }]
     },
-    options: { 
-      responsive: true, 
-      cutout: '75%',
+    options: {
+      responsive: true, cutout: '75%',
       plugins: {
-        legend: { position: 'right', labels: { color: isDark?'#f0f0ff':'#0f0f20', padding: 20, font: {family: 'Plus Jakarta Sans', size: 13, weight: 600} } },
-        tooltip: {
-          backgroundColor: isDark ? 'rgba(20,20,30,0.9)' : 'rgba(255,255,255,0.9)',
-          titleColor: isDark ? '#fff' : '#000',
-          bodyColor: isDark ? '#ccc' : '#444',
-          padding: 12,
-          cornerRadius: 8,
-          borderColor: isDark ? 'rgba(124,92,252,0.3)' : 'rgba(124,92,252,0.1)',
-          borderWidth: 1
-        }
-      } 
+        legend: { position: 'right', labels: { color: isDark ? '#f0f0ff' : '#0f0f20', padding: 20, font: { family: 'Plus Jakarta Sans', size: 12, weight: 600 } } }
+      }
     }
   });
 
-  if(window._eChart) window._eChart.destroy();
+  if (window._eChart) window._eChart.destroy();
   window._eChart = new Chart(ec.getContext('2d'), {
     type: 'bar',
     data: {
-      labels: ['Micro', 'Mid-tier', 'Macro', 'Mega'],
+      labels: ['Micro (<100k)', 'Mid-tier', 'Macro (1M+)', 'Mega (10M+)'],
       datasets: [{
         label: 'Avg Engagement Rate %',
-        data: [7.2, 5.1, 3.4, 2.1],
+        data: [avg(tierEng.Micro), avg(tierEng.Mid), avg(tierEng.Macro), avg(tierEng.Mega)],
         backgroundColor: '#7c5cfc',
         borderRadius: 4
       }]
     },
-    options: { responsive: true, scales: { y: { grid: { color: gridColor } }, x: { grid: { display: false } } } }
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true, grid: { color: gridColor }, ticks: { color: isDark ? '#ccc' : '#666' } },
+        x: { grid: { display: false }, ticks: { color: isDark ? '#ccc' : '#666' } }
+      },
+      plugins: { legend: { display: false } }
+    }
   });
 }
 
 // ── AI Negotiator ──────────────────────────────────────────────
 function onNegTargetChange() {
   const idx = document.getElementById('negTarget').value;
-  if(idx !== "") {
+  if (idx !== "") {
     const inf = currentResults[idx];
     const rate = RATES[currentCurrency] || 1;
     const localPrice = inf.price_usd ? Math.round(inf.price_usd * rate) : Math.round(500 * rate);
@@ -639,9 +740,9 @@ function onNegTargetChange() {
 
 function populateNegDropdown() {
   const sel = document.getElementById('negTarget');
-  if(!sel) return;
+  if (!sel) return;
   sel.innerHTML = '<option value="">Select an influencer...</option>';
-  if(currentResults.length > 0) {
+  if (currentResults.length > 0) {
     currentResults.slice(0, 20).forEach((inf, idx) => {
       sel.innerHTML += `<option value="${idx}">${inf.name} (${inf.platform})</option>`;
     });
@@ -652,26 +753,26 @@ function populateNegDropdown() {
 
 async function generateScript() {
   const idx = document.getElementById('negTarget').value;
-  if(idx === "") { flash("Please select an influencer."); return; }
-  
+  if (idx === "") { flash("Please select an influencer."); return; }
+
   const inf = currentResults[idx];
   const goal = document.getElementById('negGoal').value || 'Brand Awareness';
   const budgetLocal = document.getElementById('negBudget').value || 500;
-  
+
   const sym = SYMBOLS[currentCurrency] || '$';
-  let formattedBudget = sym + parseFloat(budgetLocal).toLocaleString(currentCurrency==='INR'?'en-IN':'en-US');
-  
+  let formattedBudget = sym + parseFloat(budgetLocal).toLocaleString(currentCurrency === 'INR' ? 'en-IN' : 'en-US');
+
   try {
     const res = await fetch('/api/negotiate', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ influencer: inf, goal: goal, budget: formattedBudget })
     });
     const data = await res.json();
     document.getElementById('scriptOutput').style.display = 'block';
     document.getElementById('generatedText').value = data.script;
     currentOfferData = { name: inf.name, budget: budgetLocal };
-  } catch(e) {
+  } catch (e) {
     flash("Error generating script.");
   }
 }
@@ -685,13 +786,13 @@ function copyScript() {
 
 function sendScriptAsOffer() {
   const txt = document.getElementById('generatedText').value;
-  if(!currentOfferData) return;
+  if (!currentOfferData) return;
   currentOfferTarget = currentOfferData.name;
-  
+
   document.getElementById('offerTargetName').textContent = currentOfferTarget;
   document.getElementById('offerAmount').value = currentOfferData.budget;
   document.getElementById('offerMessage').value = "Outreach Pitch:\n\n" + txt;
-  
+
   document.getElementById('offerModal').style.display = 'flex';
 }
 
@@ -708,8 +809,8 @@ async function loadTrending() {
       card.className = 'trend-card';
       card.style.animationDelay = `${i * 0.07}s`;
       card.innerHTML = `
-        <div class="trend-rank">${String(i+1).padStart(2,'0')}</div>
-        <div class="trend-name">${t.name}${t.verified?' ✓':''}</div>
+        <div class="trend-rank">${String(i + 1).padStart(2, '0')}</div>
+        <div class="trend-name">${t.name}${t.verified ? ' ✓' : ''}</div>
         <div class="trend-cat">${t.subcategory} · ${t.platform}</div>
         <div class="trend-stat">
           <span>👥 ${fmtNum(t.followers)}</span>
@@ -717,18 +818,33 @@ async function loadTrending() {
         </div>`;
       grid.appendChild(card);
     });
-  } catch(e) { console.warn('Trending load failed', e); }
+  } catch (e) { console.warn('Trending load failed', e); }
 }
 
-function flash(msg) {
+function flash(msg, type = 'error') {
   let el = document.getElementById('flashMsg');
   if (!el) {
     el = document.createElement('div');
     el.id = 'flashMsg';
-    el.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:rgba(239,68,68,.95);color:#fff;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,.3)';
+    el.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);color:#fff;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,.3);transition:all 0.3s ease;';
     document.body.appendChild(el);
   }
-  el.textContent = msg;
+
+  if (type === 'warning') {
+    el.style.background = 'rgba(245, 158, 11, 0.95)'; // Amber
+    el.innerHTML = `⚠️ ${msg}`;
+  } else if (type === 'success') {
+    el.style.background = 'rgba(34, 197, 94, 0.95)'; // Green
+    el.innerHTML = `✅ ${msg}`;
+  } else {
+    el.style.background = 'rgba(239, 68, 68, 0.95)'; // Red
+    el.innerHTML = `❌ ${msg}`;
+  }
+
   el.style.display = 'block';
-  setTimeout(() => el.style.display = 'none', 3000);
+  el.style.opacity = '1';
+  setTimeout(() => {
+    el.style.opacity = '0';
+    setTimeout(() => { el.style.display = 'none'; }, 300);
+  }, 4000);
 }
