@@ -54,6 +54,8 @@ a{color:var(--accent);text-decoration:none;transition:opacity .2s}
 a:hover{opacity:.8}
 img{max-width:100%;display:block}
 input,select,textarea,button{font-family:var(--fb)}
+select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+select::-ms-expand { display: none; }
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar{width:6px}
@@ -282,7 +284,7 @@ input,select,textarea,button{font-family:var(--fb)}
 .field-group input,.field-group select{background:var(--bg3);border:1.5px solid var(--border);border-radius:var(--rsm);padding:12px 16px;color:var(--text);font-family:var(--fb);font-size:15px;font-weight:500;outline:none;transition:border-color .2s,box-shadow .2s;appearance:none;-webkit-appearance:none;cursor:pointer}
 .field-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%238888aa'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px; padding-right: 40px; }
 .field-group select option { background: var(--bg3); color: var(--text); }
-[data-theme="light"] .field-group input,[data-theme="light"] .field-group select{background:#fff;border-color:rgba(124,92,252,.2)}
+[data-theme="light"] .field-group input,[data-theme="light"] .field-group select{background-color:#fff;border-color:rgba(124,92,252,.2)}
 [data-theme="light"] .field-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%237c5cfc'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E"); }
 .field-group input::placeholder{color:var(--text3)}
 .field-group input:focus,.field-group select:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(124,92,252,.15)}
@@ -324,8 +326,8 @@ input,select,textarea,button{font-family:var(--fb)}
 .algo-badge { display: inline-block; font-size: 11px; font-weight:700; background: rgba(124,92,252,0.1); color: var(--accent); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(124,92,252,0.25); vertical-align: middle; margin-left: 10px; }
 .results-bar-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .sort-wrap{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--text2)}
-.sort-wrap select{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--rsm);color:var(--text);font-weight:600;font-size:14px;padding:8px 12px;outline:none;cursor:pointer;appearance:none}
-[data-theme="light"] .sort-wrap select{background:#fff;border-color:rgba(124,92,252,.2)}
+.sort-wrap select{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--rsm);color:var(--text);font-weight:600;font-size:14px;padding:8px 30px 8px 12px;outline:none;cursor:pointer;appearance:none;-webkit-appearance:none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%238888aa'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; background-size: 14px;}
+[data-theme="light"] .sort-wrap select{background-color:#fff;border-color:rgba(124,92,252,.2);background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%237c5cfc'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");}
 .btn-new-search{background:var(--surface);border:1.5px solid var(--border);color:var(--text);font-weight:700;padding:10px 18px;border-radius:var(--rsm);font-size:14px;cursor:pointer;transition:all .2s}
 .btn-new-search:hover{background:var(--surfaceB);border-color:var(--borderH)}
 .chart-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:26px;margin-bottom:30px}
@@ -442,7 +444,7 @@ input,select,textarea,button{font-family:var(--fb)}
 .form-field input,.form-field select,.form-field textarea{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--rsm);padding:14px 16px;color:var(--text);font-family:var(--fb);font-size:15px;font-weight:500;outline:none;transition:border-color .2s,box-shadow .2s;appearance:none;-webkit-appearance:none;resize:vertical}
 .form-field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%238888aa'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px; padding-right: 40px; }
 .form-field select option { background: var(--bg3); color: var(--text); }
-[data-theme="light"] .form-field input,[data-theme="light"] .form-field select,[data-theme="light"] .form-field textarea{background:#fff;border-color:rgba(124,92,252,.2)}
+[data-theme="light"] .form-field input,[data-theme="light"] .form-field select,[data-theme="light"] .form-field textarea{background-color:#fff;border-color:rgba(124,92,252,.2)}
 [data-theme="light"] .form-field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%237c5cfc'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E"); }
 .form-field input::placeholder,.form-field textarea::placeholder{color:var(--text3)}
 .form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,92,252,.2)}
@@ -687,4 +689,112 @@ input:checked + .toggle-slider:before { transform: translateX(20px); background-
   .pipeline-visual { flex-direction: column; gap: 0; align-items: center; }
   .pv-arrow { transform: rotate(90deg); margin: 0 0 20px 0; }
   .plan-options { grid-template-columns: 1fr; }
+}
+
+/* ── Platform Toggle Button ── */
+.platform-toggle {
+    width: 100%;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    color: var(--text2);
+    padding: 10px 14px;
+    border-radius: var(--rsm);
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--fb);
+    cursor: pointer;
+    text-align: left;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.platform-toggle:hover {
+    background: var(--surfaceB);
+    border-color: var(--accent);
+    color: var(--text);
+}
+
+/* ── Platform Multi-Select Checkboxes ── */
+.platform-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+    max-height: 0;
+    overflow: hidden;
+    background: var(--bg3);
+    border-radius: var(--rsm);
+    border: 1.5px solid transparent;
+    transition: max-height 0.4s ease, padding 0.3s ease, border-color 0.3s;
+    padding: 0 14px;
+}
+
+/* Expanded state */
+.platform-checkboxes.open {
+    max-height: 300px;
+    padding: 14px;
+    border-color: var(--accent);
+    overflow: visible;
+}
+
+[data-theme="light"] .platform-checkboxes.open {
+    background: #fff;
+    border-color: rgba(124,92,252,0.5);
+}
+[data-theme="light"] .platform-checkboxes {
+    background: #fff;
+}
+
+.plt-cb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text2);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    padding: 4px 0;
+}
+
+.plt-cb input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--borderH);
+    border-radius: 6px;
+    background: var(--surface);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.plt-cb input[type="checkbox"]:checked {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.plt-cb input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.plt-cb:hover {
+    color: var(--text);
+}
+
+.plt-cb:hover input[type="checkbox"] {
+    border-color: var(--accent);
+}
+
+.plt-cb span {
+    font-weight: 600;
 }
