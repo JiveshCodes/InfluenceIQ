@@ -278,6 +278,44 @@ gunicorn -w 4 -b 0.0.0.0:$PORT app:app
 
 ---
 
+
+## 🌐 Live Demo
+
+Experience the live version of **Influence IQ** here:
+
+🔗 https://influenceiq-r4yw.onrender.com/
+
+> Note: The application is hosted on Render's free tier, so the initial load may take a few seconds if the server is inactive.
+
+---
+
+## 🚀 Features
+
+- Modern and responsive UI
+- AI-powered functionality
+- Interactive user experience
+- Real-time processing and dynamic responses
+- Optimized frontend design
+
+---
+
+## 🛠️ Deployment
+
+This project is deployed using:
+
+- Frontend / Backend Hosting: Render
+- Version Control: GitHub
+
+---
+
+## 📸 Preview
+
+Visit the live application to explore all features in action.
+
+
+---
+
+
 ## 🛡️ Security & Contribution
 
 ### Security
